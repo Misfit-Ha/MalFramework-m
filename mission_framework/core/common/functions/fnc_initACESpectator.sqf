@@ -21,12 +21,15 @@
 
 if !(hasInterface) exitWith {};
 
-params ["_state", ["_allowAllSides", false], ["_allowFreeCam", false]];
+params ["_state", ["_allowAllSides", false]];
 
 // Stop the script and exit the spectator mode if state is false
 if !(_state) exitWith {
     [false] call AFUNC(spectator,setSpectator);
 };
+
+//Get _allowFreeCam from cba settings
+_allowFreeCam = if (ace_spectator_restrictModes == 0) then [{ true }, { false }];
 
 // If we allow all sides
 if (_allowAllSides) then {
@@ -35,7 +38,7 @@ if (_allowAllSides) then {
     [[playerSide], [west, east, independent, civilian]] call AFUNC(spectator,updateSides);
 };
 
-// If we allow the use of free cam
+// If we allow the use of free cam, you can set this option in cba_settings
 if (_allowFreeCam) then {
     [[0, 1, 2]] call AFUNC(spectator,updateCameraModes);
 } else {

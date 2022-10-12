@@ -8,3 +8,4 @@ releases/*
 *.zip
 
 CHANGELOG.md
+mission_framework/.vscode/settings.json
