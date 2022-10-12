@@ -55,7 +55,7 @@ cutText ["", "BLACK FADED", 5, true];
     private _gear = GETVAR(_unit,EGVAR(gear,currentGear),[]);
 
     if (count _gear != 0) then {
-        _unit setUnitLoadout _gear;
+        [_unit, _gear] call CBA_fnc_setLoadout;
     } else {
         [_unit, _role] call EFUNC(gear,setGear);
     };

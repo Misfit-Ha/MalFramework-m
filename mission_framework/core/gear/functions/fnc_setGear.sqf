@@ -136,7 +136,7 @@ if (count _gear == 0) exitWith {
 };
 
 // Apply the selected loadout
-_unit setUnitLoadout _gear;
+[_unit, _gear] call CBA_fnc_setLoadout;
 
 // Save the current loadout
 SETPVAR(_unit,GVAR(currentRole),_role);
