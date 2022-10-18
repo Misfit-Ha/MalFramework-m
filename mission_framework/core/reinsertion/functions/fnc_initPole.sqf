@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Malbryn
+        Malbryn, Misfit
 
     Description:
         Adds different options to an object ("TP pole") for reinsertion.
@@ -64,6 +64,15 @@ _tpPoles apply {
             ["Reinsertion - Platoon HAB"] spawn FUNC(tpToHAB);
         }, nil, 1, true, true, "", "true", 12];
     };
+
+    //Add a helper text on top of teleporter, not tested on server
+    _targetPositionAGLTop = _x modelToWorldVisual [0, 0, 3.5];
+
+    addMissionEventHandler ["Draw3D", {
+        if (player distance _thisArgs <= 150 ) then {
+            drawIcon3D ["\A3\modules_f\data\portraitModule_ca.paa", [1, 1, 1, 0.8],_thisArgs , 0.3 / (getResolution select 5), 0.3 / (getResolution select 5), 0, "Use mouse scroll here to teleport", true, 0.02 / (getResolution select 5), "PuristaBold", "center"];
+        };
+    }, _targetPositionAGLTop];
 };
 
 // Assigning the RP menu to the squad leaders
