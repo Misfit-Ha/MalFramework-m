@@ -28,8 +28,7 @@ if !(_state) exitWith {
     [false] call AFUNC(spectator,setSpectator);
 };
 
-//Get _allowFreeCam from cba settings
-_allowFreeCam = if (ace_spectator_restrictModes == 0) then [{ true }, { false }];
+
 
 // If we allow all sides
 if (_allowAllSides) then {
@@ -39,7 +38,7 @@ if (_allowAllSides) then {
 };
 
 // If we allow the use of free cam, you can set this option in cba_settings
-if (_allowFreeCam) then {
+if (ace_spectator_restrictModes == 0) then {
     [[0, 1, 2]] call AFUNC(spectator,updateCameraModes);
 } else {
     [[1, 2], [0, 1, 2]] call AFUNC(spectator,updateCameraModes);
