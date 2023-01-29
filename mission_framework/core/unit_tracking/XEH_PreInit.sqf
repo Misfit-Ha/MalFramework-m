@@ -9,6 +9,3 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
-
-// Init map marker hash
-GVAR(markerHash) = createHashMap;

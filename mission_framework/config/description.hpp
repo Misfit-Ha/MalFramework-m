@@ -2,7 +2,7 @@
 #define UID "76561198066551781"  // Malbryn's UID
 
 // VCOM AI
-#define VCOMAI  // Comment out this line if you don't want to load VCOM AI
+//#define VCOMAI  // Comment out this line if you don't want to load VCOM AI
 
 // Mission parameters
 class Header {

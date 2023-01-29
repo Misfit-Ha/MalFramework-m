@@ -244,8 +244,7 @@ GVARMAIN(moduleTFAR) = false;  // Coop & TvT
 
 
 // Unit tracking
-GVARMAIN(moduleUnitTracking) = false;  // Coop
-EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. value = 1)
+GVARMAIN(moduleUnitTracking) = false;  // Coop & TvT
 
 
 // Vehicle respawn
