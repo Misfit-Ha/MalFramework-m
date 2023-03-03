@@ -1,11 +1,13 @@
 release/*
 releases/*
 
+*.vscode
 # Arma test mission file
 *.sqm
 
 *.pbo
 *.zip
+
 
 CHANGELOG.md
 mission_framework/.vscode/settings.json
