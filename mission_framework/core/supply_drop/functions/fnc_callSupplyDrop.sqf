@@ -23,7 +23,7 @@
 if !(isServer) exitWith {};
 
 
-params ["_crate", ["_dir", "north"], ["_alt", 500], "_playerPos"];
+params ["_crate", ["_dir", "north"], ["_alt", 1000], "_playerPos"];
 
 thisCrate =_crate;
 
@@ -69,6 +69,7 @@ if !(GVAR(useFlare)) then {
 // Create the plane
 GVAR(plane) = createVehicle [_type, _startPos, [], 0, "FLY"];
 createVehicleCrew GVAR(plane);
+GVAR(plane) allowDamage false;
 group GVAR(plane) setCombatMode "BLUE";
 group GVAR(plane) setBehaviour "CARELESS";
 

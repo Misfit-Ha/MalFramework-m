@@ -13,7 +13,20 @@ class Header {
 
 // Mission selection screen
 briefingName = "[CO-12] operation_name";  // Mission name on the mission selection screen (use [CO-XX] or [TVT-XX] where XX is the max. player number)
-overviewText = "mission_info";  // Mission info on the mission selection screen (e.g. mission assets, factions, time limit etc.)
+//overviewText = "mission_info";  // Mission info on the mission selection screen (e.g. mission assets, factions, time limit etc.)
+/*
+    The text that appears at the top of an MP mission is defined in mod mission.sqm definition and not through Description.ext:
+    class Mission
+    {
+        // ...
+        class Intel
+        {
+            overviewText = "German forces engage Russans in Chernarus. // Assets: 1x Puma ifv (callsign: HAMMER) // Respawns: unlimited, Wave // Arsenal mode: Alt Loadouts // Time limit: disabled // Staging: disabled // JIP: enabled";
+            // ...
+        };
+    // ...
+    };
+*/
 
 // Loading screen settings
 onLoadName = "operation_name";  // Name of the operation on the loading screen (you can drop the [CO-XX] part here)

@@ -27,6 +27,7 @@ _para setPos getPos _this;
 _paras = [_para];
 _this attachTo [_para, [0, 0, 0.5]];
 
+
        // if is a land vehicle use 4 more parachutes to look more epic
 if (_this isKindOf "LandVehicle") then {
 	{
@@ -67,7 +68,7 @@ if (_this isKindOf "LandVehicle") then {
 		];
 		{
 			detach _x;
-			_x disableCollisionWith _veh;
+			
 		} count (_this select 1);
 		_time = time + 5;
 		waitUntil {
