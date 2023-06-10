@@ -21,7 +21,7 @@ if !(hasInterface) exitWith {};
 
 SETPMVAR(GVAR(dropAvailable),true);
 
-if (count GVAR(supplyCrates) == 0) exitWith {
+if (GVAR(supplyCrates) isEqualTo []) exitWith {
     [COMPONENT_STR, "ERROR", "No supply drop crate is defined in the config", true] call EFUNC(main,log);
 };
 

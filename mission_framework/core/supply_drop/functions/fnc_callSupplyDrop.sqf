@@ -62,7 +62,7 @@ switch (_dir) do {
 
 // Spawn smoke
 if !(GVAR(useFlare)) then {
-    private _signal = "SmokeShellBlue" createVehicle _playerPos;
+    "SmokeShellBlue" createVehicle _playerPos;
 };
 
 
@@ -70,19 +70,20 @@ if !(GVAR(useFlare)) then {
 GVAR(plane) = createVehicle [_type, _startPos, [], 0, "FLY"];
 createVehicleCrew GVAR(plane);
 GVAR(plane) allowDamage false;
-group GVAR(plane) setCombatMode "BLUE";
-group GVAR(plane) setBehaviour "CARELESS";
+private _group = group GVAR(plane);
+_group setCombatMode "BLUE";
+_group setBehaviour "CARELESS";
 
 
 
 // First waypoint
-private _wp1 = group GVAR(plane) addWaypoint [_endPos, 20];
+private _wp1 = _group addWaypoint [_endPos, 20];
 _wp1 setWaypointStatements ["true", QUOTE(thisCrate setPos (getPos GVAR(plane)); thisCrate call FUNC(spawnPara))];
 _wp1 setWaypointType "MOVE";
 
 
 
 // Second waypoint, delete plane
-private _wp2 = group GVAR(plane) addWaypoint [_startPos, 20];
-_wp2 setWaypointStatements ["true", QUOTE(crew GVAR(plane) apply {deleteVehicle _x}; deleteVehicle GVAR(plane); SETPMVAR(QGVAR(dropAvailable),true);)];
+private _wp2 = _group addWaypoint [_startPos, 20];
+_wp2 setWaypointStatements ["true", QUOTE(deleteVehicleCrew GVAR(plane); deleteVehicle GVAR(plane); SETPMVAR(QGVAR(dropAvailable),true);)];
 _wp2 setWaypointType "MOVE";
