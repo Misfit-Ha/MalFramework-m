@@ -5,73 +5,39 @@
         Malbryn
 
     Description:
-        Handles the change of admin state.
+        Handles the displaying of client FPS in 3D.
+        If the state is true, the client FPS will be transmitted over the network.
 
     Arguments:
-        -
+        0: BOOLEAN - If the FPS counter is visible
 
     Example:
-        ["3", true, false] call MF_admin_fnc_handleAdminStateChanged
+        [true] call MF_admin_fnc_handleClientFPSDisplayChanged
 
     Returns:
         void
 */
 
-if !(isServer) exitWith {};
+if !(hasInterface) exitWith {};
 
-params ["_networkId", "_loggedIn", "_votedIn"];
+params [
+    ["_toggle", false, [true]]
+];
 
-// Get the UID from network ID
-private _userInfo = getUserInfo _networkId;
-private _playerUID = _userInfo select 2;
-private _unit = _userInfo select 10;
+// Check state, exit if current and requested states are the same
+if (GVAR(isMonitoring) && _toggle) exitWith {};
+if (!GVAR(isMonitoring) && !_toggle) exitWith {};
 
-if (isNull _unit) then {
-    [
-        COMPONENT_STR,
-        "WARNING",
-        "Admin player object is null",
-        false,
-        1
-    ] call EFUNC(main,log);
-};
+if (_toggle) then {
+    // Start monitoring the client FPS
+    GVAR(fpsMonitor) = [{
+        SETPVAR(player,GVAR(clientFPS),round diag_fps);
+    }, 1] call CFUNC(addPerFrameHandler);
 
-// Update admins array
-if (_loggedIn) then {
-    // Add to array
-    GVAR(gameMasters) pushBackUnique _playerUID;
-
-    // Fire event
-    [QGVAR(onAdminLoggedIn), [_unit]] call CFUNC(localEvent);
-
-    // Log
-    [
-        COMPONENT_STR,
-        "INFO",
-        format ["Admin logged in (UID: %1)", _playerUID],
-        false,
-        1
-    ] call EFUNC(main,log);
+    GVAR(isMonitoring) = true;
 } else {
-    private _missionMakerUID = GETPAVAR(GVARMAIN(missionMaker),"");
+    // Stop  monitoring the client FPS
+    [GVAR(fpsMonitor)] call CFUNC(removePerFrameHandler);
 
-    // Remove from array (don't remove if it's the mission maker)
-    if (_playerUID != _missionMakerUID) then {
-        GVAR(gameMasters) = GVAR(gameMasters) - [_playerUID];
-    };
-
-    // Fire event
-    [QGVAR(onAdminLoggedOut), [_unit]] call CFUNC(localEvent);
-
-    // Log
-    [
-        COMPONENT_STR,
-        "INFO",
-        format ["Admin logged out (UID: %1)", _playerUID],
-        false,
-        1
-    ] call EFUNC(main,log);
+    GVAR(isMonitoring) = false;
 };
-
-// Make changes public
-publicVariable QGVAR(gameMasters);
