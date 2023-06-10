@@ -183,10 +183,11 @@ force ace_medical_treatment_medicIV = 0;
 force ace_medical_treatment_timeCoefficientPAK = 0.7;
 
 // ACE Nightvision
-force ace_nightvision_aimDownSightsBlur = 0.7;
-force ace_nightvision_effectScaling = 1.3;
-force ace_nightvision_fogScaling = 0;
-force ace_nightvision_noiseScaling = 0.7;
+force ace_nightvision_aimDownSightsBlur = 0;
+force ace_nightvision_disableNVGsWithSights = false;
+force ace_nightvision_effectScaling = 0.8;
+force ace_nightvision_fogScaling = 0.8;
+force ace_nightvision_noiseScaling = 0.5;
 force ace_nightvision_shutterEffects = true;
 
 // ACE Overheating
@@ -412,7 +413,7 @@ force force TFI_cba_animMapOff = true;
 force force TFI_cba_platcTabOff = true;
 
 // TFI VFX
-force TFI_cba_vfxGcamChkEnemyRange = 10;
+force TFI_cba_vfx_gcamChkEnemy = false;
 force TFI_cba_vfxGcamRange = 1500;
 
 // Unit Ambient SFX
