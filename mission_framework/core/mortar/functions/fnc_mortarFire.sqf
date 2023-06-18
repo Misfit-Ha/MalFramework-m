@@ -37,10 +37,10 @@ for "_index" from 1 to _shellCount do {
         };
     };
 
-    _posToFireAt set [2, 800];
+    _posToFireAt set [2, 1000];
     private _shell = _shellType createVehicle _posToFireAt;
     _shell setPos _posToFireAt;
-    _shell setVelocity [0, 0, -200];
+    _shell setVelocity [0, 0, -10];
 
     if ((_index % 4) == 3) then {
         sleep (3 + (random 1) / 4);

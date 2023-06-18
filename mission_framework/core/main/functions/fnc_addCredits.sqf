@@ -65,9 +65,9 @@ Some parts of this framework are based on other Arma 3 frameworks and scripts. S
  - Parachute script by Kex and cobra4v320<br/>
  - Rearm scripts by GitHawk<br/>
  - Setup timer script by Olsen<br/>
- - Sit down script by RickOShay<br/>
  - Snowfall script by AZCoder and JW<br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
+ - BFT by Quiksilver<br/>
 <br/>
 Special thanks to <font color='#21749c'>Garfield</font> and <font color='#21749c'>kMaN</font> for their technical help.
 </font>
