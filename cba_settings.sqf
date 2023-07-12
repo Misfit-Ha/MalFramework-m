@@ -16,7 +16,9 @@ force ace_advanced_throwing_showMouseControls = true;
 force ace_advanced_throwing_showThrowArc = true;
 
 // ACE Advanced Vehicle Damage
-force ace_vehicle_damage_enabled = true;
+force ace_vehicle_damage_enableCarDamage = false;
+force ace_vehicle_damage_enabled = false;
+force ace_vehicle_damage_removeAmmoDuringCookoff = false;
 
 // ACE Armor Adjuster
 force AAA_VAR_AI_ARMOR_COEF = 1;
@@ -75,8 +77,8 @@ force acex_field_rations_hudType = 0;
 
 // ACE Fire
 force ace_fire_dropWeapon = 0;
-force ace_fire_enableFlare = true;
-force ace_fire_enableScreams = true;
+force ace_fire_enableFlare = false;
+force ace_fire_enableScreams = false;
 
 // ACE Fortify
 force ace_fortify_timeCostCoefficient = 0;
@@ -89,7 +91,8 @@ force ace_frag_maxTrackPerFrame = 25;
 force ace_frag_spallEnabled = true;
 
 // ACE G-Forces
-force ace_gforces_coef = 0.5;
+force ace_gforces_coef = 0.6;
+force ace_gforces_enabledFor = 2;
 
 // ACE Goggles
 force ace_goggles_effects = 0;
@@ -237,7 +240,8 @@ force ace_weather_enabled = false;
 force ace_weather_windSimulation = false;
 
 // ACE Wind Deflection
-force ace_winddeflection_enabled = false;
+force ace_winddeflection_enabled = true;
+force ace_winddeflection_simulationInterval = 0.05;
 force ace_winddeflection_vehicleEnabled = false;
 
 // ACE Zeus
@@ -261,15 +265,38 @@ cba_optics_usePipOptics = false;
 force diwako_dui_enable_compass_dir = 4;
 
 // Enhanced Movement Rework
+force emr_main_allowClimbOnStandingUnits = false;
+force emr_main_allowMidairClimbing = true;
+force emr_main_animSpeedCoef = 1;
+force emr_main_animSpeedStaminaCoef = 0.4;
+force emr_main_assistDuty = 1.5;
+force emr_main_assistHeight = 1;
+force emr_main_blacklistStr = "";
+force emr_main_climbingEnabled = true;
+force emr_main_climbOnDuty = 3.4;
+force emr_main_climbOverDuty = 3;
+force emr_main_dropDuty = 0.7;
+force emr_main_dropViewElevation = -0.7;
 force emr_main_enableWalkableSurface = true;
-force emr_main_jumpingLoadCoefficient = 0;
-force emr_main_jumpVelocity = 3.4;
-force emr_main_maxDropHeight = 5;
-force emr_main_maxWeightClimb1 = 200;
-force emr_main_maxWeightClimb2 = 200;
-force emr_main_maxWeightClimb3 = 200;
-force emr_main_maxWeightJump = 200;
+force emr_main_enableWeightCheck = true;
+force emr_main_hintType = 2;
+force emr_main_interactBehaviorInVehicle = "ENGINE";
+force emr_main_jumpDuty = 1;
+force emr_main_jumpForwardVelocity = 1.2;
+force emr_main_jumpingEnabled = true;
+force emr_main_jumpingLoadCoefficient = 1;
+force emr_main_jumpVelocity = 3.5;
+force emr_main_maxClimbHeight = 2.6;
+force emr_main_maxDropHeight = 6;
+force emr_main_maxWeightClimb1 = 100;
+force emr_main_maxWeightClimb2 = 85;
+force emr_main_maxWeightClimb3 = 60;
+force emr_main_maxWeightJump = 100;
+force emr_main_minClimbTerrain = 0.3;
 force emr_main_preventHighVaulting = false;
+force emr_main_staminaCoefficient = 1;
+force emr_main_whitelistStr = "";
+force emr_main_yeetCoefficient = 1.4;
 
 // Fish Camo Cream
 force fish_camo_cream_common_application_time = 7;
@@ -279,6 +306,9 @@ force fish_camo_cream_mirror_showMirrorOnApplication = true;
 // Goko Simulate Mag Options
 force GSM_option_bShowMagAuthor = false;
 force GSM_option_nonCompatList = "BW-Mod**Bohemia Interactive**Example Author Name**";
+
+// Improved Melee System (Server Settings)
+force TFI_cba_ims_imsOff = true;
 
 // GRAD Trenches
 force grad_trenches_functions_bigEnvelopeRemovalTime = 10;
@@ -354,6 +384,50 @@ force kat_misc_neckTourniquet = true;
 force NMAB_setting_pfxHelicopters = true;
 force NMAB_setting_pfxPlanes = true;
 
+
+// LAMBS Danger
+force lambs_danger_cqbRange = 60;
+force lambs_danger_disableAIAutonomousManoeuvres = false;
+force lambs_danger_disableAIDeployStaticWeapons = false;
+force lambs_danger_disableAIFindStaticWeapons = false;
+force lambs_danger_disableAIHideFromTanksAndAircraft = false;
+force lambs_danger_disableAIPlayerGroup = true;
+force lambs_danger_disableAIPlayerGroupReaction = true;
+force lambs_danger_disableAutonomousFlares = false;
+force lambs_danger_disableAutonomousSmokeGrenades = false;
+force lambs_danger_panicChance = 0.1;
+// LAMBS Danger WP
+force lambs_wp_autoAddArtillery = false;
+// LAMBS Main
+force lambs_main_combatShareRange = 200;
+force lambs_main_debug_drawAllUnitsInVehicles = false;
+force lambs_main_debug_Drawing = false;
+force lambs_main_debug_FSM = false;
+force lambs_main_debug_FSM_civ = false;
+force lambs_main_debug_functions = false;
+force lambs_main_debug_RenderExpectedDestination = false;
+force lambs_main_disableAICallouts = false;
+force lambs_main_disableAIDodge = false;
+force lambs_main_disableAIFleeing = false;
+force lambs_main_disableAIGestures = true;
+force lambs_main_disableAutonomousMunitionSwitching = false;
+force lambs_main_disablePlayerGroupSuppression = true;
+force lambs_main_indoorMove = 0.5;
+force lambs_main_maxRevealValue = 1;
+force lambs_main_minFriendlySuppressionDistance = 5;
+force lambs_main_minObstacleProximity = 5;
+force lambs_main_minSuppressionRange = 50;
+force lambs_main_radioBackpack = 2000;
+force lambs_main_radioDisabled = false;
+force lambs_main_radioEast = 500;
+force lambs_main_radioGuer = 500;
+force lambs_main_radioShout = 100;
+force lambs_main_radioWest = 500;
+
+// NIArms
+force niarms_gripSwitch = true;
+force niarms_magSwitch = true;
+
 // Recoil coefficient changer
 force RECOIL_accumulative_on = 1;
 force RECOIL_AI_on = false;
@@ -366,11 +440,14 @@ force RECOIL_randomMax_on = 1.10462;
 force RECOIL_randomMid_on = 1;
 force RECOIL_randomMin_on = -0.5;
 force RECOIL_variety_on = false;
+
 // Simple Suppress
-force simplesuppress_suppress_overlayFadeoutTime = 2;
-force simplesuppress_suppress_overlayOpacity = 0.747675;
+force simplesuppress_suppress_checkLOS = false;
+force simplesuppress_suppress_overlayFadeoutTime = 1.5;
+force simplesuppress_suppress_overlayOpacity = 0.9;
 force simplesuppress_suppress_overlayTexture = 0;
 force simplesuppress_suppress_projectileMaxDistance = 5;
+force simplesuppress_suppress_shooterMinDistance = 0;
 
 // TFAR - Clientside settings
 force TFAR_curatorCamEars = true;
@@ -406,15 +483,56 @@ force TFAR_spectatorCanHearEnemyUnits = false;
 force TFAR_takingRadio = 1;
 
 // TFI Animation
-force TFI_cba_animHitRChance = 0.05;
-force force TFI_cba_animMapOff = true;
+force TFI_cba_anim_actionDeathChance = 1;
+force force TFI_cba_anim_actionDeathOff = true;
+force TFI_cba_anim_actionHitChance = 1;
+force force TFI_cba_anim_actionHitOff = true;
+force force TFI_cba_anim_adsOff = true;
+force force TFI_cba_anim_doorOff = true;
+force force TFI_cba_anim_mapOff = true;
+force force TFI_cba_anim_nvgOff = true;
+force TFI_cba_anim_runSteepMax = 20;
+force TFI_cba_anim_runSteepMin = -20;
+
+// TFI Fatigue
+force TFI_cba_fat_armFatigueOff = true;
+force TFI_cba_fat_rccOff = true;
+force TFI_cba_fat_rccOnlyPlayers = true;
 
 // TFI Platform
-force force TFI_cba_platcTabOff = true;
+force TFI_cba_plat_bubbleChatOff = false;
+TFI_cba_plat_clearRadioOff = true;
+force TFI_cba_plat_craterOff = true;
+force TFI_cba_plat_craterSize = 3;
+force TFI_cba_plat_navKeepGPS = false;
+force TFI_cba_plat_navOff = false;
+force TFI_cba_plat_vecCollisionOff = false;
+
+// TFI SFX
+
+force TFI_cba_sfx_attachmentOff = false;
+force force TFI_cba_sfx_deathChance = 0.7;
+force force TFI_cba_sfx_deathOff = true;
+force TFI_cba_sfx_inventoryOff = false;
+force force TFI_cba_sfx_jumpOff = true;
+force TFI_cba_sfx_mapOff = false;
 
 // TFI VFX
+force TFI_cba_vfx_bloodIntersectionBlackList = "['#particlesource', 'dummyweapon.p3d', 'TFI_obj_bloodBoard', 'TFI_obj_bloodBoard_medium', 'WeaponHolderSimulated', 'WeaponHolder', 'Thing', 'Man', 'AllVehicles', 'Default']";
+force TFI_cba_vfx_bloodObjectLimit = 500;
+force TFI_cba_vfx_bloodPoolChance = 0.5;
+force force TFI_cba_vfx_bloodPoolOff = true;
+force TFI_cba_vfx_bloodSplatterChance = 0.5;
+force force TFI_cba_vfx_bloodSplatterOff = true;
 force TFI_cba_vfx_gcamChkEnemy = false;
-force TFI_cba_vfxGcamRange = 1500;
+force TFI_cba_vfx_gcamChkEnemyRange = 100;
+force TFI_cba_vfx_gcamLamp = true;
+force TFI_cba_vfx_gcamNvg = true;
+force TFI_cba_vfx_gcamOff = false;
+force TFI_cba_vfx_gcamRange = 500;
+force force TFI_cba_vfx_hsOff = true;
+force TFI_cba_vfx_nvgEffect = "mwEffect";
+
 
 // Unit Ambient SFX
 force uvo_uas_enableCoughing = false;
