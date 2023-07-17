@@ -80,25 +80,26 @@ function formatGearArrays(gearArrays) {
     let arsenalExport = gearArrays[i][1]
     let role = gearArrays[i][0]
 
-    const replacedStr = arsenalExport.replace(/&quot;/g, '"') // Replace &quot; with " because JSON.parse() doesn't like it.
-    try {
-      const arr = JSON.parse(replacedStr)
-      templateString += `case "${role[i][0]}" : {\n\t_gear = [\n`
-      for (let j = 0; j < arr.length; j++) {
-        let loadout = arr[j]
-        for (let k = 0; k < loadout.length; k++) {
-          //loop through the 9 items
-          let item = loadout[k]
-          templateString += '\t\t' + comments[k] + '\n'
-          templateString += '\t\t' + JSON.stringify(item) + ',\n'
-        }
-        templateString = templateString.slice(0, -1)
+    const replacedStr = arsenalExport.replace(/&amp;quot;/g, '"') // Replace &amp;quot; with " because JSON.parse() doesn't like it.
+    const arr = JSON.parse(replacedStr)
+
+    templateString += `case "${role}" : {\n\t_gear = [\n`
+
+    for (let j = 0; j < arr.length; j++) {
+      let loadout = arr[j]
+
+      // loop through the 9 items.
+      for (let k = 0; k < loadout.length; k++) {
+        let item = loadout[k]
+        templateString += '\t\t' + comments[k] + '\n'
+        templateString += '\t\t' + JSON.stringify(item) + ',\n'
       }
-      templateString += `\n\t];\n};\n\n\n`
-    } catch {
-      alert('there was an error read the output')
-      return `Error: Invalid array in loadout ${i}. Make sure to copy the exported array from ACE Arsenal. `
+
+      templateString = templateString.slice(0, -1)
     }
+
+    templateString += `\n\t];\n};\n\n\n`
   }
+
   return templateString
 }
