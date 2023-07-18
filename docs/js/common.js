@@ -1,3 +1,6 @@
+const currentRoute = window.location.pathname
+const label = currentRoute === '/gear_creator.html' ? 'Loadout' : 'Intel'
+
 /*
  *  Adds a new Gear card.
  */
@@ -16,7 +19,7 @@ $('#add-form').on('click', function (e) {
 
   // Clear the input fields of the clone and change the ID
   clearForm($cardCloneID)
-  setGearID($cardCloneID, 'loadout')
+  setGearID($cardCloneID, label)
 })
 
 /*
@@ -59,8 +62,6 @@ function setCardID(oldID, index) {
   let newID = 'card_' + index
 
   $(oldID).prop('id', newID)
-  const currentRoute = window.location.pathname
-  let label = currentRoute === '/gear_creator.html' ? 'Loadout' : 'Intel'
   setGearID('#' + newID, label)
 }
 

@@ -11,3 +11,4 @@ releases/*
 
 CHANGELOG.md
 mission_framework/.vscode/settings.json
+.editorconfig

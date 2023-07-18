@@ -4,60 +4,56 @@
  *  GitHub: https://github.com/Malbryn/MalFramework
  */
 
-
 /*
  *  Event fired when the user submits the form.
  */
-$("#main-form").submit(function(e) {
-    let fields = $(this).serializeArray();
-    
-    e.preventDefault();
+$('#main-form').submit(function (e) {
+  let fields = $(this).serializeArray()
 
-    generateBriefing(fields);
+  e.preventDefault()
+
+  generateBriefing(fields)
 })
-
 
 /*
  *  Copy to clipboard event fired when the user clicks the button.
  */
-$("#copy-button").click(e => {
-    let text = $("#output");
+$('#copy-button').click((e) => {
+  let text = $('#output')
 
-    text.select();
-    document.execCommand("copy");
-    document.getSelection().removeAllRanges();
+  text.select()
+  document.execCommand('copy')
+  document.getSelection().removeAllRanges()
 
-    // Button text
-    $("#panel").slideDown("slow");
+  // Button text
+  $('#panel').slideDown('slow')
 
-    setTimeout(function() {
-        $("#panel").slideUp("slow");
-    }, 3000);
+  setTimeout(function () {
+    $('#panel').slideUp('slow')
+  }, 3000)
 })
-
 
 /*
  *  Converts the line breaks to "<br/>".
  */
 function convertLineBreaks(str) {
-    return str.split("\n").join("\n<br/>");
+  return str.split('\n').join('\n<br/>')
 }
-
 
 /*
  *  Generates the briefing template.
  */
 function generateBriefing(fields) {
-    // Convert line breaks
-    fields.forEach(e => {
-        e['value'] = convertLineBreaks(e['value']);
-    });
+  // Convert line breaks
+  fields.forEach((e) => {
+    e['value'] = convertLineBreaks(e['value'])
+  })
 
-    // Select side colour
-    let sideColour = fields[28]['value'] === "BLUFOR" ? "#21749c" : "#9c2d21";
+  // Select side colour
+  let sideColour = fields[28]['value'] === 'BLUFOR' ? '#21749c' : '#9c2d21'
 
-    // Output
-    let template = `// This briefing file was generated with the Briefing Builder tool
+  // Output
+  let template = `// This briefing file was generated with the Briefing Builder tool
 
 NEWTAB("I. Organisation")
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>BLUFOR ORBAT</font>
@@ -170,13 +166,13 @@ NEWTAB("V. Notes:")
 <br/>${fields[27]['value']}
 ENDTAB;`
 
-    // Display output
-    $("#output").val(template);
-    $("#output-field").css("display", "flex");
+  // Display output
+  $('#output').val(template)
+  $('#output-field').css('display', 'flex')
 
-    // Scroll down
-    $("#output-field")[0].scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+  // Scroll down
+  $('#output-field')[0].scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  })
 }
