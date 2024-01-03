@@ -18,7 +18,6 @@ This framework was designed to help mission-makers create complex PvE and TvT sc
 Some scripts have also been integrated into the framework. Their original authors were given credit in the Credits section.
 
 If something is broken, open a new issue on **[GitHub](https://github.com/Misfit-Ha/MalFramework-m/issues)**.
-
 </br>
 
 **For more information, [visit the Wiki.](https://github.com/Misfit-Ha/MalFramework-m/wiki)**
