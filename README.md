@@ -22,15 +22,17 @@ If something is broken, open a new issue on **[GitHub](https://github.com/Misfit
 
 **For more information, [visit the Wiki.](https://github.com/Misfit-Ha/MalFramework-m/wiki)**
 
-**For additional tools, [visit the Github Page.](https://misfit-ha.github.io/MalFramework-m/)**
+**For additional tools, [visit the Github Page.](https://misfit-ha.github.io/MalFramework-m)**
 
 </br>
 
 ## Required mods:
- - ACE
- - CBA
+
+-   ACE
+-   CBA
 
 ## Optional mods:
- - ACRE (required by the ACRE module)
- - CUP Core (required by the Snowfall module)
- - TFAR (required by the TFAR module)
+
+-   ACRE (required by the ACRE module)
+-   CUP Core (required by the Snowfall module)
+-   TFAR (required by the TFAR module)
