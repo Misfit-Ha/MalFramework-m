@@ -20,7 +20,7 @@
 if !(hasInterface) exitWith {};
 
 // FUNC(isGameMaster) doesn't work here
-if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
+if !(IS_ADMIN_LOGGED || (getPlayerUID player) in GETPAVAR(GVARMAIN(missionMaker),[])) exitWith {};
 
 disableSerialization;
 
