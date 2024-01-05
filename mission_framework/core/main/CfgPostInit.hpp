@@ -90,11 +90,6 @@ class GVARMAIN(Gear) {
     serverInit = PATH_POST_SERVER(gear);
 };
 
-class GVARMAIN(GrassCutter) {
-    init = PATH_POST(grass_cutter);
-    clientInit = PATH_POST_CLIENT(grass_cutter);
-    serverInit = PATH_POST_SERVER(grass_cutter);
-};
 
 class GVARMAIN(Hostage) {
     init = PATH_POST(hostage);

@@ -136,11 +136,6 @@ EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
 
 
-// Grass cutter
-GVARMAIN(moduleGrassCutter) = false;  // Coop & TvT
-EGVAR(grass_cutter,requireEntrenchingTool) = true; // Require entrenching tool
-
-
 // Hostage
 GVARMAIN(moduleHostage) = false;  // Coop & TvT
 

@@ -60,10 +60,6 @@ class GVARMAIN(Gear) {
     init = PATH_PRE(gear);
 };
 
-class GVARMAIN(GrassCutter) {
-    init = PATH_PRE(grass_cutter);
-};
-
 class GVARMAIN(Hostage) {
     init = PATH_PRE(hostage);
 };
