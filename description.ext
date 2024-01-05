@@ -25,14 +25,14 @@ enableTargetDebug = 1;  // Target debugging
 
 // Garbage collector settings
 corpseManagerMode = 1;
-corpseLimit = 30;
-corpseRemovalMinTime = 300;
-corpseRemovalMaxTime = 600;
+corpseLimit = 15;
+corpseRemovalMinTime = 200;
+corpseRemovalMaxTime = 400;
 
 wreckManagerMode = 1;
-wreckLimit = 15;
-wreckRemovalMinTime = 600;
-wreckRemovalMaxTime = 900;
+wreckLimit = 5;
+wreckRemovalMinTime = 300;
+wreckRemovalMaxTime = 500;
 
 // Tasks
 taskManagement_markers2D = 0;  // Use 2D markers
