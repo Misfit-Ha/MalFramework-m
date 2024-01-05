@@ -178,6 +178,8 @@ GVARMAIN(moduleMapCover) = false;  // Coop & TvT
 EGVAR(map_cover,aoMarker) = "mrk_ao";  // Name of the AO marker
 EGVAR(map_cover,colour) = "Color4_FD_F";  // Colour of the covered area
 
+// Mark custom objects
+GVARMAIN(moduleMarkObjects) = false;  // Coop & TvT
 
 // Marker side
 GVARMAIN(moduleMarkerSide) = false;  // TvT

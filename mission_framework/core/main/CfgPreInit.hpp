@@ -96,6 +96,10 @@ class GVARMAIN(MapCover) {
     init = PATH_PRE(map_cover);
 };
 
+class GVARMAIN(ObjectMarker) {
+    init = PATH_PRE(object_marker);
+};
+
 class GVARMAIN(MarkerSide) {
     init = PATH_PRE(marker_side);
 };

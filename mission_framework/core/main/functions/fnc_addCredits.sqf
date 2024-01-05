@@ -68,6 +68,7 @@ Some parts of this framework are based on other Arma 3 frameworks and scripts. S
  - Snowfall script by AZCoder and JW<br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
  - BFT by Quiksilver<br/>
+ - Editor placed objects marker by Mallen<br/>
 <br/>
 Special thanks to <font color='#21749c'>Garfield</font> and <font color='#21749c'>kMaN</font> for their technical help.
 </font>

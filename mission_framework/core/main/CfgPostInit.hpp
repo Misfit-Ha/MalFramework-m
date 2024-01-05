@@ -145,6 +145,12 @@ class GVARMAIN(MapCover) {
     serverInit = PATH_POST_SERVER(map_cover);
 };
 
+class GVARMAIN(ObjectMarker) {
+    init = PATH_POST(object_marker);
+    clientInit = PATH_POST_CLIENT(object_marker);
+    serverInit = PATH_POST_SERVER(object_marker);
+};
+
 class GVARMAIN(MarkerSide) {
     init = PATH_POST(marker_side);
     clientInit = PATH_POST_CLIENT(marker_side);
