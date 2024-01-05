@@ -36,7 +36,7 @@ private _insertChildren = {
 
     {
         _childStatement = {
-            [30, [_this], {
+            [10, [_this], {
                 [player, _this#0#0#2] call AFUNC(medical_treatment,fullHeal);
                 ["Healing done", 2, ace_player, 12] call AFUNC(common,displayTextStructured);
             }, {
