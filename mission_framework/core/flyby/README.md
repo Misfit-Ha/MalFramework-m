@@ -11,9 +11,10 @@ Arguments:
     1: ARRAY - Starting position of the aircraft (Note: third coordinate is the altitude of the aircraft)
     2: ARRAY - First waypoint position
     3: ARRAY - Second waypoint position
+    4: side - Side of the aircraft crew (default: civilian)
 
 Example:
-    ["B_Plane_CAS_01_dynamicLoadout_F", [7003, 4978, 100], [7161, 2043, 0], [4004, 2028, 0]] call MF_flyby_fnc_doFlyby
+    ["B_Plane_CAS_01_dynamicLoadout_F", [7003, 4978, 100], [7161, 2043, 0], [4004, 2028, 0], east] call MF_flyby_fnc_doFlyby
 ```
 
 ## Config:

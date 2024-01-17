@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Malbryn
+        Malbryn, Misfit
 
     Description:
         Spawns an aircraft to do a fly-by then despawns it.
@@ -14,7 +14,7 @@
         3: ARRAY - Second waypoint position
 
     Example:
-        ["B_Plane_CAS_01_dynamicLoadout_F", [7003.45, 4978.28, 100], [7161.55,2043.53,0], [4004.47,2028.71,0]] call MF_flyby_fnc_doFlyby
+        ["B_Plane_CAS_01_dynamicLoadout_F", [7003.45, 4978.28, 100], [7161.55,2043.53,0], [4004.47,2028.71,0], "east"] call MF_flyby_fnc_doFlyby
 
     Returns:
         void
@@ -22,10 +22,10 @@
 
 if !(isServer) exitWith {};
 
-params ["_type", "_startPos", "_wp1Pos", "_wp2Pos"];
+params ["_type", "_startPos", "_wp1Pos", "_wp2Pos", ["_side", "civilian"]];
 
 private _aircraft = createVehicle [_type, _startPos, [], 0, "FLY"];
-createVehicleCrew _aircraft;
+_side createVehicleCrew _aircraft;
 
 group _aircraft setCombatMode "BLUE";
 group _aircraft setBehaviour "CARELESS";
