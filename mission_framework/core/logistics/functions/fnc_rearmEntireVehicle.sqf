@@ -52,10 +52,8 @@ if (_rearmCount != -1) then {
             ] call AFUNC(common,displayTextStructured);
         };
 
-        // Check if vehicle ammo is not filled due to an error
-        if (_vehicle getVehicleAmmo 0 < 1) then {
-            _vehicle setVehicleAmmo 1;
-        };
+        // in case not filled due to an error
+        _vehicle setVehicleAmmo 1;
     },
     {
         param [0] params ["_object", "_vehicle", "_player", "_rearmCount"];
