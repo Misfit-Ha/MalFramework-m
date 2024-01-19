@@ -82,7 +82,7 @@ function formatGearArrays(gearArrays) {
         let arsenalExport = gearArrays[i][1]
         let role = gearArrays[i][0]
 
-        const replacedStr = arsenalExport.replace(/&quot;/g, '"') // Replace &quot; with " because JSON.parse() doesn't like it.
+        const replacedStr = arsenalExport.replace(/"/g, '"') // Replace " with " because JSON.parse() doesn't like it.
         const arr = JSON.parse(replacedStr)
 
         templateString += `case "${role}" : {\n\t_gear = [\n`
@@ -92,12 +92,15 @@ function formatGearArrays(gearArrays) {
         for (let k = 0; k < Math.min(loadout.length, 10); k++) {
             let item = loadout[k]
             templateString += '\t\t' + comments[k] + '\n'
-            templateString += '\t\t' + JSON.stringify(item) + ',\n'
+            templateString += '\t\t' + JSON.stringify(item)
+            if (k < Math.min(loadout.length, 10) - 1) {
+                templateString += ',\n'
+            } else {
+                templateString += '\n'
+            }
         }
 
-        templateString = templateString.slice(0, -1)
-
-        templateString += `\n\t];\n};\n\n\n`
+        templateString += `\t];\n};\n\n\n`
     }
 
     return templateString
