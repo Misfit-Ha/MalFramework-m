@@ -27,6 +27,8 @@ params ["_crate", ["_dir", "north"], ["_alt", 1000], "_playerPos"];
 
 thisCrate =_crate;
 
+// Disable dynamic sim, for some reason when its enabled on the crate the plane gets spawned on the ground
+thisCrate enableDynamicSimulation false;
 
 private _type = GVAR(supplyDropPlane);
 
