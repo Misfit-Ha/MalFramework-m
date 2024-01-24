@@ -1,6 +1,6 @@
 // The UID of the mission makers (to access the admin menu and debug console during the mission)
 #define UID1 "76561198297856937"
-#define UID2 "76561198297856938"
+#define UID2 "76561198308736646"
 
 // VCOM AI
 //#define VCOMAI  // Comment out this line if you don't want to load VCOM AI
