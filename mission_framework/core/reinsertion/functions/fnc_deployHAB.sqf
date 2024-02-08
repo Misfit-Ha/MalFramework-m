@@ -25,12 +25,20 @@ if !(GVARMAIN(moduleHAB)) exitWith {
 };
 
 // Check if the HAB is already deployed
-if !(isNil {GETMVAR(GVAR(HAB),nil)}) exitWith {
-    ["Warning", ["The HAB is already deployed"]] call BFUNC(showNotification);
+if !(isNil {GETMVAR(GVAR(HAB),nil)}) then {
+    private _id = GETMVAR(GVAR(HAB),nil);
+    private _HAB = objectFromNetId _id;
+    deleteVehicle _HAB;
+    SETPMVAR(GVAR(HAB),nil);
+
+    // Remove marker
+    if GVAR(markHAB) then {
+        deleteMarker "MF_mrk_HAB";
+    };
 };
 
 // Check if there's enemy nearby
-if (allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 50} != -1) exitWith {
+if (allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 150} != -1) exitWith {
     ["Warning", ["Cannot deploy a HAB when enemies are nearby"]] call BFUNC(showNotification);
 };
 
