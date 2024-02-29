@@ -1004,23 +1004,23 @@ force crowsEW_spectrum_spectrumEnable = true;
 force crowsEW_spectrum_tfarSideTrack = true;
 
 // DUI - Squad Radar - Indicators
-force diwako_dui_indicators_crew_range_enabled = true;
+force diwako_dui_indicators_crew_range_enabled = false;
 diwako_dui_indicators_fov_scale = false;
 diwako_dui_indicators_icon_buddy = true;
 diwako_dui_indicators_icon_leader = true;
 diwako_dui_indicators_icon_medic = true;
-diwako_dui_indicators_range = 30;
+diwako_dui_indicators_range = 20;
 diwako_dui_indicators_range_crew = 300;
-diwako_dui_indicators_range_scale = true;
-diwako_dui_indicators_show = false;
-diwako_dui_indicators_size = 1;
+diwako_dui_indicators_range_scale = false;
+diwako_dui_indicators_show = true;
+diwako_dui_indicators_size = 0.67596;
 diwako_dui_indicators_style = "standard";
 diwako_dui_indicators_useACENametagsRange = true;
 
 // DUI - Squad Radar - Main
 diwako_dui_ace_hide_interaction = true;
-diwako_dui_colors = "custom";
-diwako_dui_font = "PuristaLight";
+diwako_dui_colors = "standard";
+diwako_dui_font = "RobotoCondensed";
 diwako_dui_icon_style = "standard";
 diwako_dui_main_hide_dialog = true;
 diwako_dui_main_hide_ui_by_default = false;
@@ -1035,11 +1035,11 @@ diwako_dui_reset_ui_pos = false;
 // DUI - Squad Radar - Nametags
 diwako_dui_nametags_customRankStyle = "[[""PRIVATE"",""CORPORAL"",""SERGEANT"",""LIEUTENANT"",""CAPTAIN"",""MAJOR"",""COLONEL""],[""Pvt."",""Cpl."",""Sgt."",""Lt."",""Capt."",""Maj."",""Col.""]]";
 diwako_dui_nametags_deadColor = [0.2,0.2,0.2,1];
-force diwako_dui_nametags_deadRenderDistance = 0;
-force diwako_dui_nametags_drawRank = true;
-diwako_dui_nametags_enabled = false;
-force diwako_dui_nametags_enableFOVBoost = true;
-force diwako_dui_nametags_enableOcclusion = true;
+force diwako_dui_nametags_deadRenderDistance = 3.5;
+force diwako_dui_nametags_drawRank = false;
+diwako_dui_nametags_enabled = true;
+force diwako_dui_nametags_enableFOVBoost = false;
+diwako_dui_nametags_enableOcclusion = true;
 diwako_dui_nametags_fadeInTime = 0.05;
 diwako_dui_nametags_fadeOutTime = 0.5;
 diwako_dui_nametags_fontGroup = "RobotoCondensedLight";
@@ -1052,58 +1052,58 @@ diwako_dui_nametags_groupNameOtherGroupColor = [0.6,0.85,0.6,1];
 diwako_dui_nametags_nameFontShadow = 1;
 diwako_dui_nametags_nameOtherGroupColor = [0.2,1,0,1];
 diwako_dui_nametags_rankNameStyle = "default";
-force diwako_dui_nametags_renderDistance = 30;
-diwako_dui_nametags_showUnconAsDead = false;
-force diwako_dui_nametags_useLIS = false;
-diwako_dui_nametags_useSideIsFriendly = true;
+force diwako_dui_nametags_renderDistance = 10;
+force diwako_dui_nametags_showUnconAsDead = true;
+diwako_dui_nametags_useLIS = true;
+force diwako_dui_nametags_useSideIsFriendly = false;
 
 // DUI - Squad Radar - Radar
 diwako_dui_compass_hide_alone_group = false;
-force diwako_dui_compass_hide_blip_alone_group = true;
-diwako_dui_compass_icon_scale = 1.1;
-diwako_dui_compass_opacity = 0.75;
-diwako_dui_compass_style = ["\z\diwako_dui\addons\radar\UI\compass_styles\pizza\compass_limited.paa","\z\diwako_dui\addons\radar\UI\compass_styles\pizza\compass.paa"];
-force diwako_dui_compassRange = 25;
+diwako_dui_compass_hide_blip_alone_group = false;
+diwako_dui_compass_icon_scale = 1;
+diwako_dui_compass_opacity = 1;
+diwako_dui_compass_style = ["\z\diwako_dui\addons\radar\UI\compass_styles\standard\compass_limited.paa","\z\diwako_dui\addons\radar\UI\compass_styles\standard\compass.paa"];
+diwako_dui_compassRange = 35;
 diwako_dui_compassRefreshrate = 0;
 diwako_dui_dir_showMildot = false;
-diwako_dui_dir_size = 1.5;
-force diwako_dui_distanceWarning = 5;
-force diwako_dui_enable_compass = true;
-force diwako_dui_enable_compass_dir = 4;
-force diwako_dui_enable_occlusion = true;
-force diwako_dui_enable_occlusion_cone = 360;
-diwako_dui_hudScaling = 0.8;
-diwako_dui_namelist = false;
+diwako_dui_dir_size = 1.25;
+diwako_dui_distanceWarning = 3;
+diwako_dui_enable_compass = true;
+diwako_dui_enable_compass_dir = 1;
+diwako_dui_enable_occlusion = true;
+diwako_dui_enable_occlusion_cone = 360;
+diwako_dui_hudScaling = 1.33333;
+diwako_dui_namelist = true;
 diwako_dui_namelist_bg = 0;
 diwako_dui_namelist_only_buddy_icon = false;
-diwako_dui_namelist_size = 0.599662;
+diwako_dui_namelist_size = 2.82843;
 diwako_dui_namelist_text_shadow = 2;
 diwako_dui_namelist_width = 215;
-force diwako_dui_radar_ace_finger = true;
+diwako_dui_radar_ace_finger = true;
 force diwako_dui_radar_ace_medic = true;
-force diwako_dui_radar_compassRangeCrew = 500;
-diwako_dui_radar_dir_padding = 35;
-diwako_dui_radar_dir_shadow = 1;
+diwako_dui_radar_compassRangeCrew = 500;
+diwako_dui_radar_dir_padding = 25;
+diwako_dui_radar_dir_shadow = 2;
 diwako_dui_radar_group_by_vehicle = false;
 diwako_dui_radar_icon_opacity = 1;
-diwako_dui_radar_icon_opacity_no_player = false;
-force diwako_dui_radar_icon_priority_setting = 1;
+diwako_dui_radar_icon_opacity_no_player = true;
+force force diwako_dui_radar_icon_priority_setting = 0;
 diwako_dui_radar_icon_scale_crew = 6;
-force diwako_dui_radar_leadingZeroes = true;
+diwako_dui_radar_leadingZeroes = false;
 diwako_dui_radar_namelist_hideWhenLeader = false;
-diwako_dui_radar_namelist_vertical_spacing = 1.40625;
+diwako_dui_radar_namelist_vertical_spacing = 1;
 diwako_dui_radar_occlusion_fade_in_time = 1;
-diwako_dui_radar_occlusion_fade_time = 2;
-diwako_dui_radar_pointer_color = [0,1,0.89803,1];
-diwako_dui_radar_pointer_style = "wedge";
-force diwako_dui_radar_show_cardinal_points = true;
-diwako_dui_radar_showSpeaking = false;
+diwako_dui_radar_occlusion_fade_time = 10;
+diwako_dui_radar_pointer_color = [1,0.5,0,1];
+diwako_dui_radar_pointer_style = "standard";
+diwako_dui_radar_show_cardinal_points = true;
+diwako_dui_radar_showSpeaking = true;
 diwako_dui_radar_showSpeaking_radioOnly = false;
-diwako_dui_radar_showSpeaking_replaceIcon = false;
+diwako_dui_radar_showSpeaking_replaceIcon = true;
 force diwako_dui_radar_sortType = "none";
 force diwako_dui_radar_sqlFirst = false;
 force diwako_dui_radar_syncGroup = false;
-force diwako_dui_radar_vehicleCompassEnabled = true;
+force diwako_dui_radar_vehicleCompassEnabled = false;
 diwako_dui_use_layout_editor = false;
 
 // Enhanced Movement Rework
@@ -1247,40 +1247,44 @@ force IMS_WBK_MAINFPTP = true;
 
 // LAMBS Danger
 force lambs_danger_cqbRange = 60;
-force lambs_danger_disableAIAutonomousManoeuvres = false;
-force lambs_danger_disableAIDeployStaticWeapons = false;
-force lambs_danger_disableAIFindStaticWeapons = false;
-force lambs_danger_disableAIHideFromTanksAndAircraft = false;
-force lambs_danger_disableAIPlayerGroup = true;
-force lambs_danger_disableAIPlayerGroupReaction = true;
-force lambs_danger_disableAutonomousFlares = false;
-force lambs_danger_disableAutonomousSmokeGrenades = false;
-force lambs_danger_panicChance = 0.1;
+force force lambs_danger_disableAIAutonomousManoeuvres = true;
+lambs_danger_disableAIDeployStaticWeapons = false;
+force force lambs_danger_disableAIFindStaticWeapons = true;
+force force lambs_danger_disableAIHideFromTanksAndAircraft = true;
+lambs_danger_disableAIPlayerGroup = false;
+lambs_danger_disableAIPlayerGroupReaction = false;
+lambs_danger_disableAutonomousFlares = false;
+lambs_danger_disableAutonomousSmokeGrenades = false;
+force force lambs_danger_panicChance = 0;
+
+// LAMBS Danger Eventhandlers
+force lambs_eventhandlers_ExplosionEventHandlerEnabled = true;
+force lambs_eventhandlers_ExplosionReactionTime = 9;
 
 // LAMBS Danger WP
 force lambs_wp_autoAddArtillery = false;
 
 // LAMBS Main
-force lambs_main_combatShareRange = 300;
+force force lambs_main_combatShareRange = 0;
 force lambs_main_debug_drawAllUnitsInVehicles = false;
 force lambs_main_debug_Drawing = false;
 force lambs_main_debug_FSM = false;
 force lambs_main_debug_FSM_civ = false;
 force lambs_main_debug_functions = false;
 force lambs_main_debug_RenderExpectedDestination = false;
-force lambs_main_disableAICallouts = false;
-force lambs_main_disableAIDodge = false;
-force lambs_main_disableAIFleeing = false;
-force lambs_main_disableAIGestures = false;
-force lambs_main_disableAutonomousMunitionSwitching = false;
-force lambs_main_disablePlayerGroupSuppression = true;
-force lambs_main_indoorMove = 0.8;
-force lambs_main_maxRevealValue = 2;
-force lambs_main_minFriendlySuppressionDistance = 5;
+lambs_main_disableAICallouts = false;
+lambs_main_disableAIDodge = false;
+force force lambs_main_disableAIFleeing = true;
+lambs_main_disableAIGestures = false;
+lambs_main_disableAutonomousMunitionSwitching = false;
+lambs_main_disablePlayerGroupSuppression = false;
+force lambs_main_indoorMove = 0.1;
+force lambs_main_maxRevealValue = 1;
+force force lambs_main_minFriendlySuppressionDistance = 50;
 force lambs_main_minObstacleProximity = 5;
-force lambs_main_minSuppressionRange = 50;
-force lambs_main_radioBackpack = 3000;
-force lambs_main_radioDisabled = false;
+force force lambs_main_minSuppressionRange = 500;
+force lambs_main_radioBackpack = 2000;
+lambs_main_radioDisabled = false;
 force lambs_main_radioEast = 500;
 force lambs_main_radioGuer = 500;
 force lambs_main_radioShout = 100;
@@ -1335,7 +1339,7 @@ force TFAR_giveMicroDagrToSoldier = false;
 force TFAR_givePersonalRadioToRegularSoldier = false;
 force TFAR_globalRadioRangeCoef = 1;
 force TFAR_instantiate_instantiateAtBriefing = false;
-force TFAR_objectInterceptionEnabled = true;
+force TFAR_objectInterceptionEnabled = false;
 force TFAR_objectInterceptionStrength = 300;
 force tfar_radiocode_east = "_opfor";
 force tfar_radiocode_independent = "_independent";
@@ -1619,8 +1623,8 @@ force TFI_cba_vfx_bloodPoolChance = 0.5;
 force TFI_cba_vfx_bloodPoolOff = true;
 force TFI_cba_vfx_bloodSplatterChance = 1;
 force TFI_cba_vfx_bloodSplatterOff = true;
-force TFI_cba_vfx_gcamChkEnemy = false;
-force TFI_cba_vfx_gcamChkEnemyRange = 2000;
+force TFI_cba_vfx_gcamChkEnemy = true;
+force TFI_cba_vfx_gcamChkEnemyRange = 100;
 force TFI_cba_vfx_gcamLamp = true;
 TFI_cba_vfx_gcamMoveSpeed = 1;
 force TFI_cba_vfx_gcamNvg = true;
@@ -1640,6 +1644,76 @@ force WBK_ZommbiesMeleeHealthParam = "100";
 force WBK_ZommbiesSmasherHealthParam = "3500";
 force WBK_ZommbiesSmasherJumpParam = true;
 force WBK_ZommbiesSmasherThrowParam = true;
+
+
+// Unit Ambient SFX
+force uvo_uas_chanceCough = 0.1;
+force uvo_uas_chanceRadio = 0.5;
+force uvo_uas_chanceSigh = 0.1;
+force uvo_uas_chanceWhistle = 0.03;
+force uvo_uas_distanceCough = 250;
+force uvo_uas_distanceRadio = 250;
+force uvo_uas_distanceRadioInVehicle = 100;
+force uvo_uas_distanceSigh = 150;
+force uvo_uas_distanceWhistle = 250;
+force uvo_uas_enableCoughing = true;
+force uvo_uas_enablePlayers = true;
+force uvo_uas_enableRadio = true;
+force uvo_uas_enableRadioPlayers = true;
+force uvo_uas_enableSighing = true;
+force uvo_uas_enableWhistling = true;
+force uvo_uas_intMultiplierCough = 2.5;
+force uvo_uas_intMultiplierRadio = 2.5;
+force uvo_uas_intMultiplierSigh = 2.5;
+force uvo_uas_intMultiplierWhistle = 2.5;
+force uvo_uas_minIntCough = 60;
+force uvo_uas_minIntRadio = 20;
+force uvo_uas_minIntSigh = 60;
+force uvo_uas_minIntWhistle = 120;
+force uvo_uas_radioOperator = 0;
+
+// Unit Voice-overs
+force uvo_main_compatExplosive = "";
+force uvo_main_compatFlash = "";
+force uvo_main_compatFrag = "";
+force uvo_main_compatIncendiary = "";
+force uvo_main_compatSmoke = "";
+force uvo_main_deathShoutDistance = 300;
+force uvo_main_deathShoutVolume = 3;
+force uvo_main_debug = false;
+force uvo_main_enableCallouts = false;
+force uvo_main_enablePlayers = false;
+force uvo_main_hearingDistance = 300;
+force uvo_main_killConfirmChanceAI = 1;
+force uvo_main_killConfirmChancePlayer = 1;
+force uvo_main_killConfirmStealth = false;
+force uvo_main_sentencesAMER = true;
+force uvo_main_sentencesARAB = true;
+force uvo_main_sentencesASIA = true;
+force uvo_main_sentencesBRIT = true;
+force uvo_main_sentencesCZ = true;
+force uvo_main_sentencesEast = true;
+force uvo_main_sentencesFREN = true;
+force uvo_main_sentencesGERM = true;
+force uvo_main_sentencesGuer = true;
+force uvo_main_sentencesJP = true;
+force uvo_main_sentencesPOL = true;
+force uvo_main_sentencesRUSS = true;
+force uvo_main_sentencesWest = true;
+force uvo_main_UVOAMER = true;
+force uvo_main_UVOARAB = true;
+force uvo_main_UVOASIA = true;
+force uvo_main_UVOBRIT = true;
+force uvo_main_UVOCZ = true;
+force uvo_main_UVOEast = true;
+force uvo_main_UVOFREN = true;
+force uvo_main_UVOGERM = true;
+force uvo_main_UVOGuer = true;
+force uvo_main_UVOJP = true;
+force uvo_main_UVOPOL = true;
+force uvo_main_UVORUSS = true;
+force uvo_main_UVOWest = true;
+force uvo_main_voicePitch = 1;
 
 // Zeus Enhanced
 force zen_area_markers_editableMarkers = 0;
@@ -1907,15 +1981,15 @@ force Vcm_AISkills_East_spotDistance = 0.7;
 force Vcm_AISkills_East_spotTime = 0.7;
 
 // VCOM AI General Skill
-force Vcm_AISkills_General_AimingAccuracy = 0.45;
-force Vcm_AISkills_General_aimingShake = 0.5;
-force Vcm_AISkills_General_aimingSpeed = 0.65;
+force Vcm_AISkills_General_AimingAccuracy = 0.65;
+force Vcm_AISkills_General_aimingShake = 0.6;
+force Vcm_AISkills_General_aimingSpeed = 0.75;
 force Vcm_AISkills_General_commanding = 1;
 force Vcm_AISkills_General_courage = 1;
-force Vcm_AISkills_General_general = 0.6;
+force Vcm_AISkills_General_general = 0.75;
 force Vcm_AISkills_General_reloadSpeed = 1;
-force Vcm_AISkills_General_spotDistance = 0.7;
-force Vcm_AISkills_General_spotTime = 0.7;
+force Vcm_AISkills_General_spotDistance = 0.8;
+force Vcm_AISkills_General_spotTime = 0.8;
 
 // VCOM AI Resistance Skill
 force Vcm_AISkills_Resistance_AimingAccuracy = 0.35;
@@ -1941,6 +2015,99 @@ force Vcm_AISkills_West_spotTime = 0.7;
 
 // VCOM SETTINGS
 force VCM_ARTYENABLE = false;
-force VCM_HEARINGDISTANCE = 700;
+force VCM_HEARINGDISTANCE = 800;
 force VCM_RAGDOLLCHC = 50;
 force VCM_TURRETUNLOAD = false;
+
+
+// CF_BAI
+force CF_BAI_subskills_maximum_aimingAccuracy = 0;
+force CF_BAI_subskills_maximum_aimingShake = 0;
+force CF_BAI_subskills_maximum_aimingSpeed = 0;
+force CF_BAI_subskills_maximum_commanding = 0;
+force CF_BAI_subskills_maximum_courage = 0;
+force CF_BAI_subskills_maximum_general = 0;
+force CF_BAI_subskills_maximum_reloadSpeed = 0;
+force CF_BAI_subskills_maximum_spotDistance = 0;
+force CF_BAI_subskills_maximum_spotTime = 0;
+force CF_BAI_subskills_minimum_aimingAccuracy = 0.41;
+force CF_BAI_subskills_minimum_aimingShake = 0.5;
+force CF_BAI_subskills_minimum_aimingSpeed = 0.5;
+force CF_BAI_subskills_minimum_commanding = 0.5;
+force CF_BAI_subskills_minimum_courage = 0.5;
+force CF_BAI_subskills_minimum_general = 1;
+force CF_BAI_subskills_minimum_reloadSpeed = 0.5;
+force CF_BAI_subskills_minimum_spotDistance = 0.35;
+force CF_BAI_subskills_minimum_spotTime = 0.5;
+force CF_BAI_subskills_sleep = 30;
+force CF_BAI_subskills_terrain_maximum_default = 30;
+force CF_BAI_subskills_terrain_maximum_world_code = "[[""pja310"",25],[""Panthera3"",25]]";
+force CF_BAI_subskills_terrain_range = 25;
+
+// CF_BAI_boost
+force CF_BAI_boost_bulletsToMaxBoost = 5;
+force CF_BAI_boost_disableBoost = false;
+force CF_BAI_boost_maxBoost = 1.1;
+force CF_BAI_boost_minimumShotDistance = 300;
+force CF_BAI_boost_minimumShotInterval = 2;
+force CF_BAI_boost_targetChangeSleepTime = 0.1;
+force CF_BAI_boost_toleranceRange = 50;
+
+// CF_BAI_death
+force CF_BAI_death_deathMessageDelay = 10;
+force CF_BAI_death_disableDeath = false;
+force CF_BAI_death_messageHint = true;
+force CF_BAI_death_messageSideChat = true;
+force CF_BAI_death_messageSystemChat = false;
+
+// CF_BAI_detect
+force CF_BAI_detect_aiplayervision_max_distance = 1200;
+force CF_BAI_detect_aivision_aware_chance = 0.9;
+force CF_BAI_detect_aivision_aware_knowledge = 1;
+force CF_BAI_detect_aivision_careless_chance = 0.5;
+force CF_BAI_detect_aivision_careless_knowledge = 0.5;
+force CF_BAI_detect_aivision_combat_chance = 1;
+force CF_BAI_detect_aivision_combat_knowledge = 1;
+force CF_BAI_detect_aivision_nobino_chance = 0.75;
+force CF_BAI_detect_aivision_nobino_knowledge = 0.75;
+force CF_BAI_detect_aivision_nooptics_chance = 0.5;
+force CF_BAI_detect_aivision_nooptics_knowledge = 0.5;
+force CF_BAI_detect_aivision_nooptics_range = 400;
+force CF_BAI_detect_aivision_nvg_percentage = 0.25;
+force CF_BAI_detect_aivision_optics_range = 1500;
+force CF_BAI_detect_aivision_safe_chance = 0.75;
+force CF_BAI_detect_aivision_safe_knowledge = 1;
+force CF_BAI_detect_aivision_stealth_chance = 0.75;
+force CF_BAI_detect_aivision_stealth_knowledge = 0.75;
+force CF_BAI_detect_disableDetect = false;
+force CF_BAI_detect_environmentConiditions_fog = 0.9;
+force CF_BAI_detect_environmentConiditions_nightTime = 0.5;
+force CF_BAI_detect_environmentConiditions_rain = 0.2;
+force CF_BAI_detect_overall_visibility_multiplier = 1;
+force CF_BAI_detect_playerVisibility_crouch_chance = 0.5;
+force CF_BAI_detect_playerVisibility_crouch_knowledge = 1;
+force CF_BAI_detect_playerVisibility_movement = 0.5;
+force CF_BAI_detect_playerVisibility_movement_knowledge = 1;
+force CF_BAI_detect_playerVisibility_prone_chance = 0.1;
+force CF_BAI_detect_playerVisibility_prone_knowledge = 1;
+force CF_BAI_detect_playerVisibility_standing_chance = 1;
+force CF_BAI_detect_playerVisibility_standing_knowledge = 1;
+force CF_BAI_detect_playerVisibility_terrain_count = 4;
+
+// CF_BAI_suppression
+force CF_BAI_suppression_aimingAccuracy = 0.2;
+force CF_BAI_suppression_aimingShake = 0.2;
+force CF_BAI_suppression_aimingSpeed = 0.2;
+force CF_BAI_suppression_bulletImpact = 0.1;
+force CF_BAI_suppression_commanding = 0.2;
+force CF_BAI_suppression_courage = 0.2;
+force CF_BAI_suppression_decay = 0.03;
+force CF_BAI_suppression_decaySleep = 5;
+force CF_BAI_suppression_disableSuppression = false;
+force CF_BAI_suppression_general = 0.5;
+force CF_BAI_suppression_heldTime = 20;
+force CF_BAI_suppression_reloadSpeed = 0.5;
+force CF_BAI_suppression_spotDistance = 0.5;
+force CF_BAI_suppression_spotTime = 0.5;
+
+
