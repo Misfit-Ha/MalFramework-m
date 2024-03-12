@@ -617,10 +617,10 @@ force force ace_medical_bleedingCoefficient = 0.5;
 force force ace_medical_blood_bloodLifetime = 600;
 force force ace_medical_blood_enabledFor = 2;
 force force ace_medical_blood_maxBloodObjects = 500;
-force ace_medical_deathChance = 1;
+force ace_medical_deathChance = 0.8;
 force ace_medical_dropWeaponUnconsciousChance = 0;
 force ace_medical_enableVehicleCrashes = true;
-force ace_medical_engine_damagePassThroughEffect = 1;
+force ace_medical_engine_damagePassThroughEffect = 0.9;
 force force ace_medical_fatalDamageSource = 1;
 force force ace_medical_fractureChance = 0.7;
 force force ace_medical_fractures = 1;
@@ -1981,9 +1981,9 @@ force Vcm_AISkills_East_spotDistance = 0.7;
 force Vcm_AISkills_East_spotTime = 0.7;
 
 // VCOM AI General Skill
-force Vcm_AISkills_General_AimingAccuracy = 0.65;
-force Vcm_AISkills_General_aimingShake = 0.6;
-force Vcm_AISkills_General_aimingSpeed = 0.75;
+force Vcm_AISkills_General_AimingAccuracy = 0.45;
+force Vcm_AISkills_General_aimingShake = 0.5;
+force Vcm_AISkills_General_aimingSpeed = 0.65;
 force Vcm_AISkills_General_commanding = 1;
 force Vcm_AISkills_General_courage = 1;
 force Vcm_AISkills_General_general = 0.75;
