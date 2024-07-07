@@ -572,6 +572,14 @@ force ace_magazinerepack_timePerAmmo = 1;
 force ace_magazinerepack_timePerBeltLink = 1;
 force ace_magazinerepack_timePerMagazine = 1;
 
+// Armor Modifier - ACE
+force armor_modifier_ace_main_hitPointMultiplierSetting_AI_chest = "[1, 0, 20]";
+force armor_modifier_ace_main_hitPointMultiplierSetting_AI_head = "[1, 0, 0]";
+force armor_modifier_ace_main_hitPointMultiplierSetting_AI_limb = "[1, 0, 0]";
+force armor_modifier_ace_main_hitPointMultiplierSetting_Player_chest = "[1, 0, 0]";
+force armor_modifier_ace_main_hitPointMultiplierSetting_Player_head = "[1, 0, 0]";
+force armor_modifier_ace_main_hitPointMultiplierSetting_Player_limb = "[1, 0, 0]";
+
 // ACE Map
 force ace_map_BFT_Enabled = false;
 force ace_map_BFT_HideAiGroups = false;
@@ -988,6 +996,98 @@ force AE3_DebugMode = false;
 force bocr_main_disabled = false;
 force bocr_main_walk = true;
 
+
+// CF_BAI
+force CF_BAI_subskills_maximum_aimingAccuracy = 0;
+force CF_BAI_subskills_maximum_aimingShake = 0;
+force CF_BAI_subskills_maximum_aimingSpeed = 0;
+force CF_BAI_subskills_maximum_commanding = 0;
+force CF_BAI_subskills_maximum_courage = 0;
+force CF_BAI_subskills_maximum_general = 0;
+force CF_BAI_subskills_maximum_reloadSpeed = 0;
+force CF_BAI_subskills_maximum_spotDistance = 0;
+force CF_BAI_subskills_maximum_spotTime = 0;
+force CF_BAI_subskills_minimum_aimingAccuracy = 0.41;
+force CF_BAI_subskills_minimum_aimingShake = 0.5;
+force CF_BAI_subskills_minimum_aimingSpeed = 0.5;
+force CF_BAI_subskills_minimum_commanding = 0.5;
+force CF_BAI_subskills_minimum_courage = 0.5;
+force CF_BAI_subskills_minimum_general = 1;
+force CF_BAI_subskills_minimum_reloadSpeed = 0.5;
+force CF_BAI_subskills_minimum_spotDistance = 0.35;
+force CF_BAI_subskills_minimum_spotTime = 0.5;
+force CF_BAI_subskills_sleep = 30;
+force CF_BAI_subskills_terrain_maximum_default = 30;
+force CF_BAI_subskills_terrain_maximum_world_code = "[[""pja310"",25],[""Panthera3"",25]]";
+force CF_BAI_subskills_terrain_range = 25;
+
+// CF_BAI_boost
+force CF_BAI_boost_bulletsToMaxBoost = 5;
+force CF_BAI_boost_disableBoost = false;
+force CF_BAI_boost_maxBoost = 1.1;
+force CF_BAI_boost_minimumShotDistance = 300;
+force CF_BAI_boost_minimumShotInterval = 2;
+force CF_BAI_boost_targetChangeSleepTime = 0.1;
+force CF_BAI_boost_toleranceRange = 50;
+
+// CF_BAI_death
+force CF_BAI_death_deathMessageDelay = 10;
+force CF_BAI_death_disableDeath = false;
+force CF_BAI_death_messageHint = true;
+force CF_BAI_death_messageSideChat = true;
+force CF_BAI_death_messageSystemChat = false;
+
+// CF_BAI_detect
+force CF_BAI_detect_aiplayervision_max_distance = 1200;
+force CF_BAI_detect_aivision_aware_chance = 0.9;
+force CF_BAI_detect_aivision_aware_knowledge = 1;
+force CF_BAI_detect_aivision_careless_chance = 0.5;
+force CF_BAI_detect_aivision_careless_knowledge = 0.5;
+force CF_BAI_detect_aivision_combat_chance = 1;
+force CF_BAI_detect_aivision_combat_knowledge = 1;
+force CF_BAI_detect_aivision_nobino_chance = 0.75;
+force CF_BAI_detect_aivision_nobino_knowledge = 0.75;
+force CF_BAI_detect_aivision_nooptics_chance = 0.5;
+force CF_BAI_detect_aivision_nooptics_knowledge = 0.5;
+force CF_BAI_detect_aivision_nooptics_range = 400;
+force CF_BAI_detect_aivision_nvg_percentage = 0.25;
+force CF_BAI_detect_aivision_optics_range = 1500;
+force CF_BAI_detect_aivision_safe_chance = 0.75;
+force CF_BAI_detect_aivision_safe_knowledge = 1;
+force CF_BAI_detect_aivision_stealth_chance = 0.75;
+force CF_BAI_detect_aivision_stealth_knowledge = 0.75;
+force CF_BAI_detect_disableDetect = false;
+force CF_BAI_detect_environmentConiditions_fog = 0.9;
+force CF_BAI_detect_environmentConiditions_nightTime = 0.5;
+force CF_BAI_detect_environmentConiditions_rain = 0.2;
+force CF_BAI_detect_overall_visibility_multiplier = 1;
+force CF_BAI_detect_playerVisibility_crouch_chance = 0.5;
+force CF_BAI_detect_playerVisibility_crouch_knowledge = 1;
+force CF_BAI_detect_playerVisibility_movement = 0.5;
+force CF_BAI_detect_playerVisibility_movement_knowledge = 1;
+force CF_BAI_detect_playerVisibility_prone_chance = 0.1;
+force CF_BAI_detect_playerVisibility_prone_knowledge = 1;
+force CF_BAI_detect_playerVisibility_standing_chance = 1;
+force CF_BAI_detect_playerVisibility_standing_knowledge = 1;
+force CF_BAI_detect_playerVisibility_terrain_count = 4;
+
+// CF_BAI_suppression
+force CF_BAI_suppression_aimingAccuracy = 0.2;
+force CF_BAI_suppression_aimingShake = 0.2;
+force CF_BAI_suppression_aimingSpeed = 0.2;
+force CF_BAI_suppression_bulletImpact = 0.1;
+force CF_BAI_suppression_commanding = 0.2;
+force CF_BAI_suppression_courage = 0.2;
+force CF_BAI_suppression_decay = 0.03;
+force CF_BAI_suppression_decaySleep = 5;
+force CF_BAI_suppression_disableSuppression = false;
+force CF_BAI_suppression_general = 0.5;
+force CF_BAI_suppression_heldTime = 20;
+force CF_BAI_suppression_reloadSpeed = 0.5;
+force CF_BAI_suppression_spotDistance = 0.5;
+force CF_BAI_suppression_spotTime = 0.5;
+
+
 // Community Base Addons
 cba_diagnostic_ConsoleIndentType = -1;
 force cba_diagnostic_watchInfoRefreshRate = 0.2;
@@ -1247,15 +1347,15 @@ force IMS_WBK_MAINFPTP = true;
 
 // LAMBS Danger
 force lambs_danger_cqbRange = 60;
-force force lambs_danger_disableAIAutonomousManoeuvres = true;
+force lambs_danger_disableAIAutonomousManoeuvres = true;
 lambs_danger_disableAIDeployStaticWeapons = false;
-force force lambs_danger_disableAIFindStaticWeapons = true;
-force force lambs_danger_disableAIHideFromTanksAndAircraft = true;
+force lambs_danger_disableAIFindStaticWeapons = true;
+force lambs_danger_disableAIHideFromTanksAndAircraft = true;
 lambs_danger_disableAIPlayerGroup = false;
 lambs_danger_disableAIPlayerGroupReaction = false;
 lambs_danger_disableAutonomousFlares = false;
 lambs_danger_disableAutonomousSmokeGrenades = false;
-force force lambs_danger_panicChance = 0;
+force lambs_danger_panicChance = 0;
 
 // LAMBS Danger Eventhandlers
 force lambs_eventhandlers_ExplosionEventHandlerEnabled = true;
@@ -1265,7 +1365,7 @@ force lambs_eventhandlers_ExplosionReactionTime = 9;
 force lambs_wp_autoAddArtillery = false;
 
 // LAMBS Main
-force force lambs_main_combatShareRange = 0;
+force lambs_main_combatShareRange = 0;
 force lambs_main_debug_drawAllUnitsInVehicles = false;
 force lambs_main_debug_Drawing = false;
 force lambs_main_debug_FSM = false;
@@ -1274,15 +1374,15 @@ force lambs_main_debug_functions = false;
 force lambs_main_debug_RenderExpectedDestination = false;
 lambs_main_disableAICallouts = false;
 lambs_main_disableAIDodge = false;
-force force lambs_main_disableAIFleeing = true;
+force lambs_main_disableAIFleeing = true;
 lambs_main_disableAIGestures = false;
 lambs_main_disableAutonomousMunitionSwitching = false;
 lambs_main_disablePlayerGroupSuppression = false;
 force lambs_main_indoorMove = 0.1;
 force lambs_main_maxRevealValue = 1;
-force force lambs_main_minFriendlySuppressionDistance = 50;
+force lambs_main_minFriendlySuppressionDistance = 50;
 force lambs_main_minObstacleProximity = 5;
-force force lambs_main_minSuppressionRange = 500;
+force lambs_main_minSuppressionRange = 500;
 force lambs_main_radioBackpack = 2000;
 lambs_main_radioDisabled = false;
 force lambs_main_radioEast = 500;
