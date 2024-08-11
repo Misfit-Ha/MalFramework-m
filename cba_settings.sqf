@@ -841,8 +841,8 @@ force acex_sitting_enable = true;
 // ACE Spectator
 force ace_spectator_enableAI = false;
 force ace_spectator_maxFollowDistance = 5;
-force ace_spectator_restrictModes = 1;
-force ace_spectator_restrictVisions = 1;
+force ace_spectator_restrictModes = 0;
+force ace_spectator_restrictVisions = 0;
 
 // ACE Switch Units
 force ace_switchunits_enableSafeZone = false;
