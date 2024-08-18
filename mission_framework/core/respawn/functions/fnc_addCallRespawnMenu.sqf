@@ -43,6 +43,9 @@ _menu = ['Check remaining reinforcement waves', 'Check remaining reinforcement w
     [["Remaining reinforcement waves:<br/>%1", GVAR(availableWaves)], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
 }, {true}] call AFUNC(interact_menu,createAction);
 
+[player, 1, ["ACE_SelfActions", "Reinforcements"], _menu] call AFUNC(interact_menu,addActionToObject);
+
+
 //Check spectator count
 _menu = ['Check number of spectators', 'Check number of spectators', '', {
         private _deadPlayers = (allPlayers select {!alive _x});
