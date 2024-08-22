@@ -618,12 +618,12 @@ ace_maptools_plottingBoardAllowChannelDrawing = 1;
 force ace_maptools_rotateModifierKey = 1;
 
 // ACE Medical
-force ace_medical_ai_enabledFor = 2;
+force ace_medical_ai_enabledFor = 0;
 force ace_medical_ai_requireItems = 0;
 force ace_medical_AIDamageThreshold = 1;
-force ace_medical_bleedingCoefficient = 1;
-force ace_medical_blood_bloodLifetime = 900;
-force ace_medical_blood_enabledFor = 0;
+force ace_medical_bleedingCoefficient = 0.5;
+force ace_medical_blood_bloodLifetime = 600;
+force ace_medical_blood_enabledFor = 2;
 force ace_medical_blood_maxBloodObjects = 500;
 force ace_medical_deathChance = 0.5;
 force ace_medical_dropWeaponUnconsciousChance = 0;
@@ -633,7 +633,7 @@ force ace_medical_fatalDamageSource = 2;
 force ace_medical_fractureChance = 0.5;
 force ace_medical_fractures = 1;
 force ace_medical_ivFlowRate = 25;
-force ace_medical_limping = 1;
+force ace_medical_limping = 0;
 force ace_medical_painCoefficient = 1;
 force ace_medical_painUnconsciousChance = 0.1;
 force ace_medical_painUnconsciousThreshold = 0.5;
