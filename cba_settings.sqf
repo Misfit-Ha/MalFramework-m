@@ -1102,107 +1102,14 @@ force crowsEW_spectrum_spectrumEnable = true;
 force crowsEW_spectrum_tfarSideTrack = true;
 
 // DUI - Squad Radar - Indicators
-force diwako_dui_indicators_crew_range_enabled = false;
-diwako_dui_indicators_fov_scale = false;
-diwako_dui_indicators_icon_buddy = true;
-diwako_dui_indicators_icon_leader = true;
-diwako_dui_indicators_icon_medic = true;
-diwako_dui_indicators_range = 20;
-diwako_dui_indicators_range_crew = 300;
-diwako_dui_indicators_range_scale = false;
-diwako_dui_indicators_show = true;
-diwako_dui_indicators_size = 0.67596;
-diwako_dui_indicators_style = "standard";
-diwako_dui_indicators_useACENametagsRange = true;
-
-// DUI - Squad Radar - Main
-diwako_dui_ace_hide_interaction = true;
-diwako_dui_colors = "standard";
-diwako_dui_font = "RobotoCondensed";
-diwako_dui_icon_style = "standard";
-diwako_dui_main_hide_dialog = true;
-diwako_dui_main_hide_ui_by_default = false;
-diwako_dui_main_squadBlue = [0,0,1,1];
-diwako_dui_main_squadGreen = [0,1,0,1];
-diwako_dui_main_squadMain = [1,1,1,1];
-diwako_dui_main_squadRed = [1,0,0,1];
-diwako_dui_main_squadYellow = [1,1,0,1];
-diwako_dui_main_trackingColor = [0.93,0.26,0.93,1];
-diwako_dui_reset_ui_pos = false;
-
-// DUI - Squad Radar - Nametags
-diwako_dui_nametags_customRankStyle = "[[""PRIVATE"",""CORPORAL"",""SERGEANT"",""LIEUTENANT"",""CAPTAIN"",""MAJOR"",""COLONEL""],[""Pvt."",""Cpl."",""Sgt."",""Lt."",""Capt."",""Maj."",""Col.""]]";
-diwako_dui_nametags_deadColor = [0.2,0.2,0.2,1];
-force diwako_dui_nametags_deadRenderDistance = 3.5;
-force diwako_dui_nametags_drawRank = false;
-diwako_dui_nametags_enabled = true;
-force diwako_dui_nametags_enableFOVBoost = false;
-diwako_dui_nametags_enableOcclusion = true;
-diwako_dui_nametags_fadeInTime = 0.05;
-diwako_dui_nametags_fadeOutTime = 0.5;
-diwako_dui_nametags_fontGroup = "RobotoCondensedLight";
-diwako_dui_nametags_fontGroupNameSize = 8;
-diwako_dui_nametags_fontName = "RobotoCondensedBold";
-diwako_dui_nametags_fontNameSize = 10;
-diwako_dui_nametags_groupColor = [1,1,1,1];
-diwako_dui_nametags_groupFontShadow = 1;
-diwako_dui_nametags_groupNameOtherGroupColor = [0.6,0.85,0.6,1];
-diwako_dui_nametags_nameFontShadow = 1;
-diwako_dui_nametags_nameOtherGroupColor = [0.2,1,0,1];
-diwako_dui_nametags_rankNameStyle = "default";
-force diwako_dui_nametags_renderDistance = 10;
-force diwako_dui_nametags_showUnconAsDead = true;
-diwako_dui_nametags_useLIS = true;
-force diwako_dui_nametags_useSideIsFriendly = false;
+force force diwako_dui_indicators_crew_range_enabled = false;
 
 // DUI - Squad Radar - Radar
-diwako_dui_compass_hide_alone_group = false;
-diwako_dui_compass_hide_blip_alone_group = false;
-diwako_dui_compass_icon_scale = 1;
-diwako_dui_compass_opacity = 1;
-diwako_dui_compass_style = ["\z\diwako_dui\addons\radar\UI\compass_styles\standard\compass_limited.paa","\z\diwako_dui\addons\radar\UI\compass_styles\standard\compass.paa"];
-diwako_dui_compassRange = 35;
-diwako_dui_compassRefreshrate = 0;
-diwako_dui_dir_showMildot = false;
-diwako_dui_dir_size = 1.25;
-diwako_dui_distanceWarning = 3;
-diwako_dui_enable_compass = true;
-diwako_dui_enable_compass_dir = 1;
-diwako_dui_enable_occlusion = true;
-diwako_dui_enable_occlusion_cone = 360;
-diwako_dui_hudScaling = 1.33333;
-diwako_dui_namelist = true;
-diwako_dui_namelist_bg = 0;
-diwako_dui_namelist_only_buddy_icon = false;
-diwako_dui_namelist_size = 2.82843;
-diwako_dui_namelist_text_shadow = 2;
-diwako_dui_namelist_width = 215;
-diwako_dui_radar_ace_finger = true;
-force diwako_dui_radar_ace_medic = true;
-diwako_dui_radar_compassRangeCrew = 500;
-diwako_dui_radar_dir_padding = 25;
-diwako_dui_radar_dir_shadow = 2;
-diwako_dui_radar_group_by_vehicle = false;
-diwako_dui_radar_icon_opacity = 1;
-diwako_dui_radar_icon_opacity_no_player = true;
-force force diwako_dui_radar_icon_priority_setting = 0;
-diwako_dui_radar_icon_scale_crew = 6;
-diwako_dui_radar_leadingZeroes = false;
-diwako_dui_radar_namelist_hideWhenLeader = false;
-diwako_dui_radar_namelist_vertical_spacing = 1;
-diwako_dui_radar_occlusion_fade_in_time = 1;
-diwako_dui_radar_occlusion_fade_time = 10;
-diwako_dui_radar_pointer_color = [1,0.5,0,1];
-diwako_dui_radar_pointer_style = "standard";
-diwako_dui_radar_show_cardinal_points = true;
-diwako_dui_radar_showSpeaking = true;
-diwako_dui_radar_showSpeaking_radioOnly = false;
-diwako_dui_radar_showSpeaking_replaceIcon = true;
-force diwako_dui_radar_sortType = "none";
-force diwako_dui_radar_sqlFirst = false;
-force diwako_dui_radar_syncGroup = false;
-force diwako_dui_radar_vehicleCompassEnabled = false;
-diwako_dui_use_layout_editor = false;
+force force diwako_dui_radar_ace_medic = true;
+force force diwako_dui_radar_icon_priority_setting = 1;
+force force diwako_dui_radar_sortType = "name";
+force force diwako_dui_radar_sqlFirst = true;
+force force diwako_dui_radar_syncGroup = false;
 
 // Enhanced Movement Rework
 force emr_main_allowClimbOnStandingUnits = false;
@@ -1280,22 +1187,39 @@ force grad_trenches_functions_vehicleEnvelopeRemovalTime = 10;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 5;
 
 // HBQ General
-force HBQSS_AimingSkill = 0.4;
 force HBQSS_DebugEnabled = true;
-force HBQSS_DefaultPlayerCount = 10;
-force HBQSS_DeSpawnSecurityRadius = 600;
+force HBQSS_DefaultPlayerCount = 15;
+force HBQSS_DeSpawnSecurityRadius = 300;
 force HBQSS_LeaderDistance = 0;
+force HBQSS_NoAmmoFleetime = 0;
 force HBQSS_ProbabilityScalingEnabled = false;
-force HBQSS_RetreatGroupsize = 2;
+force HBQSS_RearmDistance = 0;
+force HBQSS_RetreatGroupsize = 0;
 force HBQSS_SpawnSecurityRadius = 0;
+force HBQSS_UnstuckDistance = 0;
 
 // HBQ Performance
 force HBQSS_AIFeatureActivationDelay = 1;
 force HBQSS_ChecksDelay = 5;
-force HBQSS_FPSlimit = 0;
+force HBQSS_DynamicAIRadius = 2000;
+force HBQSS_FPSlimit = 30;
 force HBQSS_LifeTime = 0;
-force HBQSS_MaxTotalAICount = 0;
+force HBQSS_MaxTotalAICount = 80;
 force HBQSS_OptimizedSpawnMethod = true;
+
+// HBQ Skills
+force HBQSS_aimingShake = 0.4;
+force HBQSS_AimingSkill = 0.4;
+force HBQSS_aimingSpeed = 0.4;
+force HBQSS_commanding = 0.4;
+force HBQSS_courage = 0.4;
+force HBQSS_general = 0.4;
+force HBQSS_reloadSpeed = 0.4;
+force HBQSS_SkillMultiplierClose = 2;
+force HBQSS_spotDistance = 0.4;
+force HBQSS_spotTime = 0.4;
+force HBQSS_UseHBQSkills = true;
+
 
 // IEDD Notebook
 force iedd_ied_addDefusalKit = false;
@@ -1473,10 +1397,10 @@ force tfar_terrain_interception_coefficient = 7;
 force TFAR_voiceCone = true;
 
 // TFI Animation
-force TFI_cba_anim_actionDeathChance = 1;
+force TFI_cba_anim_actionDeathChance = 0.5;
 force TFI_cba_anim_actionDeathOff = true;
-force TFI_cba_anim_actionHitChance = 1;
-force TFI_cba_anim_actionHitOff = true;
+force TFI_cba_anim_actionHitChance = 0.25;
+force TFI_cba_anim_actionHitOff = false;
 force TFI_cba_anim_adsOff = false;
 TFI_cba_anim_Aggressive = true;
 TFI_cba_anim_Agreeing = true;
@@ -1488,6 +1412,13 @@ TFI_cba_anim_Attention 2 = true;
 TFI_cba_anim_Attention 3 = true;
 TFI_cba_anim_Attention 4 = true;
 TFI_cba_anim_Bird = true;
+TFI_cba_anim_cantingCrosshairColorAlpha = 1;
+TFI_cba_anim_cantingCrosshairColorBlue = 1;
+TFI_cba_anim_cantingCrosshairColorGreen = 1;
+TFI_cba_anim_cantingCrosshairColorRed = 1;
+TFI_cba_anim_cantingCrosshairHeight = 1.5;
+TFI_cba_anim_cantingCrosshairType = "\A3\ui_f\data\igui\cfg\Cursors\iconComplex_ca.paa";
+TFI_cba_anim_cantingCrosshairWidth = 1.5;
 TFI_cba_anim_Confused = true;
 TFI_cba_anim_Contact 1 = true;
 TFI_cba_anim_Contact 2 = true;
@@ -1497,13 +1428,15 @@ TFI_cba_anim_Crouch Thumbup = true;
 TFI_cba_anim_Dab = true;
 TFI_cba_anim_Dead 1 = true;
 TFI_cba_anim_Dead 2 = true;
+force TFI_cba_anim_deadBodyLimit = 50;
+force TFI_cba_anim_deadBodyTimer = 3;
 TFI_cba_anim_Defensive = true;
+TFI_cba_anim_DisableCantingCrosshair = false;
+TFI_cba_anim_DisableSling = true;
 TFI_cba_anim_Disagreeing 1 = true;
 TFI_cba_anim_Disagreeing 2 = true;
 TFI_cba_anim_Dismissing = true;
 force TFI_cba_anim_doorOff = false;
-TFI_cba_anim_Drake No = true;
-TFI_cba_anim_Drake Yes = true;
 TFI_cba_anim_Drunk = true;
 TFI_cba_anim_Dubstep = true;
 TFI_cba_anim_Dubstep Pop = true;
@@ -1512,12 +1445,11 @@ TFI_cba_anim_Duo (Stefan) = true;
 TFI_cba_anim_Emergency Stop = true;
 TFI_cba_anim_Engines Off = true;
 TFI_cba_anim_Engines On = true;
-TFI_cba_anim_Facepalm = true;
 TFI_cba_anim_Facepalm 1 = true;
 TFI_cba_anim_Facepalm 2 = true;
+force TFI_cba_anim_garbageCollectOff = false;
 TFI_cba_anim_HipHop = true;
 TFI_cba_anim_Horns = true;
-TFI_cba_anim_I Want You = true;
 TFI_cba_anim_Idle 1 = true;
 TFI_cba_anim_Idle 10 = true;
 TFI_cba_anim_Idle 11 = true;
@@ -1563,6 +1495,7 @@ TFI_cba_anim_Point Left = true;
 TFI_cba_anim_Point Right = true;
 TFI_cba_anim_Point Up = true;
 TFI_cba_anim_Pushups = true;
+force TFI_cba_anim_radioGestureOff = false;
 TFI_cba_anim_Right = true;
 TFI_cba_anim_Robo = true;
 TFI_cba_anim_Rock = true;
@@ -1575,6 +1508,7 @@ TFI_cba_anim_Scissors = true;
 TFI_cba_anim_Shouting = true;
 TFI_cba_anim_Sleeping = true;
 TFI_cba_anim_Sleepy = true;
+TFI_cba_anim_slingPos = "[[-0.1, 0.8, 0.15], [-100, 30, 70]]";
 TFI_cba_anim_Slow = true;
 TFI_cba_anim_Smile = true;
 TFI_cba_anim_Smirking = true;
@@ -1612,7 +1546,6 @@ TFI_cba_anim_Suicide = true;
 TFI_cba_anim_Talking = true;
 TFI_cba_anim_Tighten Shoelace = true;
 TFI_cba_anim_Unconscious = true;
-TFI_cba_anim_Warming Hands = true;
 TFI_cba_anim_Wave 1 = true;
 TFI_cba_anim_Wave 2 = true;
 TFI_cba_anim_Wave 3 = true;
@@ -1623,14 +1556,15 @@ TFI_cba_anim_Yawning = true;
 TFI_cba_anim_ZOZO = true;
 
 // TFI Fatigue
-force TFI_cba_fat_armFatigueOff = true;
+force TFI_cba_fat_armFatigueOff = false;
 force TFI_cba_fat_rccOff = false;
 force TFI_cba_fat_rccOnlyPlayers = true;
+force force TFI_cba_fat_shroudOff = true;
 
 // TFI Medical
 TFI_AFAK_B1 = "ACE_elasticBandage";
 TFI_AFAK_B1c = 10;
-TFI_AFAK_B2 = "ACE_elasticBandage";
+TFI_AFAK_B2 = "ACE_packingBandage";
 TFI_AFAK_B2c = 10;
 TFI_AFAK_B3 = "ACE_bloodIV";
 TFI_AFAK_B3c = 3;
@@ -1684,45 +1618,49 @@ TFI_AFAK_U7 = "kat_aatKit";
 TFI_AFAK_U7c = 1;
 TFI_AFAK_U8 = "kat_IO_FAST";
 TFI_AFAK_U8c = 1;
-TFI_IFAK_B1 = "ACE_elasticBandage";
-TFI_IFAK_B2 = "ACE_elasticBandage";
+TFI_IFAK_B1 = "ACE_packingBandage";
+TFI_IFAK_B2 = "ACE_quikclot";
 TFI_IFAK_B3 = "ACE_bloodIV_500";
 TFI_IFAK_M1 = "ACE_epinephrine";
 TFI_IFAK_M2 = "ACE_morphine";
 TFI_IFAK_M3 = "kat_Painkiller";
 TFI_IFAK_U1 = "ACE_tourniquet";
 TFI_IFAK_U2 = "ACE_splint";
-TFI_IFAK_U3 = "ACE_splint";
-TFI_IFAK_U4 = "ACE_tourniquet";
-TFI_IFAK_U5 = "ACE_tourniquet";
+TFI_IFAK_U3 = "kat_IV_16";
+TFI_IFAK_U4 = "kat_Pulseoximeter";
+TFI_IFAK_U5 = "kat_guedel";
 
 // TFI Platform
 force TFI_cba_plat_bubbleChatOff = false;
 TFI_cba_plat_clearRadioOff = true;
 force TFI_cba_plat_craterOff = true;
-force TFI_cba_plat_craterSize = 3;
+force TFI_cba_plat_craterSize = 1.5;
 force TFI_cba_plat_navKeepGPS = false;
 force TFI_cba_plat_navOff = false;
 force TFI_cba_plat_vecCollisionOff = false;
-force TFI_cba_plat_wbkAiOff = false;
+force TFI_cba_plat_wbkAiOff = true;
 
 // TFI SFX
 force TFI_cba_sfx_attachmentOff = false;
-force TFI_cba_sfx_deathChance = 1;
+force TFI_cba_sfx_deathChance = 0.5;
 force TFI_cba_sfx_deathOff = false;
 force TFI_cba_sfx_inventoryOff = false;
 force TFI_cba_sfx_jumpOff = false;
 force TFI_cba_sfx_mapOff = false;
 
 // TFI VFX
-force TFI_cba_vfx_bloodIntersectionBlackList = "['#particlesource', 'dummyweapon.p3d', 'TFI_obj_bloodBoard', 'TFI_obj_bloodBoard_medium', 'WeaponHolderSimulated', 'WeaponHolder', 'Thing', 'Man', 'AllVehicles', 'Default']";
+force TFI_cba_vfx_bloodIntersectionBlackList = "[""#particlesource"", ""dummyweapon.p3d"", ""TFI_obj_bloodBoard"", ""TFI_obj_bloodBoard_medium"", ""WeaponHolderSimulated"", ""WeaponHolder"", ""Thing"", ""Man"", ""CAManBase"", ""AllVehicles"", ""Default""]";
 force TFI_cba_vfx_bloodObjectLimit = 500;
 force TFI_cba_vfx_bloodPoolChance = 0.5;
-force TFI_cba_vfx_bloodPoolOff = true;
+force TFI_cba_vfx_bloodPoolOff = false;
 force TFI_cba_vfx_bloodSplatterChance = 1;
-force TFI_cba_vfx_bloodSplatterOff = true;
+force TFI_cba_vfx_bloodSplatterOff = false;
+force TFI_cba_vfx_dismembermentBlackList = "[""no_legs_skinned_unit"",""skinned_unit"",""gibed_nohandleg"",""gibed_half"",""gibed_nobelly"",""gibed_nohandsboth"",""gibed_nohandone"",""gibed_noleg"",""gibed_limbless"",""gibed_lol"",""gibed_noarmfoot"",""gibed_noarmfootmore"",""gibed_nobellyL"",""gibed_nobellyLlegR"",""gibed_nohandlegL"",""gibed_nolaghandlow"",""gibed_nolagL"",""gibed_nolegsfull""]";
+force TFI_cba_vfx_dismembermentChance = 0.1;
+force TFI_cba_vfx_dismembermentOff = true;
+force TFI_cba_vfx_dismembermentVelocity = -10;
 force TFI_cba_vfx_gcamChkEnemy = true;
-force TFI_cba_vfx_gcamChkEnemyRange = 100;
+force TFI_cba_vfx_gcamChkEnemyRange = 2000;
 force TFI_cba_vfx_gcamLamp = true;
 TFI_cba_vfx_gcamMoveSpeed = 1;
 force TFI_cba_vfx_gcamNvg = true;
@@ -1730,8 +1668,17 @@ force TFI_cba_vfx_gcamOff = false;
 force TFI_cba_vfx_gcamRange = 300;
 TFI_cba_vfx_gcamTrunSpeed = 0.15;
 TFI_cba_vfx_gcamZoomSpeed = 3;
-force TFI_cba_vfx_hsOff = true;
+force TFI_cba_vfx_hsOff = false;
 TFI_cba_vfx_nvgEffect = "mwEffect";
+
+// View Distance Manager
+force DT_automaticObjectSync = true;
+force DT_terrainGridMax = 25;
+force DT_viewDistanceEnabled = true;
+DT_viewDistanceHotkey1 = 200;
+DT_viewDistanceHotkey2 = 500;
+DT_viewDistanceHotkey3 = 1000;
+force DT_viewDistanceMax = 12000;
 
 // WebKnight's Zombies
 force WBK_ZombiesIsUseBitingAnimation = true;
