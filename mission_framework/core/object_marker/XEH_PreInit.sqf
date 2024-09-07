@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleObjectMarker)) exitWith {};
+if !(GVARMAIN(moduleMarkObjects)) exitWith {};
 
 ADDON = false;
 
