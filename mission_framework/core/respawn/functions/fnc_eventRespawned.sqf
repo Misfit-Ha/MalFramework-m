@@ -21,7 +21,6 @@
 if !(hasInterface) exitWith {};
 
 params [["_unit", player], ["_corpse", objNull]];
-
 // Side update
 if (GVARMAIN(isTvT)) then {
     [QEGVAR(common,sideValueSet), [playerSide, 0, 1, 0]] call CFUNC(serverEvent);

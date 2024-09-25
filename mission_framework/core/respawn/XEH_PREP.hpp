@@ -6,3 +6,4 @@ PREP(handleRespawn);
 PREP(setRespawnTickets);
 PREP(transferLeaderModules);
 PREP(updateSides);
+PREP(manualRespawn);

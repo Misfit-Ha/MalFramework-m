@@ -19,10 +19,11 @@
     call FUNC(handleRespawn);
 }] call CFUNC(addEventHandler);
 
-//Add manual respawn menu
 if (GVAR(waveRespawn)==MANUAL) then {
     call FUNC(addCallRespawnMenu);
 };
+
+
 
 // Transfer respawn menu
 [QGVAR(transferRespawnMenu), {

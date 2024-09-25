@@ -18,6 +18,7 @@
 */
 
 if !(hasInterface) exitWith {};
+[COMPONENT_STR, "DEBUG", "call MF_respawn_fnc_callReinforcements", true, 1] call EFUNC(main,log);
 
 private _deadPlayers = allPlayers select {!alive _x};
 private _count = 0;

@@ -18,6 +18,8 @@
 */
 
 if !(hasInterface) exitWith {};
+[COMPONENT_STR, "DEBUG", "MF_respawn_fnc_handleRespawn", true, 1] call EFUNC(main,log);
+
 
 // Check if the player's death was registered in the FW as well (not between death and the spectator screen)
 // Also exit if the outro screen is running
