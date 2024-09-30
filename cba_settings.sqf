@@ -79,7 +79,7 @@ force ace_cookoff_ammoCookoffDuration = 0.5;
 force ace_cookoff_destroyVehicleAfterCookoff = false;
 force ace_cookoff_enable = 2;
 force ace_cookoff_enableAmmobox = false;
-force ace_cookoff_enableAmmoCookoff = true;
+force ace_cookoff_enableAmmoCookoff = false;
 force ace_cookoff_enableFire = true;
 force ace_cookoff_probabilityCoef = 0.1;
 
