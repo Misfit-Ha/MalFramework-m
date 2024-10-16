@@ -75,13 +75,13 @@ ace_common_settingFeedbackIcons = 1;
 ace_common_settingProgressBarLocation = 0;
 
 // ACE Cook off
-force ace_cookoff_ammoCookoffDuration = 0.5;
+force ace_cookoff_ammoCookoffDuration = 0.3;
 force ace_cookoff_destroyVehicleAfterCookoff = false;
 force ace_cookoff_enable = 2;
 force ace_cookoff_enableAmmobox = false;
-force ace_cookoff_enableAmmoCookoff = false;
-force ace_cookoff_enableFire = true;
-force ace_cookoff_probabilityCoef = 0.1;
+force ace_cookoff_enableAmmoCookoff = true;
+force ace_cookoff_enableFire = false;
+force ace_cookoff_probabilityCoef = 0.3;
 
 // ACE Crew Served Weapons
 force ace_csw_ammoHandling = 2;
@@ -751,20 +751,20 @@ force ace_nightvision_noiseScaling = 0.4;
 force ace_nightvision_shutterEffects = true;
 
 // ACE Overheating
-force ace_overheating_cookoffCoef = 1;
-force ace_overheating_coolingCoef = 2;
-force ace_overheating_displayTextOnJam = false;
-force ace_overheating_enabled = false;
-force ace_overheating_heatCoef = 0.5;
-force ace_overheating_jamChanceCoef = 0.25;
+force ace_overheating_cookoffCoef = 0;
+force ace_overheating_coolingCoef = 1.5;
+ace_overheating_displayTextOnJam = true;
+force ace_overheating_enabled = true;
+force ace_overheating_heatCoef = 0.746098;
+force ace_overheating_jamChanceCoef = 1;
 force ace_overheating_overheatingDispersion = true;
 force ace_overheating_overheatingRateOfFire = true;
-force ace_overheating_particleEffectsAndDispersionDistance = 500;
-force ace_overheating_showParticleEffects = false;
-force ace_overheating_showParticleEffectsForEveryone = false;
-force ace_overheating_suppressorCoef = 1.5;
-force ace_overheating_unJamFailChance = 0.01;
-force ace_overheating_unJamOnreload = false;
+ace_overheating_particleEffectsAndDispersionDistance = 3000;
+ace_overheating_showParticleEffects = false;
+ace_overheating_showParticleEffectsForEveryone = false;
+force ace_overheating_suppressorCoef = 1;
+force ace_overheating_unJamFailChance = 0;
+force ace_overheating_unJamOnreload = true;
 force ace_overheating_unJamOnSwapBarrel = true;
 
 // ACE Pointing
