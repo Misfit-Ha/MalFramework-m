@@ -45,6 +45,7 @@ private _insertChildren = {
         };
 
         _menu = [name _x, name _x, "", _childStatement, {true}, {}, _x] call AFUNC(interact_menu,createAction);
+
         _actions pushBack [_menu, [], _target];
     } forEach (_target nearEntities ["Man", 8]);
 
@@ -53,7 +54,8 @@ private _insertChildren = {
 
 // Main action
 private _menu = [
-    'Heal', 'Heal', '\a3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa', {}, {}, _insertChildren, [], "", 2, [false, false, false, true, false]
+    'Heal', 'Heal', '\a3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa', {}, {true}, _insertChildren, [], "", 2, [false, false, false, true, false]
+
 ] call AFUNC(interact_menu,createAction);
 
 [_object, 0, [], _menu] call AFUNC(interact_menu,addActionToObject);

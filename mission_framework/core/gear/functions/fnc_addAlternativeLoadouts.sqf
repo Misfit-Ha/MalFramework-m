@@ -42,7 +42,7 @@ if (isNull _obj) exitWith {
     _available append (_loadouts get _available#0);
 
     // Add parent menu
-    private _parentMenu = ['Loadout', 'Loadout', '', {}, {}] call AFUNC(interact_menu,createAction);
+    private _parentMenu = ['Loadout', 'Loadout', '', {}, {true}] call AFUNC(interact_menu,createAction);
     [_obj, 0, ["ACE_MainActions"], _parentMenu] call AFUNC(interact_menu,addActionToObject);
 
     // Add child menus
@@ -66,3 +66,4 @@ if (isNull _obj) exitWith {
         } forEach _y;
     } forEach _loadouts;
 }, [_obj]] call CFUNC(addEventHandlerArgs);
+ 
