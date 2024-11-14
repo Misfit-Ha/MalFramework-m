@@ -65,13 +65,11 @@ Some parts of this framework are based on other Arma 3 frameworks and scripts. S
  - Parachute script by Kex and cobra4v320<br/>
  - Rearm scripts by GitHawk<br/>
  - Setup timer script by Olsen<br/>
- - Snowfall script by AZCoder and JW<br/>
+ - Snowfall script by Lightning <br/>
+ - Subtitle script by Lightning <br/>
+ - Intro script by Lightning <br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
- - BFT by Quiksilver<br/>
  - Editor placed objects marker by Mallen<br/>
-<br/>
-Special thanks to <font color='#21749c'>Garfield</font> and <font color='#21749c'>kMaN</font> for their technical help.
-</font>
 "
 DIARY_RECORD_END;
 

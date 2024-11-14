@@ -5,6 +5,9 @@
         // Disconnected event
         call FUNC(eventHandleDisconnect);
     };
+    // View distance
+    setViewDistance GVARMAIN(serverViewDistance);
+    setObjectViewDistance [GVARMAIN(serverViewDistance), 10];
 }] call CFUNC(addEventHandler);
 
 [QGVAR(sideValueSet), {

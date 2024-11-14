@@ -29,17 +29,17 @@ if (_pos isEqualTo "") exitWith {
     ["Warning", ["Target destination does not exist!"]] call BFUNC(showNotification);
 };
 
-cutText ["You are being paradropped into the AO", "BLACK OUT", 2, true];
+"MF_blackout" cutText ["You are being paradropped into the AO", "BLACK OUT", 0.5, true];
 
 [{
     // Get a random position in a radius
     private _randomPos = [[[_this, 250]], []] call BFUNC(randomPos);
 
     _randomPos set [2, 1500];
-    player setPos _randomPos;
+    player setPosASL _randomPos;
     [player] call FUNC(addParachute);
 
     [{
-        cutText ["", "BLACK IN", 3, true];
+        "MF_blackout" cutText ["", "BLACK IN", 0.5, true];
     }, [], 1] call CFUNC(waitAndExecute);
 }, _pos, 2] call CFUNC(waitAndExecute);

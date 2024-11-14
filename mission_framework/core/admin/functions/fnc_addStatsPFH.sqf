@@ -63,7 +63,7 @@ GVAR(otherStatsPFH) = [{
     ctrlSetText [702, _admin];
 
     // View distance (Server)
-    ctrlSetText [703, str GVARMAIN(playerViewDistance)];
+    ctrlSetText [703, "N/A"];
 
     // View distance (Player)
     ctrlSetText [704, str GVARMAIN(serverViewDistance)];

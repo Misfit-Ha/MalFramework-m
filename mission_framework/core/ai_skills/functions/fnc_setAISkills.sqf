@@ -21,12 +21,10 @@ if !(isServer) exitWith {};
 
 params ["_unit"];
 
-private _unit = _unit#0;
-
 // If the unit is not local or is a player, then exit
 if (!local _unit || isPlayer _unit) exitWith {};
 
-_skills = GVAR(skillSet);
+private _skills = GVAR(skillSet);
 
 // Set the sub-skills
 _unit setSkill ["general", _skills#0];

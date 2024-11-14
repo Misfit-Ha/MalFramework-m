@@ -19,11 +19,10 @@ Arguments:
         1 - Pilot status
         2 - Engineer status
     4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
-    5: SCALAR - Unit's custom view distance (Optional, default: -1 (overwrites the default value defined in config.sqf))
     6: STRING - Custom shoulder insignia (Optional, default: "")
 
 Example:
-    [this, "MEDIC", 0, [true, false, false], "GREEN", 2500, "EAF_5thRegiment"] call MF_player_fnc_initPlayer
+    [this, "", 0, [false, false, false], "", ""] call MF_player_fnc_initPlayer
 ```
 
 ## Config:

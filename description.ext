@@ -5,7 +5,17 @@
 
 // Importing the custom settings
 #include "mission_framework\config\description.hpp"
-__EXEC(MF_missionMaker = [UID1, UID2];)
+__EXEC(MF_missionMaker = [UID1, UID2, UID3];)
+
+// Mission selection screen
+briefingName = OprName;  // Mission name on the mission selection screen
+overviewText = OprInfo;  // Mission info on the mission selection screen
+
+// Loading screen settings
+onLoadName = OprName;  // Name of the mission on the loading screen
+onLoadMission = OprInfo;  // Mission description on the loading screen
+author = OprAuth;  // Mission author 
+loadScreen = OprLoad;  // Loading screen image
 
 // Respawn settings
 respawn = "BASE";  // Respawn type
@@ -17,22 +27,24 @@ respawnOnStart = -1;  // Respawn script at mission start
 
 // Mission settings
 cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
-cba_settings_whitelist[] = {UID1, UID2};  // Enable the CBA server settings for the mission maker + logged in admin or host
-disableChannels[] = {};  // Disable certain comms channels
+cba_settings_whitelist[] = {UID1, UID2, UID3};  // Enable the CBA server settings for the mission maker + logged in admin or host
 disabledAI = 1;  // Enable/disable AI in player slots
-enableDebugConsole[] = {UID1, UID2};  // Enable the debug console for the mission maker + logged in admin or host
+enableDebugConsole[] = {UID1, UID2, UID3};  // Enable the debug console for the mission maker + logged in admin or host
 enableTargetDebug = 1;  // Target debugging
 
 // Garbage collector settings
 corpseManagerMode = 1;
 corpseLimit = 15;
-corpseRemovalMinTime = 200;
-corpseRemovalMaxTime = 400;
-
+corpseRemovalMinTime = 120;
+corpseRemovalMaxTime = 300;
 wreckManagerMode = 1;
-wreckLimit = 5;
-wreckRemovalMinTime = 300;
-wreckRemovalMaxTime = 500;
+wreckLimit = 15;
+wreckRemovalMinTime = 120;
+wreckRemovalMaxTime = 300;
+weaponholderManagerMode = 1;
+weaponholderLimit = 30;
+weaponholderRemovalMinTime = 120;
+weaponholderRemovalMaxTime = 300;
 
 // Tasks
 taskManagement_markers2D = 0;  // Use 2D markers
@@ -56,6 +68,7 @@ onPauseScript[] = {QEFUNC(admin,handlePauseMenuOpened)};
 
 // RscTitles
 #include "mission_framework\core\main\RscTitles.hpp"
+
 
 // VCOM functions
 #ifdef VCOMAI

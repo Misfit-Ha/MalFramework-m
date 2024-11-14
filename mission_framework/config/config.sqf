@@ -15,7 +15,7 @@ EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: None, 1: BLUF
 EGVAR(end_conditions,notificationTime) = 10 MINUTES;  // Send a notification to each player X seconds before the time limit (-1: disabled)
 EGVAR(end_conditions,timeLimitCheckEnabled) = true;  // Enable time limit check for players
 EGVAR(end_conditions,stagingEnabled) = false;  // Coop: Don't start the mission timer until the players leave the staging area
-EGVAR(end_conditions,stagingAreaMarker) = "mrk_staging";  // Coop: Marker for the staging area
+EGVAR(end_conditions,stagingAreaMarker) = "TFI_mrk_opr_staging";  // Coop: Marker for the staging area
 
 // End condition - Player casualty limit
 GVARMAIN(modulePlayerCasualties) = false;  // Coop & TvT
@@ -38,7 +38,7 @@ EGVAR(end_conditions,taskLimit) = 2;  // Minimum number of completed tasks
 
 // End condition - Extraction
 GVARMAIN(moduleExtraction) = false;  // Coop
-EGVAR(end_conditions,extMarker) = "mrk_ext";  // Name of the extraction marker
+EGVAR(end_conditions,extMarker) = "TFI_mrk_opr_exit";  // Name of the extraction marker
 EGVAR(end_conditions,extTask) = "";  // Extraction task that will be automatically completed (empty string disables this functionality)
 EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players that have to be in the extraction zone
 
@@ -49,7 +49,7 @@ GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be comple
 GVARMAIN(moduleGear) = true;  // Coop & TvT
 EGVAR(gear,useArsenalWhitelist) = false;  // Allows the creation of arsenal objects with custom whitelist based on the player's role
 EGVAR(gear,saveGearInArsenal) = true;  // Should the player's gear be saved (and applied after respawn) after the arsenal is closed
-EGVAR(gear,removeDefaultGear) = true;  // Should the default gear (that the unit has in the editor) be removed if pre-defined gear is disabled
+EGVAR(gear,removeDefaultGear) = false;  // Should the default gear (that the unit has in the editor) be removed if pre-defined gear is disabled
 EGVAR(gear,useLoadouts) = false;  // Apply the pre-defined gear (defined in config\gear\)
 EGVAR(gear,enableAlternativeLoadouts) = false;  // Enable alternative loadouts
 EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (defined in config\gear\)
@@ -66,7 +66,6 @@ EGVAR(respawn,availableWaves) = 1;  // Number of available respawn waves (MANUAL
 EGVAR(respawn,removePlayerCorpses) = true;  // Remove the players' corpses upon respawn
 
 // View distances
-GVARMAIN(playerViewDistance) = 1500;  // Player view distance
 GVARMAIN(serverViewDistance) = 1500;  // Server view distance (= AI view distance)
 
 // Time acceleration
@@ -88,21 +87,13 @@ EGVAR(ai_skills,skillSet) = [
     0.5   // Spotting Time (Higher = Faster)
 ];
 
-
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
-
-// ACRE
-GVARMAIN(moduleACRE) = false;  // Coop & TvT
-EGVAR(acre,useBabel) = false;  // TvT
-
 
 // AI Spawner
 GVARMAIN(moduleAISpawner) = false;  // Coop & TvT
 
-
 // Ambient fly-by
 GVARMAIN(moduleFlyby) = false;  // Coop
-
 
 // AO limit
 GVARMAIN(moduleAOLimit) = false;  // Coop & TvT
@@ -112,10 +103,8 @@ EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";  // AO limit marker for every pl
 EGVAR(ao_limit,aoMarkerBlufor) = "mrk_aoLimitBlufor";  // AO limit marker for BLUFOR players
 EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";  // AO limit marker for REDFOR players
 
-
 // Briefing
 GVARMAIN(moduleBriefing) = false;  // Coop & TvT
-
 
 // CBRN
 GVARMAIN(moduleCBRN) = false;  // Coop & TvT
@@ -125,58 +114,54 @@ EGVAR(cbrn,protectiveUniforms) = ["U_C_CBRN_Suit_01_Blue_F"];  // Uniforms that 
 EGVAR(cbrn,protectiveBackpack) = ["B_CombinationUnitRespirator_01_F"];  // Backpacks (= breathing apparatus) that provide protection (LVL 3)
 EGVAR(cbrn,protectiveVehicles) = ["B_APC_Wheeled_01_cannon_F"];  // Vehicles that provide protection (LVL 3)
 
-
 // Countdown
 GVARMAIN(moduleCountdown) = false;  // Coop & TvT
 
-
 // Custom channel
-GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT
+GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT (Remmber to put "disableChannels[] = {};" in description.ext to make sure this module work)
 EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
-
 
 // Hostage
 GVARMAIN(moduleHostage) = false;  // Coop & TvT
 
-
 // IED
 GVARMAIN(moduleIED) = false;  // Coop
-
 
 // Intel
 GVARMAIN(moduleIntel) = false;  // Coop
 
-
-// Intro text
-GVARMAIN(moduleIntroText) = false;  // Coop & TvT
-EGVAR(intro_text,title) = "TEST TITLE";  // Title
-EGVAR(intro_text,date) = "TEST DATE";  // Date
-EGVAR(intro_text,location) = "TEST LOCATION";  // Location
-EGVAR(intro_text,delay) = 15;  // Delay after loading in
-
+// Intro
+GVARMAIN(moduleIntro) = false;  // Coop & TvT
+EGVAR(intro,blackScreen) = true;  // Black fade screen at start
+EGVAR(intro,freeze) = true;  // Freeze players at start
+EGVAR(intro,unitInfo) = true;  // Show player name, rank and squad name before intro text
+EGVAR(intro,missionInfo) = true;  // Show mission intro text
+EGVAR(intro,delay) = 15;  // Delay after loading in
+EGVAR(intro,font) = "PuristaLight";  // Text font, need to be defined in arma
+EGVAR(intro,line1) = "TEST TITLE";  // Line 1, Title e.g. (Operation Thunderstorm)
+EGVAR(intro,line2) = "TEST Date";  // Line 2, Date e.g. (26 JUL 2035 1500)
+EGVAR(intro,line3) = "TEST Faction";  // Line 3, Faction e.g. (CSAT Paratroopes)
+EGVAR(intro,line4) = "TEST Description";  // Line 4, Description e.g. (ETA T minus 3 minutes)
+EGVAR(intro,line5) = "TEST Location";  // Line 5, Location e.g. (Greece - Altis Island)
 
 // JIP
 GVARMAIN(moduleJIP) = true;  // Coop & TvT
-EGVAR(jip,jipTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
-
+EGVAR(jip,jipTimer) = 10 MINUTES;  // For how long the TP is available after joining the mission
 
 // Killcam
-GVARMAIN(moduleKillcam) = false;  // Coop & TvT
-
+GVARMAIN(moduleKillcam) = true;  // Coop & TvT
 
 // Logistics
 GVARMAIN(moduleLogistics) = false;  // Coop & TvT
 
-
 // LOS Tool
 GVARMAIN(moduleLOSTool) = false;  // Coop & TvT
 
-
 // Map cover
-GVARMAIN(moduleMapCover) = false;  // Coop & TvT
-EGVAR(map_cover,aoMarker) = "mrk_ao";  // Name of the AO marker
-EGVAR(map_cover,colour) = "Color4_FD_F";  // Colour of the covered area
+GVARMAIN(moduleMapCover) = true;  // Coop & TvT
+EGVAR(map_cover,aoMarker) = "TFI_mrk_opr_ao";  // Name of the AO marker
+EGVAR(map_cover,colour) = "ColorBlack";  // Colour of the covered area
 
 // Mark custom objects
 GVARMAIN(moduleMarkObjects) = false;  // Coop & TvT
@@ -186,37 +171,30 @@ GVARMAIN(moduleMarkerSide) = false;  // TvT
 EGVAR(marker_side,markersBlufor) = ["mrk_blufor"];  // BLUFOR markers
 EGVAR(marker_side,markersRedfor) = ["mrk_redfor"];  // REDFOR markers
 
-
 // Mortar fire
 GVARMAIN(moduleMortar) = false;  // Coop
-
 
 // ORBAT
 GVARMAIN(moduleOrbat) = false;  // Coop & TvT
 
-
 // Reinsertion
-GVARMAIN(moduleHAB) = false;  // Coop
+GVARMAIN(moduleHAB) = true;  // Coop
 GVARMAIN(moduleHALO) = false;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
-GVARMAIN(moduleRP) = false;  // Coop & TvT
+GVARMAIN(moduleRP) = true;  // Coop & TvT
 GVARMAIN(moduleTP) = false;  // Coop & TvT
-EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
 EGVAR(reinsertion,markRP) = true;  // Mark the RP location on map
 EGVAR(reinsertion,RPObject) = "Land_TentA_F";  // Object used as the squad rally point
 EGVAR(reinsertion,markHAB) = true;  // Mark the HAB location on map
 EGVAR(reinsertion,HABObject) = "Land_HBarrierTower_F";  // Object used as the platoon HAB
 EGVAR(reinsertion,allowTPFromHAB) = true;  // If TP to squad RP is allowed from the platoon HAB
-EGVAR(reinsertion,TPPoles) = ["MF_tpPole_1"];  // Teleport pole object(s)
-
+EGVAR(reinsertion,TPPoles) = ["TFI_obj_opr_teleport_1", "TFI_obj_opr_teleport_2"];  // Teleport pole object(s)
 
 // Retreat
 GVARMAIN(moduleRetreat) = false;  // Coop & TvT
 
-
 // Safety start
 GVARMAIN(moduleSafetyStart) = false;  // Coop & TvT
-
 
 // Setup timer
 GVARMAIN(moduleSetupTimer) = false;  // Coop & TvT
@@ -225,25 +203,21 @@ EGVAR(setup_timer,timerBlufor) = 60;  // Setup timer for the BLUFOR side
 EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";  // Setup area for the REDFOR side
 EGVAR(setup_timer,timerRedfor) = 60;  // Setup timer for the REDFOR side
 
-
 // Snowfall
-GVARMAIN(moduleSnowfall) = false;  // Coop & TvT
-EGVAR(snowfall,maxDensity) = 50;  // Intensity of the snowfall
-
+GVARMAIN(moduleSnowfall) = true;  // Coop & TvT
+EGVAR(snowfall,coldBreath) = true;  // Enable cold breath effect
+EGVAR(snowfall,snowRadius) = 30;  // Snow effect radius around the players
+EGVAR(snowfall,snowColor) = [0.1, 0.1, 0.1, 0.2];  // Snow drop color, In RGBA format
+EGVAR(snowfall,brightSnow) = false;  // Enable brighter snow color
+EGVAR(snowfall,customPreset) = false;  // Enable a custom weather preset for snowfall, Effected by editor weather forecast
 
 // Supply drop
 GVARMAIN(moduleSupplyDrop) = false;  // Coop
 EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";  // Plane or helicopter used for the supply drop
 EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of smokes (night ops)
 
-
 // TFAR
 GVARMAIN(moduleTFAR) = false;  // Coop & TvT
-
-
-// Unit tracking
-GVARMAIN(moduleUnitTracking) = false;  // Coop & TvT
-
 
 // Vehicle respawn
 GVARMAIN(moduleVehicleRespawn) = false;  // Coop & TvT

@@ -6,12 +6,6 @@ class GVARMAIN(Main) {  // Main first
     serverInit = PATH_POST_SERVER(main);
 };
 
-class GVARMAIN(ACRE) {
-    init = PATH_POST(acre);
-    clientInit = PATH_POST_CLIENT(acre);
-    serverInit = PATH_POST_SERVER(acre);
-};
-
 class GVARMAIN(Admin) {
     init = PATH_POST(admin);
     clientInit = PATH_POST_CLIENT(admin);
@@ -211,6 +205,12 @@ class GVARMAIN(Snowfall) {
     serverInit = PATH_POST_SERVER(snowfall);
 };
 
+class GVARMAIN(Subtitle) {
+    init = PATH_POST(subtitle);
+    clientInit = PATH_POST_CLIENT(subtitle);
+    serverInit = PATH_POST_SERVER(subtitle);
+};
+
 class GVARMAIN(SupplyDrop) {
     init = PATH_POST(supply_drop);
     clientInit = PATH_POST_CLIENT(supply_drop);
@@ -221,12 +221,6 @@ class GVARMAIN(TFAR) {
     init = PATH_POST(tfar);
     clientInit = PATH_POST_CLIENT(tfar);
     serverInit = PATH_POST_SERVER(tfar);
-};
-
-class GVARMAIN(UnitTracking) {
-    init = PATH_POST(unit_tracking);
-    clientInit = PATH_POST_CLIENT(unit_tracking);
-    serverInit = PATH_POST_SERVER(unit_tracking);
 };
 
 class GVARMAIN(VehicleRespawn) {

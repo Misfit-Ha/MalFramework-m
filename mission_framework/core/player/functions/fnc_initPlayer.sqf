@@ -19,38 +19,34 @@
             1 - Pilot status
             2 - Engineer status
         4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
-        5: SCALAR - Unit's custom view distance (Optional, default: -1 (default value defined in config.sqf))
         6: STRING - Custom shoulder insignia (Optional, default: "")
 
     Example:
-        [this, "MEDIC", 0, [true, false, false], "GREEN", 2500, "EAF_5thRegiment"] call MF_player_fnc_initPlayer
+        [this, "", 0, [false, false, false], "", ""] call MF_player_fnc_initPlayer
 
     Returns:
         void
 */
 
-params ["_unit", "_role", ["_traits", 0], ["_aceVars", [false, false, false]], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""]];
+params ["_unit", ["_role",""], ["_traits", 0], ["_aceVars", [false, false, false]], ["_colour", "MAIN"], ["_insignia", ""]];
 
 // 20:10:11 [MF] (player) INFO: Initialising unit: [B ALPHA 1-1] [Malbryn] [AR] [0] [false, false, false] [1200m]
 [COMPONENT_STR, "INFO", format [
     "Initialising unit: [%1] [%2] [%3] [%4] %5 [%6m]",
-    group _unit, name _unit, _role, _traits, _aceVars, _viewDistance
+    group _unit, name _unit, _role, _traits, _aceVars
 ]] call EFUNC(main,log);
 
 // Locality check
 if !(local _unit) exitWith {};
 
 // Gear script
-[_unit, _role] call EFUNC(gear,setGear);
+if (_role isNotEqualTo "") then { [_unit, _role] call EFUNC(gear,setGear); };
 
 // Assign player traits
 [_unit, _traits] call FUNC(setTraits);
 
 // Assign team colour
 SETPVAR(_unit,GVAR(teamColour),_colour);
-
-// Assign view distance
-SETPVAR(_unit,EGVAR(common,viewDistance),_viewDistance);
 
 // Save insignia
 SETPVAR(_unit,GVAR(insignia),_insignia);

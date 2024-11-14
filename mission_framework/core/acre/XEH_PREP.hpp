@@ -1,2 +1,0 @@
-PREP(initRadios);
-PREP(setChannels);

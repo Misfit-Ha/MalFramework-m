@@ -81,14 +81,6 @@ private _unit = objNull;
             };
         };
 
-        if GVARMAIN(moduleACRE) then {
-            _items apply {
-                if (_x call acre_api_fnc_isBaseRadio || {_x call acre_api_fnc_isRadio}) then {
-                    _radio pushBack ([_x, [28,28]] call _getPicture);
-                };
-            };
-        };
-
         _optics = "";
 
         _opticsClasses apply {

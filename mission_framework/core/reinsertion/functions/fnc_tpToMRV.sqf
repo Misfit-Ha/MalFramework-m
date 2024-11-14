@@ -37,12 +37,12 @@ if (_mrv emptyPositions "cargo" == 0) exitWith {
     ["Warning", ["Target vehicle is full! Try again later."]] call BFUNC(showNotification);
 };
 
-cutText ["You are being teleported back to the AO", "BLACK OUT", 2, true];
+"MF_blackout" cutText ["You are being teleported back to the AO", "BLACK OUT", 0.5, true];
 
 [{
     player moveInCargo _this;
 
     [{
-        cutText ["", "BLACK IN", 3, true];
+        "MF_blackout" cutText ["", "BLACK IN", 0.5, true];
     }, [], 1] call CFUNC(waitAndExecute);
 }, _mrv, 2] call CFUNC(waitAndExecute);

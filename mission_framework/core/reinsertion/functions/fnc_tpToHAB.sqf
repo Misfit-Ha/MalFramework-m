@@ -31,13 +31,13 @@ if (isNil "_id") exitWith {
 
 private _HAB = objectFromNetId _id;
 
-cutText ["You are being teleported to the platoon HAB", "BLACK OUT", 2, true];
+"MF_blackout"cutText ["You are being teleported to the platoon HAB", "BLACK OUT", 0.5, true];
 
 [{
-    player setPos [(getPos _this)#0, ((getPos _this)#1) - 8, (getPos _this)#2];
-    player setDir 0;
+    player setPos (_this modelToWorld [0,7,0.25]);
+    player setDir (getDir _this);
 
     [{
-        cutText ["", "BLACK IN", 3, true];
+        "MF_blackout"cutText ["", "BLACK IN", 0.5, true];
     }, [], 1] call CFUNC(waitAndExecute);
 }, _HAB, 2] call CFUNC(waitAndExecute);

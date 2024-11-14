@@ -2,10 +2,9 @@
 
 if !(GVARMAIN(moduleSnowfall)) exitWith {};
 
-// Add snowfall menu and start the snow
-[QGVARMAIN(initFramework), {
-    GVAR(enabled) = true;
-    
-    call FUNC(addSnowMenu);
-    call FUNC(startSnowfall);
-}] call CFUNC(addEventHandler);
+if (GVAR(coldBreath)) then {
+	// Start cold breath effect
+	[QGVARMAIN(initFramework), {
+		call FUNC(coldBreath);
+	}] call CFUNC(addEventHandler);
+};

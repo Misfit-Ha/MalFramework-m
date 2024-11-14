@@ -56,7 +56,7 @@ _Description of each value set in the config file._
 
 | Variable         | Variable type | Default value            | Game mode | Description                                                                      |
 |:---------------- |:------------- |:------------------------ |:--------- |:-------------------------------------------------------------------------------- |
-| `RPPickUp`       | `BOOLEAN`     | `false`                  | Coop/TvT  | If the player is required to pick up the previous squad RP before redeploying it |
+redeploying it |
 | `markRP`         | `BOOLEAN`     | `true`                   | Coop/TvT  | Mark the squad RP location on map (in group channel)                             |
 | `RPObject`       | `STRING`      | `"Land_TentA_F"`         | Coop/TvT  | Object used as the squad rally point                                             |
 | `markHAB`        | `BOOLEAN`     | `true`                   | Coop/TvT  | Mark the platoon HAB location on map                                             |

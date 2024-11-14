@@ -2,20 +2,20 @@
 
 // Generic - Major Success
 class MissionSuccess {
-    title = "Mission Success";              // Closing shot - Main title
-    subtitle = "default_subtitle";          // Closing shot - Short description
-    description = "default_description";    // Debriefing - Summary of the mission
-    pictureBackground = "";                 // Debriefing - 2:1 picture as background
-    picture = "mil_end";                    // Closing shot - 1:1 icon in the middle of the screen
-    pictureColor[] = {0, 0.8, 0, 1};        // Closing shot - Icon colour
+    title = "Mission Success";              									 // Closing shot - Main title
+    subtitle = OprName;          												// Closing shot - Short description
+    description = "MISSION COMPLETE!";    								       // Debriefing - Summary of the mission
+    pictureBackground = OprLoad;                  							  // Debriefing - 2:1 picture as background
+    picture = "mil_end";                    								 // Closing shot - 1:1 icon in the middle of the screen
+    pictureColor[] = {0, 0.8, 0, 1};       								    // Closing shot - Icon colour
 };
 
 // Generic - Minor success
 class MinorSuccess {
     title = "Minor Success";
-    subtitle = "default_subtitle";
-    description = "default_description";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "We Won! Kinda...";
+    pictureBackground = OprLoad;
     picture = "mil_flag";
     pictureColor[] = {0, 0.8, 0, 1};
 };
@@ -23,9 +23,9 @@ class MinorSuccess {
 // Generic - Minor fail
 class MinorFail {
     title = "Minor Defeat";
-    subtitle = "default_subtitle";
-    description = "default_description";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "Better Luck Next Time!";
+    pictureBackground = OprLoad;
     picture = "mil_flag";
     pictureColor[] = {0.9, 0, 0, 1};
 };
@@ -33,9 +33,9 @@ class MinorFail {
 // Generic - Major Fail
 class MissionFail {
     title = "Mission Failed";
-    subtitle = "default_text";
-    description = "default_text";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "Mission Failed Successfully!";
+    pictureBackground = OprLoad;
     picture = "KIA";
     pictureColor[] = {0.6, 0.1, 0.2, 1};
 };
@@ -43,9 +43,9 @@ class MissionFail {
 // Time limit - Minor success
 class TimeLimitMinorSuccess {
     title = "Minor Success";
-    subtitle = "Time limit reached";
-    description = "default_text";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "Time Limit Reached!";
+    pictureBackground = OprLoad;
     picture = "mil_flag";
     pictureColor[] = {0, 0.8, 0, 1};
 };
@@ -53,9 +53,9 @@ class TimeLimitMinorSuccess {
 // Time limit - Minor fail
 class TimeLimitMinorFail {
     title = "Minor Defeat";
-    subtitle = "Time limit reached";
-    description = "default_text";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "Time Limit Reached!";
+    pictureBackground = OprLoad;
     picture = "mil_flag";
     pictureColor[] = {0.9, 0, 0, 1};
 };
@@ -63,9 +63,9 @@ class TimeLimitMinorFail {
 // Player casualty
 class PlayerCasLimit {
     title = "Mission Failed";
-    subtitle = "You've suffered serious casualties";
-    description = "Your unit suffered serious casualties. Better luck next time.";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "Your unit suffered serious casualties.";
+    pictureBackground = OprLoad;
     picture = "KIA";
     pictureColor[] = {0.6, 0.1, 0.2, 1};
 };
@@ -73,9 +73,9 @@ class PlayerCasLimit {
 // Civilian casualty
 class CivCasLimit {
     title = "Mission Failed";
-    subtitle = "Civilian casualty limit reached";
-    description = "The number of civilian casualties was too high. Watch your fire next time.";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "The number of civilian casualties were too high.";
+    pictureBackground = OprLoad;
     picture = "KIA";
     pictureColor[] = {0.6, 0.1, 0.2, 1};
 };
@@ -83,9 +83,9 @@ class CivCasLimit {
 // Withdrawal - Minor success
 class WithdrawalMinorSuccess {
     title = "Minor Success";
-    subtitle = "Tactical withdrawal was called by the CO";
-    description = "The CO called tactical withdrawal ending the mission earlier. Consider this a minor success.";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "The NCO called tactical withdrawal ending the mission earlier. Consider this a minor success.";
+    pictureBackground = OprLoad;
     picture = "mil_flag";
     pictureColor[] = {0, 0.8, 0, 1};
 };
@@ -93,9 +93,9 @@ class WithdrawalMinorSuccess {
 // Withdrawal - Minor fail
 class WithdrawalMinorFail {
     title = "Minor Defeat";
-    subtitle = "Tactical withdrawal was called by the CO";
-    description = "The CO called tactical withdrawal ending the mission earlier. Consider this a minor defeat.";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "The NCO called tactical withdrawal ending the mission earlier. Consider this a minor defeat.";
+    pictureBackground = OprLoad;
     picture = "mil_flag";
     pictureColor[] = {0.9, 0, 0, 1};
 };
@@ -106,9 +106,9 @@ class WithdrawalMinorFail {
 // Generic success
 class BluforWin {
     title = "blufor_faction Win";
-    subtitle = "default_subtitle";
-    description = "default_description";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "blufor_faction defeated redfor_faction";
+    pictureBackground = OprLoad;
     picture = "b_unknown";
     pictureColor[] = {0, 0.3, 0.6, 1};
 };
@@ -116,9 +116,9 @@ class BluforWin {
 // Generic fail
 class RedforWin {
     title = "redfor_faction Win";
-    subtitle = "default_subtitle";
-    description = "default_description";
-    pictureBackground = "";
+    subtitle = OprName;
+    description = "redfor_faction defeated blufor_faction";
+    pictureBackground = OprLoad;
     picture = "o_unknown";
     pictureColor[] = {0.5, 0, 0, 1};
 };
@@ -126,9 +126,9 @@ class RedforWin {
 // Time limit - Blufor win
 class TimeLimitBlufor {
     title = "blufor_faction Win";
-    subtitle = "Time limit reached";
+    subtitle = OprName;
     description = "redfor_faction ran out of time. blufor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "b_unknown";
     pictureColor[] = {0, 0.3, 0.6, 1};
 };
@@ -136,9 +136,9 @@ class TimeLimitBlufor {
 // Time limit - Redfor win
 class TimeLimitRedfor {
     title = "redfor_faction Win";
-    subtitle = "Time limit reached";
+    subtitle = OprName;
     description = "blufor_faction ran out of time. redfor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "o_unknown";
     pictureColor[] = {0.5, 0, 0, 1};
 };
@@ -146,9 +146,9 @@ class TimeLimitRedfor {
 // Time limit - Draw
 class TimeLimitDraw {
     title = "Draw";
-    subtitle = "Time limit reached";
+    subtitle = OprName;
     description = "Time's up. Both sides have the same amount of players. It's a draw.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "o_unknown";
     pictureColor[] = {0.5, 0, 0, 1};
 };
@@ -156,9 +156,9 @@ class TimeLimitDraw {
 // Player casualty - Blufor win
 class PlayerCasLimitBlufor {
     title = "blufor_faction Win";
-    subtitle = "redfor_faction suffered serious casulties";
+    subtitle = OprName;
     description = "redfor_faction suffered serious casualties. blufor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "b_unknown";
     pictureColor[] = {0, 0.3, 0.6, 1};
 };
@@ -166,9 +166,9 @@ class PlayerCasLimitBlufor {
 // Player casualty - Redfor win
 class PlayerCasLimitRedfor {
     title = "redfor_faction Win";
-    subtitle = "blufor_faction suffered serious casulties";
+    subtitle = OprName;
     description = "blufor_faction suffered serious casualties. redfor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "o_unknown";
     pictureColor[] = {0.5, 0, 0, 1};
 };
@@ -176,9 +176,9 @@ class PlayerCasLimitRedfor {
 // Civilian casualty - Blufor win
 class CivCasLimitBlufor {
     title = "blufor_faction Win";
-    subtitle = "Civilian casualty limit reached";
+    subtitle = OprName;
     description = "redfor_faction reached the civilian casualty limit. blufor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "b_unknown";
     pictureColor[] = {0, 0.3, 0.6, 1};
 };
@@ -186,9 +186,9 @@ class CivCasLimitBlufor {
 // Civilian casualty - Redfor win
 class CivCasLimitRedfor {
     title = "redfor_faction Win";
-    subtitle = "Civilian casualty limit reached";
+    subtitle = OprName;
     description = "blufor_faction reached the civilian casualty limit. redfor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "o_unknown";
     pictureColor[] = {0.5, 0, 0, 1};
 };
@@ -196,9 +196,9 @@ class CivCasLimitRedfor {
 // Withdrawal - Blufor win
 class WithdrawalBlufor {
     title = "blufor_faction Win";
-    subtitle = "redfor_faction called tactical withdrawal";
+    subtitle = OprName;
     description = "redfor_faction called tactical withdrawal. blufor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "b_unknown";
     pictureColor[] = {0, 0.3, 0.6, 1};
 };
@@ -206,9 +206,9 @@ class WithdrawalBlufor {
 // Withdrawal - Redfor win
 class WithdrawalRedfor {
     title = "redfor_faction Win";
-    subtitle = "blufor_faction called tactical withdrawal";
+    subtitle = OprName;
     description = "blufor_faction called tactical withdrawal. redfor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "o_unknown";
     pictureColor[] = {0.5, 0, 0, 1};
 };
@@ -216,9 +216,9 @@ class WithdrawalRedfor {
 // Respawn tickets - Blufor win
 class TicketsBlufor {
     title = "blufor_faction Win";
-    subtitle = "redfor_faction ran out of manpower";
+    subtitle = OprName;
     description = "redfor_faction ran out of manpower. blufor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "b_unknown";
     pictureColor[] = {0, 0.3, 0.6, 1};
 };
@@ -226,9 +226,9 @@ class TicketsBlufor {
 // Respawn tickets - Redfor win
 class TicketsRedfor {
     title = "redfor_faction Win";
-    subtitle = "blufor_faction ran out of manpower";
+    subtitle = OprName;
     description = "blufor_faction ran out of manpower. redfor_faction win.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "o_unknown";
     pictureColor[] = {0.5, 0, 0, 1};
 };
@@ -239,9 +239,9 @@ class TicketsRedfor {
 // Game master
 class MissionTerminated {
     title = "Mission Terminated";
-    subtitle = "The mission was terminated by a game master";
+    subtitle = OprName;
     description = "Due to technical reasons the mission was terminated.";
-    pictureBackground = "";
+    pictureBackground = OprLoad;
     picture = "mil_warning";
     pictureColor[] = {0.9, 0, 0, 1};
 };

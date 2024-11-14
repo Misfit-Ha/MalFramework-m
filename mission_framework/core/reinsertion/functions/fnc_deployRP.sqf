@@ -24,11 +24,6 @@ if !(GVARMAIN(moduleRP)) exitWith {
     ["Warning", ["Squad rally point system is not available in this mission"]] call BFUNC(showNotification);
 };
 
-// Check if the rally point is already deployed
-if (GVAR(RPPickUp) && !(isNil {GETVAR((group player),GVAR(RPTent),nil)})) exitWith {
-    ["Warning", ["The RP is already deployed"]] call BFUNC(showNotification);
-};
-
 // Check if there's enemy nearby
 if (allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 50} != -1) exitWith {
     ["Warning", ["Cannot deploy a RP when enemies are nearby"]] call BFUNC(showNotification);
@@ -39,28 +34,27 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
-    if !(GVAR(RPPickUp)) then {
-        // Remove the previous RP tent and delete the coordinates
-        private _id = GETVAR((group player),GVAR(RPTent),nil);
-        private _RPTent = objectFromNetId _id;
+	// Remove the previous RP tent and delete the coordinates
+	private _id = GETVAR((group player),GVAR(RPTent),nil);
+	private _RPTent = objectFromNetId _id;
 
-        deleteVehicle _RPTent;
-        SETPVAR((group player),GVAR(RPTent),nil);
+	deleteVehicle _RPTent;
+	SETPVAR((group player),GVAR(RPTent),nil);
 
-        // Remove previous marker
-        if GVAR(markRP) then {
-            private _marker = GETVAR((group player),GVAR(markerRP),"");
+	// Remove previous marker
+	if GVAR(markRP) then {
+		private _marker = GETVAR((group player),GVAR(markerRP),"");
 
-            if (_marker != "") then {
-                deleteMarker _marker;
-                SETPVAR((group player),GVAR(markerRP),"");
-            };
-        };
-    };
+		if (_marker != "") then {
+			deleteMarker _marker;
+			SETPVAR((group player),GVAR(markerRP),"");
+		};
+	};
 
     // Create RP tent and save the netId so other people can access it
-    private _RPTent = createVehicle [GVAR(RPObject), player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
-    _RPTent setDir (getDir player);
+    private _RPTent = createVehicle [GVAR(RPObject), [0,0,0], [], 0, "CAN_COLLIDE"];
+	_RPTent setPos (player modelToWorld [0,2.5,0]);
+	_RPTent setDir (getDir player);
     private _id = netId _RPTent;
     SETPVAR((group player),GVAR(RPTent),_id);
 

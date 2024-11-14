@@ -11,6 +11,5 @@ PREP(isInside);
 PREP(removeRadios);
 PREP(selectTarget);
 PREP(setSideValue);
-PREP(setViewDistance);
 PREP(startSpectator);
 PREP(stopSpectator);

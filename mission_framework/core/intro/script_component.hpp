@@ -1,12 +1,12 @@
-#define COMPONENT intro_text
-#define COMPONENT_STR QUOTE(Intro text)
+#define COMPONENT intro
+#define COMPONENT_STR QUOTE(Intro)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
 // #define CBA_DEBUG_SYNCHRONOUS
 // #define ENABLE_PERFORMANCE_COUNTERS
 
-#ifdef DEBUG_ENABLED_INTRO_TEXT
+#ifdef DEBUG_ENABLED_INTRO
     #define DEBUG_MODE_FULL
 #endif
 

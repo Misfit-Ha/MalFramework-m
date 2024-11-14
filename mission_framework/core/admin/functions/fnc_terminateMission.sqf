@@ -22,7 +22,7 @@ if !(hasInterface) exitWith {};
 
 [] spawn {
     private _confirm = [
-        "Are you sure you want to terminate the mission?", 
+        "Are you sure you want to end the mission?", 
         "Confirm action",
         true,
         true,
@@ -33,8 +33,8 @@ if !(hasInterface) exitWith {};
         [
             QEGVAR(end_mission,callMission),
             [
-                "MissionTerminated",
-                false,
+                "MissionSuccess",
+                true,
                 playerSide
             ]
         ] call CFUNC(serverEvent);

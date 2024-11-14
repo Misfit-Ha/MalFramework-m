@@ -4,10 +4,6 @@ class GVARMAIN(Main) {  // Main first
     init = PATH_PRE(main);
 };
 
-class GVARMAIN(ACRE) {
-    init = PATH_PRE(acre);
-};
-
 class GVARMAIN(Admin) {
     init = PATH_PRE(admin);
 };
@@ -140,16 +136,16 @@ class GVARMAIN(Snowfall) {
     init = PATH_PRE(snowfall);
 };
 
+class GVARMAIN(Subtitle) {
+    init = PATH_PRE(subtitle);
+};
+
 class GVARMAIN(SupplyDrop) {
     init = PATH_PRE(supply_drop);
 };
 
 class GVARMAIN(TFAR) {
     init = PATH_PRE(tfar);
-};
-
-class GVARMAIN(UnitTracking) {
-    init = PATH_PRE(unit_tracking);
 };
 
 class GVARMAIN(VehicleRespawn) {

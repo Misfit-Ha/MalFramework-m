@@ -44,88 +44,68 @@ if (!isNull getConnectedUAV _unit) then {
     _unit connectTerminalToUAV objNull;
 };
 
-// Screen effects
-"dynamicBlur" ppEffectEnable true;
-"dynamicBlur" ppEffectAdjust [0];
-"dynamicBlur" ppEffectCommit 0;
-"dynamicBlur" ppEffectAdjust [6];
-"dynamicBlur" ppEffectCommit 6;
+[{
+	// Screen effects
+	"TFI_hud_respawnFade" cutText ["", "WHITE OUT", 3];
+}, [], 3] call CFUNC(waitAndExecute);
 
 // Wait for screen effects to finish
+
 [{
-    params ["_unit", "_killer"];
+	params ["_unit", "_killer"];
 
-    // Screen effects
-    cutText ["", "BLACK OUT", 5, true];
+	// Spectator settings
+	private _allowAllSides = false;
+	private _allowFreeCam = false;
 
-    [{
-        params ["_unit", "_killer"];
+	// Set respawn timer
+	switch (GVAR(waveRespawn)) do {
+		case AUTO: {
+			private _diff = CBA_missionTime % GVAR(timer);
+			setPlayerRespawnTime (GVAR(timer) - _diff);
+		};
+		case MANUAL: {
+			[QGVARMAIN(notification_2), ["Info", format ["Remaining respawn waves: %1", GVAR(availableWaves)]]] call CFUNC(localEvent);
+		};
+		default {
+			setPlayerRespawnTime GVAR(timer);
+		};
+	};
 
-        // Spectator settings
-        private _allowAllSides = false;
-        private _allowFreeCam = false;
+	// Check player tickets
+	if (GETVAR(_unit,GVAR(playerTickets),-1) == 0) then {
+		[QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
+		setPlayerRespawnTime 10e10;
 
-        // Set respawn timer
-        switch (GVAR(waveRespawn)) do {
-            case AUTO: {
-                private _diff = CBA_missionTime % GVAR(timer);
-                setPlayerRespawnTime (GVAR(timer) - _diff);
-            };
-            case MANUAL: {
-                [QGVARMAIN(notification_2), ["Info", format ["Remaining respawn waves: %1", GVAR(availableWaves)]]] call CFUNC(localEvent);
-            };
-            default {
-                setPlayerRespawnTime GVAR(timer);
-            };
-        };
+		// Set spectator options
+		_allowAllSides = true;
+		_allowFreeCam = true;
+	};
 
-        // Check player tickets
-        if (GETVAR(_unit,GVAR(playerTickets),-1) == 0) then {
-            [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
-            setPlayerRespawnTime 10e10;
+	// Check side tickets
+	if (GETVAR(_unit,GVAR(playerTickets),-1) == 0 || (GVAR(waveRespawn) == MANUAL && GVAR(availableWaves) == 0)) then {
+		// Transfer leader modules (SL & CO)
+		call FUNC(transferLeaderModules);
 
-            // Set spectator options
-            _allowAllSides = true;
-            _allowFreeCam = true;
-        };
+		// Set spectator options
+		_allowAllSides = true;
+		_allowFreeCam = true;
+	};
 
-        // Check side tickets
-        if (GETVAR(_unit,GVAR(playerTickets),-1) == 0 || (GVAR(waveRespawn) == MANUAL && GVAR(availableWaves) == 0)) then {
-            // Killcam
-            if (GVARMAIN(moduleKillcam)) then {
-                [_unit, _killer] call EFUNC(killcam,initKillcam);
-            };
+	// Save death location of the player
+	SETVAR(_unit,EGVAR(reinsertion,deathPos),getPos _unit);
 
-            // Transfer leader modules (SL & CO)
-            call FUNC(transferLeaderModules);
+	// Init spectator screen
+	[_allowAllSides, _allowFreeCam] call EFUNC(common,startSpectator);
 
-            // Set spectator options
-            _allowAllSides = true;
-            _allowFreeCam = true;
-        };
+	// Check if the mission is ending
+	if (EGVAR(end_mission,outroIsRunning)) then {
+		setPlayerRespawnTime 10e10;
+	};
 
-        // Save death location of the player
-        SETVAR(_unit,EGVAR(reinsertion,deathPos),getPos _unit);
+	// Set player's status
+	SETVAR(_unit,GVAR(isDead),true);
 
-        // Init spectator screen
-        [_allowAllSides, _allowFreeCam] call EFUNC(common,startSpectator);
-
-        // Check if the mission is ending
-        if (EGVAR(end_mission,outroIsRunning)) then {
-            setPlayerRespawnTime 10e10;
-        };
-
-        // Disable snow effect
-        if (GVARMAIN(moduleSnowfall)) then {
-            [EGVAR(snowfall,snowfallPFH)] call CFUNC(removePerFrameHandler);
-        };
-
-        // Set player's status
-        SETVAR(_unit,GVAR(isDead),true);
-
-        // Screen effects
-        cutText  ["", "BLACK IN",  3, true];
-        "dynamicBlur" ppEffectAdjust [0];
-        "dynamicBlur" ppEffectCommit 3;
-    }, [_unit, _killer], 5] call CFUNC(waitAndExecute);
-}, [_unit, _killer], 1] call CFUNC(waitAndExecute);
+	// Screen effects
+	"TFI_hud_respawnFade" cutText ["", "WHITE IN", 0.5];
+}, [_unit, _killer], 8] call CFUNC(waitAndExecute);

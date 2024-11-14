@@ -38,7 +38,7 @@ if !(isNil {GETMVAR(GVAR(HAB),nil)}) then {
 };
 
 // Check if there's enemy nearby
-if (allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 150} != -1) exitWith {
+if (allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 50} != -1) exitWith {
     ["Warning", ["Cannot deploy a HAB when enemies are nearby"]] call BFUNC(showNotification);
 };
 
@@ -48,8 +48,9 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 // Display ACE progress bar
 [12, [], {
     // Create HAB and save the netId so other people can access it
-    private _HAB = createVehicle [GVAR(HABObject), player getPos [8, getDir player], [], 0, "CAN_COLLIDE"];
-    _HAB setDir (getDir player);
+    private _HAB = createVehicle [GVAR(HABObject), [0,0,0], [], 0, "CAN_COLLIDE"];
+	_HAB setPos (player modelToWorld [0,7,0]);
+	_HAB setDir ((getDir player) + 180);
     private _id = netId _HAB;
     SETPMVAR(GVAR(HAB),_id);
 

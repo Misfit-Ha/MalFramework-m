@@ -868,7 +868,7 @@ class MF_AdminMenu
             w = safeZoneW * 0.1125;
             h = safeZoneH * 0.03666667;
             style = 2;
-            text = "Terminate Mission";
+            text = "End Mission";
             borderSize = 0;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorBackgroundActive[] = {0.1294,0.4549,0.6118,1};
