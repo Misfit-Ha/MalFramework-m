@@ -36,7 +36,7 @@ if (_pos isEqualTo "") exitWith {
     private _randomPos = [[[_this, 250]], []] call BFUNC(randomPos);
 
     _randomPos set [2, 1500];
-    player setPosASL _randomPos;
+    player setPos _randomPos;
     [player] call FUNC(addParachute);
 
     [{

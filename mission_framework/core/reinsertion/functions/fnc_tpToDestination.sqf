@@ -12,7 +12,7 @@
         1: ARRAY - Position of the destination
 
     Example:
-        ["Marker's location", getMarkerPos "markerName"] spawn MF_reinsertion_fnc_tpToDestination
+        ["Marker's location", getMarkerPos "markerName"] call MF_reinsertion_fnc_tpToDestination
 
     Returns:
         void
@@ -33,12 +33,12 @@ private _result = [_destination] call FUNC(confirmTP);
 if !(_result) exitWith {};
 
 // Teleporting player
-"MF_blackout"cutText [format ["You are being teleported to %1", _destination], "BLACK OUT", 0.5, true];
+"MF_blackout" cutText [format ["You are being teleported to %1", _destination], "BLACK OUT", 0.5, true];
 
 [{
     player setPosASL _this;
 
     [{
-        "MF_blackout"cutText ["", "BLACK IN", 0.5, true];
+        "MF_blackout" cutText ["", "BLACK IN", 0.5, true];
     }, [], 1] call CFUNC(waitAndExecute);
 }, _position, 2] call CFUNC(waitAndExecute);

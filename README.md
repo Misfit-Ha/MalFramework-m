@@ -11,7 +11,7 @@
     </a>
 </p>
 
-Welcome to **Malbryn's Mission Framework**.
+Welcome to **TFI Mission Making Framework**.
 
 This is a fork of Malbryn's Mission Framework
 This framework was designed to help mission-makers create complex PvE and TvT scenarios in Arma 3.
