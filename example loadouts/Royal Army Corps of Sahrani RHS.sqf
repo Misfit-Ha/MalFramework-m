@@ -1,4 +1,4 @@
-// Royal Army Corps of Sahrani 80s
+// Royal Army Corps of Sahrani
 
 case "LDR_1" : {
 
