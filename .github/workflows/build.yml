@@ -5,19 +5,19 @@ on:
         branches:
             - master
         paths-ignore:
-            - ".github/**"
-            - "docs/**"
-            - "mission_framework/core/main/script_version.hpp"
-            - "tools/**"
-            - ".editorconfig"
-            - ".gitignore"
+            - '.github/**'
+            - 'docs/**'
+            - 'mission_framework/core/main/script_version.hpp'
+            - 'tools/**'
+            - '.editorconfig'
+            - '.gitignore'
 
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout the source code
-              uses: actions/checkout@master
+              uses: actions/checkout@v4
               with:
                   ref: master
                   token: ${{ secrets.ACTION_TOKEN }}
@@ -27,7 +27,7 @@ jobs:
               run: python3 tools/version_bumper.py increment_build push_commit
 
             - name: Upload artifact
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v4
               with:
                   name: MalFramework_v${{ steps.bump-version.outputs.VERSION }}
                   path: |
@@ -41,7 +41,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout the source code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
 
             - name: Release Drafter
               uses: release-drafter/release-drafter@v5
