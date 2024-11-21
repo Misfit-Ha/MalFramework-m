@@ -1,4 +1,4 @@
-// RACS 80s
+// Royal Army Corps of Sahrani 80s
 
 case "LDR_1" : {
 
