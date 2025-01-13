@@ -2155,6 +2155,8 @@ force VCM_ARTYENABLE = false;
 force VCM_HEARINGDISTANCE = 800;
 force VCM_RAGDOLLCHC = 50;
 force VCM_TURRETUNLOAD = false;
+force Vcm_SmokeGrenadeChance = 1;
+
 
 
 // CF_BAI
