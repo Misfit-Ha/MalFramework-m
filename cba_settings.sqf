@@ -2118,12 +2118,12 @@ force Vcm_AISkills_East_spotDistance = 0.7;
 force Vcm_AISkills_East_spotTime = 0.7;
 
 // VCOM AI General Skill
-force Vcm_AISkills_General_AimingAccuracy = 0.45;
-force Vcm_AISkills_General_aimingShake = 0.5;
-force Vcm_AISkills_General_aimingSpeed = 0.65;
+force Vcm_AISkills_General_AimingAccuracy = 0.8;
+force Vcm_AISkills_General_aimingShake = 0.8;
+force Vcm_AISkills_General_aimingSpeed = 0.8;
 force Vcm_AISkills_General_commanding = 1;
 force Vcm_AISkills_General_courage = 1;
-force Vcm_AISkills_General_general = 0.75;
+force Vcm_AISkills_General_general = 0.8;
 force Vcm_AISkills_General_reloadSpeed = 1;
 force Vcm_AISkills_General_spotDistance = 0.8;
 force Vcm_AISkills_General_spotTime = 0.8;
@@ -2152,12 +2152,10 @@ force Vcm_AISkills_West_spotTime = 0.7;
 
 // VCOM SETTINGS
 force VCM_ARTYENABLE = false;
-force VCM_HEARINGDISTANCE = 800;
 force VCM_RAGDOLLCHC = 50;
 force VCM_TURRETUNLOAD = false;
-force Vcm_SmokeGrenadeChance = 1;
-
-
+force Vcm_SmokeGrenadeChance = 0.01;
+force VCM_MINEENABLED = false;
 
 // CF_BAI
 force CF_BAI_subskills_maximum_aimingAccuracy = 0;
