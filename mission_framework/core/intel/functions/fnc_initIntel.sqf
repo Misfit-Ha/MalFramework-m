@@ -42,7 +42,7 @@ if !(hasInterface) exitWith {};
 
 params ["_object", "_id", ["_displayText", "Search for intel"], ["_icon", "holdAction_search_ca"]];
 
-#include "..\..\..\config\intel\intel.sqf"
+#include "..\..\..\config\tools\intel\intel.sqf"
 
 private _intel = GVAR(intelList) select _id;
 private _title = _intel#0;

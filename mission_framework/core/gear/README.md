@@ -4,7 +4,7 @@ _This module handles the players' loadout. There are two options available: usin
 
 _Using pre-defined loadouts means that the mission maker creates loadouts for each role. Meanwhile using Arsenals means that the players are able to create their own loadout which will be saved and reapplied after respawn._
 
-_There are two ways of using Arsenals: the mission maker can place down unrestricted and restricted Arsenals. The restricted Arsenal means that each role has a separate set of items that are available in the Arsenal (e.g. only medics can take personal aid kits). The available items can be configured in `mission_framework\config\gear\arsenal\whitelist.sqf`._
+_There are two ways of using Arsenals: the mission maker can place down unrestricted and restricted Arsenals. The restricted Arsenal means that each role has a separate set of items that are available in the Arsenal (e.g. only medics can take personal aid kits). The available items can be configured in `mission_framework\config\tools\gear\arsenal\whitelist.sqf`._
 
 _Using pre-defined gear means that the mission maker has to create a loadout for each role and export those loadouts from the ACE Arsenal and place them in the gear config of the correct side inside `config\gear\`. Reminder: any side other than BLUFOR goes into REDFOR._
 
@@ -14,7 +14,7 @@ _Alternative loadouts can also be defined in the config file. This way the missi
 ### Restricted Arsenal
 1. _Place down an object (or multiple) which will be the Arsenal_
 2. _In the init field of the object call `MF_gear_fnc_addRestrictedArsenal`_
-3. _Define the whitelist in `mission_framework\config\gear\arsenal\whitelist.sqf`_
+3. _Define the whitelist in `mission_framework\config\tools\gear\arsenal\whitelist.sqf`_
 
 ```
 Arguments:
@@ -26,12 +26,12 @@ Example:
 
 ### Pre-defined loadouts
 1. _Create a loadout in the ACE Arsenal and then click the Export button which will copy it to the clipboard_
-2. _Place the copied string into `mission_framework\config\gear\blufor_gear.sqf` or `mission_framework\config\gear\redfor_gear.sqf` according to the side of the role_
+2. _Place the copied string into `mission_framework\config\tools\gear\blufor_gear.sqf` or `mission_framework\config\tools\gear\redfor_gear.sqf` according to the side of the role_
 3. _The role of the player is initialised via the Player module (check the README of that module for more information)_
 
 ### Alternative loadouts
 1. _Set up the loadout hash in `config.cfg`_
-2. _Set up the alternative loadouts in `mission_framework\config\gear\`._
+2. _Set up the alternative loadouts in `mission_framework\config\tools\gear\`._
 3. _Place down an object that will allow the players to change loadouts and call `MF_gear_fnc_addAlternativeLoadouts` in the init field of the object_
 
 ```

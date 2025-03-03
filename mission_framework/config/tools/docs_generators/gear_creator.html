@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MalFramework - Briefing Builder</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="https://raw.githubusercontent.com/Malbryn/MalFramework/master/mission_framework/core/main/img/icon.png?"
+        />
+        <link
+            rel="stylesheet"
+            href="css/style.css"
+            type="text/css"
+            media="all"
+        />
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/common.js" defer></script>
+        <script src="js/gear_creator.js" defer></script>
+    </head>
+    <body>
+        <div class="header">
+            <a
+                href="https://malbryn.github.io/MalFramework"
+                class="header-banner"
+            >
+                <img
+                    src="https://raw.githubusercontent.com/Malbryn/MalFramework/master/mission_framework/core/main/img/banner.jpg"
+                    alt="malframework_banner"
+                />
+            </a>
+            <h2>Gear Creator</h2>
+        </div>
+        <div class="main-form-container">
+            <form method="dialog" id="main-form">
+                <div class="form-cat card" id="card_0">
+                    <ul>
+                        <div class="card-header submit-button">
+                            <h3>Loadout #0</h3>
+                            <a href="/" class="card-remove">Remove</a>
+                        </div>
+                        <div class="card-body">
+                            <li>
+                                <label>Name</label>
+                                <textarea
+                                    name="card-Name"
+                                    rows="1"
+                                    class="user-input"
+                                    placeholder="MEDIC"
+                                ></textarea>
+                            </li>
+                            <li>
+                                <label>Arsenal export</label>
+                                <textarea
+                                    name="card-export"
+                                    rows="5"
+                                    class="user-input"
+                                    placeholder='[[["hlc_rifle_G36...'
+                                ></textarea>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </form>
+            <div class="nav-buttons">
+                <a href="/" class="nav-button" id="add-form">Add new loadout</a>
+                <button type="submit" id="submit-button" form="main-form">
+                    Generate
+                </button>
+            </div>
+            <div id="output-field">
+                <p>
+                    Navigate to <code>mission_framework\config\tools\gear\</code> and
+                    paste the following into the coresponding .sqf file.
+                </p>
+                <p>
+                    paste BLUFOR player gear in <code>blufor_gear.sqf</code> and
+                    everyone else goes here <code>redfor_gear.sqf</code>
+                </p>
+                <button id="copy-button">Copy to Clipboard</button>
+                <p id="panel">Copied!</p>
+                <textarea
+                    name="output"
+                    id="output"
+                    rows="36"
+                    readonly
+                ></textarea>
+            </div>
+        </div>
+    </body>
+</html>

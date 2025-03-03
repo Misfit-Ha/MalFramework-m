@@ -44,13 +44,18 @@ if (!isNull getConnectedUAV _unit) then {
     _unit connectTerminalToUAV objNull;
 };
 
+// Check respawn tickets
+private _tickets = _unit getVariable ["MF_respawn_playerTickets", -1];
+if !( _tickets == -1 ) then {
+	[_unit, (_tickets - 1) max 0, false] remoteExecCall ["MF_respawn_fnc_setRespawnTickets", 2];
+};
+
 [{
 	// Screen effects
 	"TFI_hud_respawnFade" cutText ["", "WHITE OUT", 3];
 }, [], 3] call CFUNC(waitAndExecute);
 
 // Wait for screen effects to finish
-
 [{
 	params ["_unit", "_killer"];
 

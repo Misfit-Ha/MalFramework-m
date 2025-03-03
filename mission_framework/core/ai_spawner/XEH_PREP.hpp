@@ -1,10 +1,8 @@
 PREP(applyWaypoints);
-PREP(cache);
-PREP(deleteGroup);
 PREP(enemyInRadius);
 PREP(main);
+PREP(mainCheck);
 PREP(pilotKill);
-PREP(playerInRadius);
 PREP(saveCrewMember);
 PREP(saveGroup);
 PREP(saveUnit);

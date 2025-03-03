@@ -54,13 +54,13 @@ clearBackpackCargoGlobal _newVehicle;
 {_newVehicle animateSource [_x, _vehicleAnimationPhases select _forEachIndex];} forEach _vehicleAnimationNames;
 
 if (_vehicleVarName isNotEqualTo "") then {
-    [_newVehicle, _vehicleVarName] remoteExec ["setVehicleVarName", 0, _newVehicle];
+    [_newVehicle, _vehicleVarName] remoteExecCall ["setVehicleVarName", 0, _newVehicle];
     missionNamespace setVariable [_vehicleVarName, _newVehicle, true];
 };
 
 private _crew = [];
 
-{
+_vehicleCrewData apply {
     _newUnit = [_x#0, _newGroup, _tmpRespawnPos, _unlimitedAmmo] call FUNC(spawnUnit);
     _crew pushBack _newUnit;
 
@@ -90,14 +90,14 @@ private _crew = [];
             _newUnit moveInturret [_newVehicle, _x#3]
         };
     };
-} forEach _vehicleCrewData;
+};
 
-private _countCrew = count _crew;
+//private _countCrew = count _crew;
 
-waitUntil {count crew _newVehicle == _countCrew};
+//waitUntil {count crew _newVehicle == _countCrew};
 
-if (_newVehicle isKindOf "Plane" && (_vehiclePos#2 > 50)) then {
-    _newVehicle setPos (_newVehicle modelToWorld [0, 0, 500]);
+if (_newVehicle isKindOf "Plane" && (_vehiclePos#2 > 40)) then {
+    _newVehicle setPos (_newVehicle modelToWorld [0, 0, 1000]);
     _newVehicle engineOn true;
     _newVehicle setVelocity [
         100 * sin _vehicleDir,

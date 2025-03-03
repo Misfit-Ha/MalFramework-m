@@ -22,7 +22,7 @@
         6: STRING - Custom shoulder insignia (Optional, default: "")
 
     Example:
-        [this, "", 0, [false, false, false], "", ""] call MF_player_fnc_initPlayer
+        [this, "", 0, [false, false, false]] call MF_player_fnc_initPlayer
 
     Returns:
         void

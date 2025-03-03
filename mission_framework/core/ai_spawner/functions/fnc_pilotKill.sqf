@@ -26,6 +26,11 @@ private _aircraft = vehicle _pilot;
 private _crew = crew _aircraft;
 private _group = group (_crew#0);
 
-waitUntil {!canMove _aircraft};
-
-deleteVehicleCrew _aircraft;
+[
+    {
+        ( !canMove (_this#0) )
+    },
+    {
+        deleteVehicleCrew (_this#0);
+    }, [_aircraft]
+] call CBA_fnc_waitUntilAndExecute;

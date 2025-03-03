@@ -21,6 +21,12 @@
 if !(hasInterface) exitWith {};
 
 params [["_unit", player], ["_corpse", objNull]];
+
+// TP to respawn pole(s)
+private _tpPolePos = getPosASL (call compile (MF_reinsertion_TPPoles#0));
+_unit setPosASL [(_tpPolePos#0) + 5, (_tpPolePos#1), (_tpPolePos#2) + 0.5];
+_unit setDir (getDir _unit + (_unit getRelDir _tpPolePos));
+
 // Side update
 if (GVARMAIN(isTvT)) then {
     [QEGVAR(common,sideValueSet), [playerSide, 0, 1, 0]] call CFUNC(serverEvent);
@@ -40,11 +46,6 @@ cutText ["", "BLACK FADED", 5, true];
 
     // Screen effects
     cutText  ["", "BLACK IN", 5, true];
-    "dynamicBlur" ppEffectEnable true;
-    "dynamicBlur" ppEffectAdjust [6];
-    "dynamicBlur" ppEffectCommit 0;
-    "dynamicBlur" ppEffectAdjust [0.0];
-    "dynamicBlur" ppEffectCommit 3;
 
     // Stop spectator screen
     call EFUNC(common,stopSpectator);
@@ -73,7 +74,7 @@ cutText ["", "BLACK FADED", 5, true];
 
     // Reassign curator
     if (call EFUNC(admin,isGameMaster)) then {
-        [QEGVAR(admin,curatorReassigned), [_unit]] call CFUNC(serverEvent);
+        [_unit] remoteExecCall ["MF_admin_fnc_handleCuratorReassigned", 2];
     };
 
     // Delete old body
@@ -88,13 +89,9 @@ cutText ["", "BLACK FADED", 5, true];
         };
     };
 
+    // Show how many tickets player have
+    [format ["Respawns available:<br/>%1", (_unit getVariable ["MF_respawn_playerTickets", -1]) - 1], 2, _unit, 12] remoteExecCall ["ace_common_fnc_displaytextstructured", _unit];
+
     // Register player's status
     SETVAR(_unit,GVAR(isDead),false);
-
-    // Remaining respawn tickets
-    private _tickets = GETVAR(_unit,GVAR(playerTickets),-1);
-
-    if (_tickets == -1) exitWith {};
-
-    [_unit, _tickets - 1] call FUNC(setRespawnTickets);
 }, [_unit, _corpse], 1] call CFUNC(waitAndExecute);

@@ -1,52 +1,200 @@
-# CBRN
-## Description:
-_This module adds CBRN threat zones that can injure the players (AI units will be unaffected) if they don't have the sufficient level of protection._
+# diwako_cbrn
 
-_The module utilises the Chemical Detector from the Contact DLC to detect and display the threat level._
+Mission script to add an arcadey cbrn mechanic into an Arma mission. This script is not meant to be realistic, as breathing in 2 seconds of some bad smell air causing death is not fun on a gameplay level. However, you can tune down the max cbrn damage to get this effect if you really wish!\
+cbrn threats are abstracted into 4 threat levels which are color coded by green, yellow, orange and red.
 
-_It supports multiple contamination zones, however it might be heavy on the performance so don't go overboard with them. Also don't place down overlapping zones._
+Threat level diagram, all threats level requirements stack:
 
-## Usage:
-1. _Place down an object (can be a normal object or a dummy one like the invisible heliped). This object will be the center of the contamination zone._
-2. _Call `MF_cbrn_fnc_createZone` in the init field of the object._
+1. Green: No cbrn gear need
+2. Yellow: Gas mask needed
+3. Orange: Supply of fresh air needed
+4. Red: Full cbrn suit needed
 
+This script comes with a custom gasmask overlay, breathing sounds and custom low oxygen warning sounds.
+
+## Custom cbrn damage
+
+This script features custom cbrn damage values, it is just a flat number and when you go over this number, you die. As cbrn damage takes quite some time to decrease hence why it is not simulated and cbrn damage stays until respawn.\
+If a unit reaches 50% of the maximum cbrn damage it will be informed that from now on the cbrn damage will go up passively even if full cbrn protection is present. The unit needs to decontaminate at a small decon shower. Walk up to the shower, activate it via ACE interactions and stand in it until you receive a new message!\
+Warning: Water is finite, make sure to turn off the shower again!
+
+## Functions for mission makers
+
+There is only one function that is public to use for mission makers. It is the function to create zones, recommended to do so via `initServer.sqf`.
+
+```sqf
+/*
+ * Arguments:
+ * 0: Center of zone, position array
+ * 1: Threatlevel between 0 and 4.9, float
+ * 2: Radius of full effect, float
+ * 3: Radius of partial effect, float
+ *
+ * Returns trigger/zone object
+ */
+[getMarkerPos "marker_0", 1.5, 25, 25] call cbrn_fnc_createZone;
 ```
-Arguments:
-    0: OBJECT - Object that is the center of the zone (use 'Land_HelipadEmpty_F' if you need an invisible object)
-    1: SCALAR - Radius of the zone in metres
-    2: SCALAR - Radius of the inner circle (= max. contamination) (Optional, default: 0)
-                The level of contamination will gradually get lower the further we go from this area
-    3: SCALAR - Required level of protection for full protection (possible values: 1, 2, 3) (Optional, default: 1)
-                LVL 1 - Mask
-                LVL 2 - Uniform, mask
-                LVL 3 - Breathing apparatus, uniform, mask
-    4: SCALAR - Level of contamination (possible values: 0.00 - 9.99) (Optional, default: 9.99)
 
-Example:
-    [this, 200, 50, 2, 3.6] call MF_cbrn_fnc_createZone
+The returned object is a trigger. With it you can either just leave it as is, attach it to some object, or toggle the zone on or off (it is on by default).
+
+To turn the zone off set the variable `cbrn_active` to false, as such:
+
+```sqf
+_trg setVariable ["cbrn_active", false, true];
 ```
 
-_Notes:_
- - _Each zone has an inner circle, The contamination level is maximum inside the inner circle. The area outside of the inner circle (but within the zone itself) has lower contamination level which depends on the distance._
- - _There are 3 levels of protection that can be required by the zone. Level 1 means the correct type of gas mask will provide enough protection. Level 2 means the correct type of gas mask and uniform are required for full protection. Level 3 means the correct type of gas mask, uniform and breathing apparatus are needed for survival. The protictive gear types are defined in the config._
- - _Vehicle types can also be defined as protected, meaning that players won't need protective gear inside them. However, they will be affected if they turn out._
- - _The damage dealt depends on the level of contamination. For reference, a player with no protective gear inside a zone with a contamination level 9.99 will pass out after 5 minutes due to blood loss._
- - _Having deficient protective gear doesn't mean the player will recieve the maximum damage. For example, having a gas mask (and no protective uniform) in a Level 2 zone will halve the damage._
- - _The symptoms are the following: blood loss, fatigue and pain._
- - _There is a time limit after which the player starts taking damage. By default it is 30 seconds. It means the player can spend 60 seconds in any zone without the proper gear before taking damage. This gives the players a chance to equip their protective gear or leave the area. It can be adjusted in the config. It also refeshes after the player was fully healed._
- - _Players can take the Chemical Detector to detect the contamination level. By default, it will start beeping when it detects minimal contamination level. However, it can configured in the ACE self-interaction menu (Equipment sub-menu) to only make sound when the contamination level reaches a certain threshold. It can also be muted._
+**WARNING**: Deleting the trigger object is not supported. First disable the zone, wait a few seconds for the value to sync in mp and then delete the trigger if you really must!
 
-## Config:
-_Description of each value set in the config file._
+## Optional features
 
-| Variable             | Variable type | Default value                              | Game mode | Description                                                       |
-|:-------------------- |:------------- |:------------------------------------------ |:--------- |:----------------------------------------------------------------- |
-| `timeLimit`          | `SCALAR`       | `60`                                      | Coop/TvT  | The time limit in seconds after which the player (with insufficient protection) starts taking damage |
-| `protectiveMasks`    | `ARRAY`        | `["G_AirPurifyingRespirator_02_black_F"]` | Coop/TvT  | Masks that provide protection (LVL 1)                             |
-| `protectiveUniforms` | `ARRAY`        | `["U_C_CBRN_Suit_01_Blue_F"]`             | Coop/TvT  | Uniforms that provide protection (LVL 2)                          |
-| `protectiveBackpack` | `ARRAY`        | `["B_CombinationUnitRespirator_01_F"]`    | Coop/TvT  | Backpacks (= breathing apparatus) that provide protection (LVL 3) |
-| `protectiveVehicles` | `ARRAY`        | `["B_APC_Wheeled_01_cannon_F"]`           | Coop/TvT  | Vehicles that provide protection (LVL 3)                          |
+All of the following options are add-ons that can be disabled and configured in the `config.sqf`.
 
-## Supported mission type(s):
- - Coop
- - TvT
+### Mask Fogging
+
+If enabled, masks can begin to fog up on the inside. While wearing a mask, the framework tracks the time a player has worn a gas mask for.
+
+After five minutes, the mask will start visibly fogging up until the uptime reaches ten minutes, at which the overlay will have reached full opacity.
+
+Taking the gas mask off causes the fog to fade over time. By default the mask airs out five times as quickly as it fogs up.
+
+### Air conditioning
+
+You can define items as air conditioners - they modify the accumulation of the fogging when worn. By default, wearing such an item *halves* the accumulation of fog. By default the combination respirator is considered an air conditioner, in addition to it being considered a source of oxygen.
+
+### Fatigue
+
+If enabled, short term fatigue loss will cause masks to fog up far quicker. Depending on your settings, either the short term stamina of `ACE Advanced Fatigue` or the default ArmA 3 stamina bar will be used.
+
+By default fatigue can add up to a whole second per tick. This value is also affected by the AC effect.
+
+### Geiger counters
+
+Also added was the ability to designate items as geiger counters. By default this behavior is added to the Micro DAGR. These play their sounds in 3D space.
+
+### Compatible with KAT Medical
+
+The script will use some of the chemical warfare function from V2.13.0. This includes, intoxication and gas mask filter. 
+
+## Requirements
+
+CBA_A3 and ACE3
+
+## Variables
+
+There are several variables preset for Vanilla and ACE3 gear, those can be overwritten either directly in the files or in your own `postinit` function or `init.sqf` file
+
+### cbrn_maxDamage
+
+Integer how much damage can be absorbed before death.\
+If 50% of damage is reached passive contamination starts that needs to be stopped via decontamination showers!\
+default: 100
+
+### cbrn_masks
+
+Array of strings, warning: CaSeSeNsItiVe!\
+Array of facewear/goggles which are to be considered gasmasks.\
+Default: Array of all vanilla Gasmasks and some select mod ones
+
+### cbrn_backpacks
+
+Array of strings, warning: CaSeSeNsItiVe!\
+Array of backpacks which are to be considered oxygen tanks.\
+Default: Array containing self-contained oxygen tank and combination respirator unit
+
+### cbrn_conditioning
+Array of strings, warning: CaSeSeNsItiVe!\
+Array of backpacks which are to be considered air conditioning units.\
+default: Combination Respirator Unit
+
+### cbrn_suits
+
+Array of strings, warning: CaSeSeNsItiVe!\
+Array of uniforms which are to be considered cbrn suits.\
+Default: Array of all Vanilla cbrn suits
+
+### cbrn_threatMeterItem
+
+String of item name that should be considered as threat meter item.\
+Default: "ACE_microDAGR"
+
+### cbrn_threatGeiger
+String of item name that should be considered as a geiger counter.\
+Default: "ACE_microDAGR"
+
+### cbrn_maxOxygenTime
+
+Float, value in seconds of how long one oxygen container should last.\
+Default: 30 Minutes
+
+### cbrn_allowPassiveDamage
+
+Boolean value if the passive contamination should occur after the 50% damage threshold
+
+### cbrn_deconWaterTime
+
+Float, value in seconds. Maximum total runtime
+
+### cbrn_healingRate
+
+Float, rate how much of the exposure damage is healed each second. **Healing is stopped if value is 0 or below, or player is experiencing passive contamination!**
+
+### cbrn_vehicles
+
+List of vehicle and proofing value pairs. First entry of a pair is the vehicle class or 3den object name as string, second entry is the proofing values, same measurements as threatlevel.
+
+### cbrn_foggingEnabled
+
+Boolean, whether fogging should be enabled or not.\
+Disabling this disables the whole fogging routine.\
+default: true
+
+### cbrn_fogStartTime
+
+Float, value after which the mask overlay starts being shown.\
+Once the mask uptime of a unit reaches this value, the fogging overlay will be created and slowly increase in opacity until the uptime reaches `cbrn_fogMaxTime`.\
+default: 5 minutes
+
+### cbrn_fogMaxTime
+
+Float, value after which the mask overlay is fully opaque.\
+Once the mask uptime of a unit reaches this value, the fogging overlay is shown in full opacity. The mask overlay has transparent areas and is **not** meant to completely block vision.\
+default: 5 minutes
+
+### cbrn_fogAccumulationCoef
+
+Float, value that modifies the fog accumulation when the unit is wearing a backpack considered to be an air conditioner.\
+Lower is better, values over 1 impact performance negatively and cause faster fog build up.\
+default: 0.5
+
+### cbrn_fogFadeCoef
+
+Float, value that modifies the fog fading when the unit has previously worn, but is no longer, wearing a gas mask.
+Higher is better.\
+default: 5
+
+### cbrn_fogFatigueEnabled
+
+Boolean, whether fatigue should contribute to fogging or not. Checks either against the ACE advanced fatigue system (if enabled) or the vanilla stamina system.\
+default: true
+
+### cbrn_fogFatigueCoef
+
+Float, value that modifies how much fatigue will cause the mask to fog up more.\
+Fatigue is returned in the range of 0 - 1; therefore a fatigue value of 1 and coefficient of 1 can add up to another second of uptime per second.\
+Higher makes fatigue build up far more fog, lower makes fatigue matter less in terms of fogging.\
+default: 1
+
+### cbrn_kat_enabled
+
+Boolean, the config will detect wheather KAT - Advanced Medical is installed or not.
+True will cause the script to read and use KAT chemical warfare data and injuries when neccessary.
+default: auto
+
+# Contributors
+
+diwako - Main dev  
+Celene - Mask fogging, geiger type
+Alan245 - KAT Compatibility
+
+# Links
+BI Thread: https://forums.bohemia.net/forums/topic/225668-cbrn-script/

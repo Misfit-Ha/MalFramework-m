@@ -49,7 +49,7 @@ if ((_a > 0 && _a <= 90) || (_a > 180 && _a <= 270)) then {
 };
 
 private _customColour = GVAR(colour);
-private _colours = ["colorBlack", "colorBlack", _customColour, "colorGreen", _customColour, /**/"colorBlack"/**/, _customColour, _customColour];
+private _colours = ["colorBlack", "colorBlack", _customColour, "colorBlack", _customColour, /**/"colorBlack"/**/, _customColour, _customColour];
 
 {
     private ["_i", "_s", "_w", "_bw"];

@@ -14,5 +14,5 @@ class RscTitles {
     #include "..\ao_limit\dialog\RscAOLimit.hpp"
     #include "..\countdown\dialog\RscCountdown.hpp"
     #include "..\setup_timer\dialog\RscSetupTimer.hpp"
-    #include "..\cbrn\dialog\RscMaskOverlay.hpp"
+    #include "..\cbrn\rscTitles.hpp"
 };

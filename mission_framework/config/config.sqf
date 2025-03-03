@@ -3,18 +3,18 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 
 // Debug mode
-GVARMAIN(debugMode) = true;  // Debug mode for mission/framework development (turn it off before deploying the mission)
+GVARMAIN(debugMode) = false;  // Debug mode for mission/framework development (turn it off before deploying the mission)
 
 // Mission type
 GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 
 // End condition - Time limit
 GVARMAIN(moduleTimeLimit) = false;  // Coop & TvT
-EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
-EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
+EGVAR(end_conditions,timeLimit) = 125 MINUTES;  // Mission time limit in seconds
+EGVAR(end_conditions,favouredSide) = 0;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
 EGVAR(end_conditions,notificationTime) = 10 MINUTES;  // Send a notification to each player X seconds before the time limit (-1: disabled)
 EGVAR(end_conditions,timeLimitCheckEnabled) = true;  // Enable time limit check for players
-EGVAR(end_conditions,stagingEnabled) = false;  // Coop: Don't start the mission timer until the players leave the staging area
+EGVAR(end_conditions,stagingEnabled) = true;  // Coop: Don't start the mission timer until the players leave the staging area
 EGVAR(end_conditions,stagingAreaMarker) = "TFI_mrk_opr_staging";  // Coop: Marker for the staging area
 
 // End condition - Player casualty limit
@@ -47,20 +47,23 @@ GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be comple
 
 // Gear
 GVARMAIN(moduleGear) = true;  // Coop & TvT
+EGVAR(gear,arsenalAtPole) = true;  // Allows access to arsenal around starting pole(s)
+EGVAR(gear,arsenalAtPoleDistance) = 300;  // How far arsenal will be available in meters
 EGVAR(gear,useArsenalWhitelist) = false;  // Allows the creation of arsenal objects with custom whitelist based on the player's role
 EGVAR(gear,saveGearInArsenal) = true;  // Should the player's gear be saved (and applied after respawn) after the arsenal is closed
 EGVAR(gear,removeDefaultGear) = false;  // Should the default gear (that the unit has in the editor) be removed if pre-defined gear is disabled
 EGVAR(gear,useLoadouts) = false;  // Apply the pre-defined gear (defined in config\gear\)
 EGVAR(gear,enableAlternativeLoadouts) = false;  // Enable alternative loadouts
 EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (defined in config\gear\)
-    ["SL", ["SL-2", "SL-3"]],
-    ["AR", ["AR-2"]]
+    //["SL", ["SL-2", "SL-3"]],
+    //["AR", ["AR-2"]],
+    ["Defualt", ["Defualt"]]
 ];
 
 // Respawn
 GVARMAIN(moduleRespawn) = true;  // Coop & TvT
 EGVAR(respawn,timer) = 30;  // Respawn timer in seconds
-EGVAR(respawn,tickets) = -1;  // Individual respawn tickets (-1: tickets disabled)
+EGVAR(respawn,tickets) = 3;  // Individual respawn tickets, 3 tickets means 3 lives, in other words, 1 life at start plus 2 additional respawns (-1: tickets disabled)
 EGVAR(respawn,waveRespawn) = OFF;  // Players will respawn in waves (OFF, AUTO: run automatically, MANUAL: requested by CO)
 EGVAR(respawn,availableWaves) = 1;  // Number of available respawn waves (MANUAL respawn waves only)
 EGVAR(respawn,removePlayerCorpses) = true;  // Remove the players' corpses upon respawn
@@ -75,6 +78,7 @@ GVARMAIN(timeAcceleration) = 1;  // Value between 0.1 and 120
 GVARMAIN(useACESpectator) = true;  // Use the ACE spectator camera instead of the vanilla one (for dead players)
 
 // AI skills
+GVARMAIN(moduleAISkill) = true;
 EGVAR(ai_skills,skillSet) = [
     0.5,  // General (Higher = Better)
     0.5,  // Commanding (Higher = Better)
@@ -99,7 +103,7 @@ GVARMAIN(moduleFlyby) = false;  // Coop
 GVARMAIN(moduleAOLimit) = false;  // Coop & TvT
 EGVAR(ao_limit,timerLand) = 10;  // Timer for any land based vehicle/unit (-1: disabled)
 EGVAR(ao_limit,timerAir) = -1;  // Timer for any air vehicle (-1: disabled)
-EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";  // AO limit marker for every player
+EGVAR(ao_limit,aoMarkerAll) = "TFI_mrk_opr_ao";  // AO limit marker for every player
 EGVAR(ao_limit,aoMarkerBlufor) = "mrk_aoLimitBlufor";  // AO limit marker for BLUFOR players
 EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";  // AO limit marker for REDFOR players
 
@@ -108,11 +112,27 @@ GVARMAIN(moduleBriefing) = false;  // Coop & TvT
 
 // CBRN
 GVARMAIN(moduleCBRN) = false;  // Coop & TvT
-EGVAR(cbrn,timeLimit) = 30;  // The time limit in seconds after which the player (with insufficient protection) starts taking damage
-EGVAR(cbrn,protectiveMasks) = ["G_AirPurifyingRespirator_02_black_F"];  // Masks that provide protection (LVL 1)
-EGVAR(cbrn,protectiveUniforms) = ["U_C_CBRN_Suit_01_Blue_F"];  // Uniforms that provide protection (LVL 2)
-EGVAR(cbrn,protectiveBackpack) = ["B_CombinationUnitRespirator_01_F"];  // Backpacks (= breathing apparatus) that provide protection (LVL 3)
-EGVAR(cbrn,protectiveVehicles) = ["B_APC_Wheeled_01_cannon_F"];  // Vehicles that provide protection (LVL 3)
+cbrn_maxDamage = 100; // how much damage before death, 50% starts internal contamination
+cbrn_backpacks = ["B_SCBA_01_F", "B_CombinationUnitRespirator_01_F", "M2_Flamethrower_Balloons_Pipe"]; // backpacks considered oxygen tanks
+cbrn_conditioning = ["B_CombinationUnitRespirator_01_F"]; // backpacks considered air conditioners; help reduce fogging
+cbrn_suits = ["U_C_CBRN_Suit_01_Blue_F", "U_B_CBRN_Suit_01_MTP_F", "U_B_CBRN_Suit_01_Tropic_F", "U_C_CBRN_Suit_01_White_F", "U_B_CBRN_Suit_01_Wdl_F", "U_I_CBRN_Suit_01_AAF_F", "U_I_E_CBRN_Suit_01_EAF_F", "U_O_Wetsuit", "U_B_Wetsuit", "U_I_Wetsuit", "PLP_U_I_Wetsuit_inv", "PLP_U_O_Wetsuit_inv", "PLP_U_B_Wetsuit_inv"]; // uniforms considered CBRN suits
+cbrn_masks = ["G_AirPurifyingRespirator_02_black_F", "G_AirPurifyingRespirator_02_olive_F", "G_AirPurifyingRespirator_02_sand_F", "G_AirPurifyingRespirator_01_F", "G_RegulatorMask_F", "XOF_G_Balaclava3_SND", "XOF_G_Balaclava3", "XOF_G_Balaclava3_GRY", "XOF_G_Balaclava3_GRN", "XOF_G_Balaclava3_OLI", "XOF_G_Balaclava3_WHT", "XOF_G_GP9"]; // goggles considered gas masks (filters included)
+cbrn_threatMeteritem = "ACE_HuntIR_monitor"; // Item that is considered a threat meter
+cbrn_threatGeiger = "ACE_HuntIR_monitor"; // Item that is considered a geiger counter
+cbrn_maxOxygenTime = 60 * 30; // after how much time does the air run out in an oxygen tank (in seconds!)
+cbrn_allowPassiveDamage = true; // should auto damage occur after 50% damage threshold has been reached?
+cbrn_deconWaterTime = 60 * 2; // time in seconds how much water a decon shower has, in seconds
+cbrn_healingRate = 0; // healing rate for each second, does nothing if 0 or below, or player while player is experiencing passive contamination
+cbrn_foggingEnabled = true; // enables or disables fogging entirely
+cbrn_fogStartTime = 60 * 5; // time after which the gas mask starts fogging up; default 5 mins
+cbrn_fogMaxTime = 60 * 10; // maximum time after which the gas mask is fully fogged up; default 10 mins
+cbrn_fogAccumulationCoef = 0.5; // fog accumulation coefficient; used when unit wears a backpack considered an air conditioner; lower means fogging accumulates slower, 0 stops it entirely; default 0.5
+cbrn_fogFadeCoef = 5; // fog fading coefficient; is used in multiplication with the frame-time delta in fogPFH when the gasmask is taken off; higher means accumulated fog will fade faster; default 5
+cbrn_fogMaxAlpha = 1; // max fog visibillity; value from 0 to 1, decimals allowed. Sets the maximum visibility of the fog layer; default 1
+cbrn_fogFatigueEnabled = true; // whether or not fogging takes Fatigue into account
+cbrn_fogFatigueCoef = 1; // Fatigue coefficient; is used in multiplication with the ACE fatigue value; higher means quicker fogging if unit has any fatigue
+cbrn_vehicles = [ /*["vroomvroom", 5], ["B_Quadbike_01_F", 1]*/ ]; // configure vehicles to be CBRN proof, list of arrays, first entry vehicle class or 3den editor object name as string, second entry amount of proofing. The amount is the same measurement as zone threat levels
+cbrn_kat_enabled = false; // Configuration for KAT - Advanced Medical
 
 // Countdown
 GVARMAIN(moduleCountdown) = false;  // Coop & TvT
@@ -147,10 +167,10 @@ EGVAR(intro,line5) = "TEST Location";  // Line 5, Location e.g. (Greece - Altis 
 
 // JIP
 GVARMAIN(moduleJIP) = true;  // Coop & TvT
-EGVAR(jip,jipTimer) = 10 MINUTES;  // For how long the TP is available after joining the mission
+EGVAR(jip,jipTimer) = 20 MINUTES;  // For how long the TP is available after joining the mission
 
 // Killcam
-GVARMAIN(moduleKillcam) = true;  // Coop & TvT
+GVARMAIN(moduleKillcam) = false;  // Coop & TvT
 
 // Logistics
 GVARMAIN(moduleLogistics) = false;  // Coop & TvT
@@ -159,7 +179,7 @@ GVARMAIN(moduleLogistics) = false;  // Coop & TvT
 GVARMAIN(moduleLOSTool) = false;  // Coop & TvT
 
 // Map cover
-GVARMAIN(moduleMapCover) = true;  // Coop & TvT
+GVARMAIN(moduleMapCover) = false;  // Coop & TvT
 EGVAR(map_cover,aoMarker) = "TFI_mrk_opr_ao";  // Name of the AO marker
 EGVAR(map_cover,colour) = "ColorBlack";  // Colour of the covered area
 
@@ -175,7 +195,7 @@ EGVAR(marker_side,markersRedfor) = ["mrk_redfor"];  // REDFOR markers
 GVARMAIN(moduleMortar) = false;  // Coop
 
 // ORBAT
-GVARMAIN(moduleOrbat) = false;  // Coop & TvT
+GVARMAIN(moduleOrbat) = true;  // Coop & TvT
 
 // Reinsertion
 GVARMAIN(moduleHAB) = true;  // Coop
@@ -204,7 +224,7 @@ EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";  // Setup area for the REDF
 EGVAR(setup_timer,timerRedfor) = 60;  // Setup timer for the REDFOR side
 
 // Snowfall
-GVARMAIN(moduleSnowfall) = true;  // Coop & TvT
+GVARMAIN(moduleSnowfall) = false;  // Coop & TvT
 EGVAR(snowfall,coldBreath) = true;  // Enable cold breath effect
 EGVAR(snowfall,snowRadius) = 30;  // Snow effect radius around the players
 EGVAR(snowfall,snowColor) = [0.1, 0.1, 0.1, 0.2];  // Snow drop color, In RGBA format
@@ -217,7 +237,13 @@ EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";  // Plane or helic
 EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of smokes (night ops)
 
 // TFAR
-GVARMAIN(moduleTFAR) = false;  // Coop & TvT
+GVARMAIN(moduleTFAR) = true;  // Coop & TvT
+
+// Undercover
+GVARMAIN(moduleUndercover) = false;  // Coop & TvT
+EGVAR(undercover,specialAreas) = false;  // Enable a function to compromise or hide players in designated areas.
+EGVAR(undercover,deniedAreasArray) = ["deniedArea_01", "deniedArea_02", "deniedArea_03", "deniedArea_04", "deniedArea_05", "deniedArea_06"];  // Denied zones markers name.
+EGVAR(undercover,safeAreasArray) = ["safeArea_01", "safeArea_02"];  // Safe zones markers name.
 
 // Vehicle respawn
 GVARMAIN(moduleVehicleRespawn) = false;  // Coop & TvT

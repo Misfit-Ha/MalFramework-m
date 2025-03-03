@@ -39,9 +39,9 @@ _vehicleData pushBack (getObjectTextures _vehicle);
 private _thisAnimationNames = animationNames _vehicle;
 private _thisAnimationPhases = [];
 
-{
+_thisAnimationNames apply {
     _thisAnimationPhases pushBack (_vehicle animationPhase _x);
-} forEach _thisAnimationNames;
+};
 
 _vehicleData pushBack (_thisAnimationNames);
 _vehicleData pushBack (_thisAnimationPhases);
@@ -49,9 +49,9 @@ _vehicleData pushBack vehicleVarName _vehicle;
 
 private _crewData = [];
 
-{
+(fullCrew _vehicle) apply {
     _crewData pushBack ([_x] call FUNC(saveCrewMember));
-} forEach (fullCrew _vehicle);
+};
 
 _vehicleData pushBack _crewData;
 

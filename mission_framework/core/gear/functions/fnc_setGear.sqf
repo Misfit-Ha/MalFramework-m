@@ -6,14 +6,14 @@
 
     Description:
         Sets the unit's gear according to their role.
-        Roles and their gear are defined in under mission_framework\config\gear\gear.sqf file.
+        Roles and their gear are defined in under mission_framework\config\tools\gear\gear.sqf file.
 
     Arguments:
         0: OBJECT - Player unit
         1: STRING - Role of the unit
 
     Example:
-        [this, "SL"] call MF_gear_fnc_setGear
+        [this, "Defualt"] call MF_gear_fnc_setGear
 
     Returns:
         void
@@ -21,7 +21,7 @@
 
 params [
     ["_unit", objNull, [objNull]],
-    ["_role", "", [""]]
+    ["_role", "Defualt", ["Defualt"]]
 ];
 
 // Check input
@@ -77,7 +77,7 @@ private _gear = [];
 if (GVAR(useLoadouts)) then {
     if ((side _unit) == west) then {
         switch _role do {
-            #include "..\..\..\config\gear\blufor_gear.sqf"
+            #include "..\..\..\config\tools\gear\blufor_gear.sqf"
 
             // Customised loadout saved in Arsenal
             case "CUSTOM" : {
@@ -99,7 +99,7 @@ if (GVAR(useLoadouts)) then {
         };
     } else {
         switch _role do {
-            #include "..\..\..\config\gear\redfor_gear.sqf"
+            #include "..\..\..\config\tools\gear\redfor_gear.sqf"
 
             // Customised loadout saved in Arsenal
             case "CUSTOM" : {

@@ -44,8 +44,8 @@ if (hasInterface) then {
     GVAR(outroIsRunning) = true;
 
     // Disable damage (dying during the closing shot breaks the end screen)
-    player allowDamage false;
-    (vehicle player) allowDamage false;
+    [player, false] remoteExecCall ["allowDamage"];
+    [vehicle player, false] remoteExecCall ["allowDamage"];
 
     // Cancel pending tasks
     private _taskList = player call BFUNC(tasksUnit);

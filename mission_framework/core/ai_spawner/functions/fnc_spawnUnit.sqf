@@ -21,23 +21,32 @@
 
 if !(isServer) exitWith {};
 
-params ["_unitData", "_newGroup", "_spawnPos", ["_unlimitedAmmo", true, [false]]];
+params ["_unitData", "_newGroup", "_spawnPos", ["_unlimitedAmmo", true]];
 _unitData params ["_unitType", "_unitPos", "_unitLoadout", "_unitSkill", "_unitVarName"];
 
 private _newUnit = _newGroup createUnit [_unitType, _spawnPos, [], 0, "CAN_COLLIDE"];
 
-waitUntil {alive _newUnit};
+[
+    {
+        params ["_newUnit"];
+        ( alive _newUnit )
+    },
+    {
+        params ["_newUnit", "_unitData", "_newGroup", "_spawnPos", ["_unlimitedAmmo", true]];
+        _unitData params ["_unitType", "_unitPos", "_unitLoadout", "_unitSkill", "_unitVarName"];
 
-_newUnit setUnitLoadout _unitLoadout;
-_newUnit setSkill _unitSkill;
+        _newUnit setUnitLoadout _unitLoadout;
+        _newUnit setSkill _unitSkill;
 
-if (_unitVarName isNotEqualTo "") then {
-    [_newUnit, _unitVarName] remoteExec ["setVehicleVarName", 0, _newUnit];
-    missionNamespace setVariable [_unitVarName, _newUnit, true];
-};
+        if (_unitVarName isNotEqualTo "") then {
+            [_newUnit, _unitVarName] remoteExecCall ["setVehicleVarName", 0, _newUnit];
+            missionNamespace setVariable [_unitVarName, _newUnit, true];
+        };
 
-if (_unlimitedAmmo) then {
-    [_newUnit] call FUNC(unlimitedAmmo);
-};
+        if (_unlimitedAmmo) then {
+            [_newUnit] call FUNC(unlimitedAmmo);
+        };
+    }, []
+] call CBA_fnc_waitUntilAndExecute;
 
 _newUnit

@@ -31,18 +31,13 @@ private _vehicle = objNull;
 private _infantryData = [];
 private _vehicleData = [];
 
-// Freeze units and get their info
-{
+// get units info
+(units _unit) apply {
     _vehicle = objectParent _x;
-
-    _x disableAI "ALL";
-    _x enableSimulationGlobal false;
 
     if (isNull _vehicle) then {
         _infantryData pushBack ([_x] call FUNC(saveUnit));
     } else {
-        _vehicle enableSimulationGlobal false;
-
         // Normal vehicles have drivers
         if (driver _vehicle == _x) then {
             _vehicleData pushBack ([_vehicle] call FUNC(saveVehicle));
@@ -53,6 +48,6 @@ private _vehicleData = [];
             };
         };
     };
-} forEach (units _unit);
+};
 
 [side _unit, _vehicleData, _infantryData, _waypoints]

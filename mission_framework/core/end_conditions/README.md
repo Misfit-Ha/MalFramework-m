@@ -24,7 +24,7 @@ Example:
     ["t1", true] call MF_end_conditions_fnc_registerTask
 ```
 
-_**Important:** don't forget to customise the end screen in `config\debriefing\CfgDebriefing.hpp`._
+_**Important:** don't forget to customise the end screen in `config\debriefing\tools\CfgDebriefing.hpp`._
 
 ## Config:
 _Description of each value set in the config file._

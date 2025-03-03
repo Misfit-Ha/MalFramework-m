@@ -19,3 +19,4 @@ _Description of each value set in the config file._
 
 ## Supported mission type(s):
  - Coop
+ - TvT

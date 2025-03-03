@@ -68,8 +68,8 @@ class GVARMAIN(Intel) {
     init = PATH_PRE(intel);
 };
 
-class GVARMAIN(IntroText) {
-    init = PATH_PRE(intro_text);
+class GVARMAIN(intro) {
+    init = PATH_PRE(intro);
 };
 
 class GVARMAIN(JIP) {
@@ -146,6 +146,10 @@ class GVARMAIN(SupplyDrop) {
 
 class GVARMAIN(TFAR) {
     init = PATH_PRE(tfar);
+};
+
+class GVARMAIN(Undercover) {
+    init = PATH_PRE(undercover);
 };
 
 class GVARMAIN(VehicleRespawn) {

@@ -44,7 +44,7 @@ if (_role == "") exitWith {
 };
 
 // Create items array
-#include "..\..\..\config\gear\arsenal\whitelist.sqf"
+#include "..\..\..\config\tools\gear\arsenal\whitelist.sqf"
 
 private _whitelist = createHashMapFromArray GVAR(arsenalWhitelist);
 private _commonItems = _whitelist getOrDefault ["COMMON", []];

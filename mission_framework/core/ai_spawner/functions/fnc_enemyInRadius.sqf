@@ -22,15 +22,14 @@
 if !(isServer) exitWith {};
 
 params ["_position", "_friendlySide", "_radius"];
-
-private _returnValue = false;
-
-private _nearestUnits = _position nearEntities [["Man", "LandVehicle", "Helicopter", "Ship"], _radius];
-
-{
-    if ((side _x getFriend _friendlySide) < 0.6 && {side _x != civilian}) exitwith {
+private ["_returnValue", "_nearestUnits", "_enemySides"];
+_returnValue = false;
+_nearestUnits = _position nearEntities [["CAManBase", "LandVehicle", "Helicopter", "Ship"], _radius];
+_enemySides = [_friendlySide] call BIS_fnc_enemySides;
+_nearestUnits apply {
+    if ((side _x) in _enemySides) exitwith {
         _returnValue = true;
     };
-} forEach _nearestUnits;
+};
 
-_returnValue;
+_returnValue

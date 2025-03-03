@@ -103,10 +103,10 @@ class GVARMAIN(Intel) {
     serverInit = PATH_POST_SERVER(intel);
 };
 
-class GVARMAIN(IntroText) {
-    init = PATH_POST(intro_text);
-    clientInit = PATH_POST_CLIENT(intro_text);
-    serverInit = PATH_POST_SERVER(intro_text);
+class GVARMAIN(intro) {
+    init = PATH_POST(intro);
+    clientInit = PATH_POST_CLIENT(intro);
+    serverInit = PATH_POST_SERVER(intro);
 };
 
 class GVARMAIN(JIP) {
@@ -221,6 +221,12 @@ class GVARMAIN(TFAR) {
     init = PATH_POST(tfar);
     clientInit = PATH_POST_CLIENT(tfar);
     serverInit = PATH_POST_SERVER(tfar);
+};
+
+class GVARMAIN(Undercover) {
+    init = PATH_POST(undercover);
+    clientInit = PATH_POST_CLIENT(undercover);
+    serverInit = PATH_POST_SERVER(undercover);
 };
 
 class GVARMAIN(VehicleRespawn) {

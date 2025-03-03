@@ -67,6 +67,7 @@ Some parts of this framework are based on other Arma 3 frameworks and scripts. S
  - Setup timer script by Olsen<br/>
  - Snowfall script by Lightning <br/>
  - Subtitle script by Lightning <br/>
+ - Undercover script by Lightning <br/>
  - Intro script by Lightning <br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
  - Editor placed objects marker by Mallen<br/>

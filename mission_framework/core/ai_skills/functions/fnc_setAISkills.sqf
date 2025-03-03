@@ -17,8 +17,6 @@
         void
 */
 
-if !(isServer) exitWith {};
-
 params ["_unit"];
 
 // If the unit is not local or is a player, then exit
