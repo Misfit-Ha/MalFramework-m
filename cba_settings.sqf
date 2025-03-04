@@ -1310,5 +1310,6 @@ force Vcm_AISkills_West_spotTime = 0.7;
 force VCM_ARTYENABLE = false;
 force VCM_RAGDOLLCHC = 50;
 force VCM_TURRETUNLOAD = false;
+force VCM_MEDICALACTIVE = false;
 force Vcm_SmokeGrenadeChance = 0.01;
 force VCM_MINEENABLED = false;
