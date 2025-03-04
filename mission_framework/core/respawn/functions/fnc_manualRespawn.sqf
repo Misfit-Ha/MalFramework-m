@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_respawn_fnc_manualRespawsn
+        call MF_respawn_fnc_manualRespawn
 
     Returns:
         void
