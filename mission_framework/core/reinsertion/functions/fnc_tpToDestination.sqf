@@ -33,12 +33,12 @@ private _result = [_destination] call FUNC(confirmTP);
 if !(_result) exitWith {};
 
 // Teleporting player
-cutText [format ["You are being teleported to %1", _destination], "BLACK OUT", 2, true];
+"MF_blackout" cutText [format ["You are being teleported to %1", _destination], "BLACK OUT", 0.5, true];
 
 [{
     player setPos _this;
 
     [{
-        cutText ["", "BLACK IN", 3, true];
+        "MF_blackout" cutText ["", "BLACK IN", 0.5, true];
     }, [], 1] call CFUNC(waitAndExecute);
 }, _position, 2] call CFUNC(waitAndExecute);

@@ -56,7 +56,7 @@ if (!isNull getConnectedUAV _unit) then {
     params ["_unit", "_killer"];
 
     // Screen effects
-    cutText ["", "BLACK OUT", 5, true];
+    "MF_blackout" cutText ["", "BLACK OUT", 5, true];
 
     [{
         params ["_unit", "_killer"];
@@ -124,7 +124,7 @@ if (!isNull getConnectedUAV _unit) then {
         SETVAR(_unit,GVAR(isDead),true);
 
         // Screen effects
-        cutText  ["", "BLACK IN",  3, true];
+        "MF_blackout" cutText  ["", "BLACK IN",  3, true];
         "dynamicBlur" ppEffectAdjust [0];
         "dynamicBlur" ppEffectCommit 3;
     }, [_unit, _killer], 5] call CFUNC(waitAndExecute);

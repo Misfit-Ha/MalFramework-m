@@ -33,7 +33,7 @@ if !({alive _x} count units group player > 1) exitWith {
 };
 
 // Teleport section
-cutText ["You are being teleported back to your squad", "BLACK OUT", 2, true];
+"MF_blackout" cutText ["You are being teleported back to your squad", "BLACK OUT", 0.5, true];
 
 [{
     params ["_target", "_vicSpot"];
@@ -44,7 +44,7 @@ cutText ["You are being teleported back to your squad", "BLACK OUT", 2, true];
         player setPosATL (_target getPos [3, getDir _target - 180]);
     };
 
-    cutText ["", "BLACK IN", 2, true];
+    "MF_blackout" cutText ["", "BLACK IN", 0.5, true];
 
     // Remove JIP teleport action after the player was teleported
     GVAR(jipAvailable) = false;

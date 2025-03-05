@@ -59,7 +59,8 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     };
 
     // Create RP tent and save the netId so other people can access it
-    private _RPTent = createVehicle [GVAR(RPObject), player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
+    private _RPTent = createVehicle [GVAR(RPObject), [0,0,0], [], 0, "CAN_COLLIDE"];
+    _RPTent setPos (player modelToWorld [0,2.5,0]);
     _RPTent setDir (getDir player);
     private _id = netId _RPTent;
     SETPVAR((group player),GVAR(RPTent),_id);

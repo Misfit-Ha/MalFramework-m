@@ -35,13 +35,13 @@ if (isNil "_id") exitWith {
 
 private _RPTent = objectFromNetId _id;
 
-cutText ["You are being teleported to your squad's Rally Point", "BLACK OUT", 2, true];
+"MF_blackout" cutText ["You are being teleported to your squad's Rally Point", "BLACK OUT", 0.5, true];
 
 [{
-    player setPos [(getPos _this)#0, ((getPos _this)#1) - 4, (getPos _this)#2];
-    player setDir 0;
+    player setPos (_this modelToWorld [0,-2.5,0.25]);
+    player setDir ((getDir _this) + 180);
 
     [{
-        cutText ["", "BLACK IN", 3, true];
+        "MF_blackout" cutText ["", "BLACK IN", 0.5, true];
     }, [], 1] call CFUNC(waitAndExecute);
 }, _RPTent, 2] call CFUNC(waitAndExecute);

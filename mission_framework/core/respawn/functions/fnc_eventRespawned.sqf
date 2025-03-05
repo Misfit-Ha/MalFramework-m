@@ -30,7 +30,7 @@ if (GVARMAIN(isTvT)) then {
 call EFUNC(common,removeRadios);
 
 // Screen effects
-cutText ["", "BLACK FADED", 5, true];
+"MF_blackout" cutText ["", "BLACK FADED", 5, true];
 
 // Wait for screen effects to finish
 [{
@@ -39,7 +39,7 @@ cutText ["", "BLACK FADED", 5, true];
     private ["_loadout", "_tickets"];
 
     // Screen effects
-    cutText  ["", "BLACK IN", 5, true];
+    "MF_blackout" cutText  ["", "BLACK IN", 5, true];
     "dynamicBlur" ppEffectEnable true;
     "dynamicBlur" ppEffectAdjust [6];
     "dynamicBlur" ppEffectCommit 0;
