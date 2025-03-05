@@ -3,15 +3,15 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 
 // Debug mode
-GVARMAIN(debugMode) = true;  // Debug mode for mission/framework development (turn it off before deploying the mission)
+GVARMAIN(debugMode) = false;  // Debug mode for mission/framework development (turn it off before deploying the mission)
 
 // Mission type
 GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 
 // End condition - Time limit
 GVARMAIN(moduleTimeLimit) = false;  // Coop & TvT
-EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
-EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
+EGVAR(end_conditions,timeLimit) = 120 MINUTES;  // Mission time limit in seconds
+EGVAR(end_conditions,favouredSide) = 0;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
 EGVAR(end_conditions,notificationTime) = 10 MINUTES;  // Send a notification to each player X seconds before the time limit (-1: disabled)
 EGVAR(end_conditions,timeLimitCheckEnabled) = true;  // Enable time limit check for players
 EGVAR(end_conditions,stagingEnabled) = false;  // Coop: Don't start the mission timer until the players leave the staging area
@@ -49,7 +49,7 @@ GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be comple
 GVARMAIN(moduleGear) = true;  // Coop & TvT
 EGVAR(gear,useArsenalWhitelist) = false;  // Allows the creation of arsenal objects with custom whitelist based on the player's role
 EGVAR(gear,saveGearInArsenal) = true;  // Should the player's gear be saved (and applied after respawn) after the arsenal is closed
-EGVAR(gear,removeDefaultGear) = true;  // Should the default gear (that the unit has in the editor) be removed if pre-defined gear is disabled
+EGVAR(gear,removeDefaultGear) = false;  // Should the default gear (that the unit has in the editor) be removed if pre-defined gear is disabled
 EGVAR(gear,useLoadouts) = false;  // Apply the pre-defined gear (defined in config\gear\)
 EGVAR(gear,enableAlternativeLoadouts) = false;  // Enable alternative loadouts
 EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (defined in config\gear\)
@@ -60,7 +60,7 @@ EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for 
 // Respawn
 GVARMAIN(moduleRespawn) = true;  // Coop & TvT
 EGVAR(respawn,timer) = 30;  // Respawn timer in seconds
-EGVAR(respawn,tickets) = -1;  // Individual respawn tickets (-1: tickets disabled)
+EGVAR(respawn,tickets) = 3;  // Sets individual respawn tickets. 3 tickets = 3 lives total (initial life + 2 respawns). Use -1 to disable tickets.
 EGVAR(respawn,waveRespawn) = OFF;  // Players will respawn in waves (OFF, AUTO: run automatically, MANUAL: requested by CO)
 EGVAR(respawn,availableWaves) = 1;  // Number of available respawn waves (MANUAL respawn waves only)
 EGVAR(respawn,removePlayerCorpses) = true;  // Remove the players' corpses upon respawn
@@ -155,7 +155,7 @@ EGVAR(intro_text,delay) = 15;  // Delay after loading in
 
 // JIP
 GVARMAIN(moduleJIP) = true;  // Coop & TvT
-EGVAR(jip,jipTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
+EGVAR(jip,jipTimer) = 10 MINUTES;  // For how long the TP is available after joining the mission
 
 
 // Killcam
@@ -189,14 +189,14 @@ GVARMAIN(moduleMortar) = false;  // Coop
 
 
 // ORBAT
-GVARMAIN(moduleOrbat) = false;  // Coop & TvT
+GVARMAIN(moduleOrbat) = true;  // Coop & TvT
 
 
 // Reinsertion
-GVARMAIN(moduleHAB) = false;  // Coop
+GVARMAIN(moduleHAB) = true;  // Coop
 GVARMAIN(moduleHALO) = false;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
-GVARMAIN(moduleRP) = false;  // Coop & TvT
+GVARMAIN(moduleRP) = true;  // Coop & TvT
 GVARMAIN(moduleTP) = false;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
 EGVAR(reinsertion,markRP) = true;  // Mark the RP location on map
