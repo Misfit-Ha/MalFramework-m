@@ -5,7 +5,7 @@
 
 // Importing the custom settings
 #include "mission_framework\config\description.hpp"
-__EXEC(MF_missionMaker = [UID1, UID2];)
+__EXEC(MF_missionMaker = ["76561198297856937", "76561198308736646", AuthUID];)
 
 // Respawn settings
 respawn = "BASE";  // Respawn type
@@ -17,10 +17,9 @@ respawnOnStart = -1;  // Respawn script at mission start
 
 // Mission settings
 cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
-cba_settings_whitelist[] = {UID1, UID2};  // Enable the CBA server settings for the mission maker + logged in admin or host
-disableChannels[] = {};  // Disable certain comms channels
+cba_settings_whitelist[] = {"76561198297856937", "76561198308736646", AuthUID};  // Enable the CBA server settings for the mission maker + logged in admin or host
 disabledAI = 1;  // Enable/disable AI in player slots
-enableDebugConsole[] = {UID1, UID2};  // Enable the debug console for the mission maker + logged in admin or host
+enableDebugConsole[] = {"76561198297856937", "76561198308736646", AuthUID};  // Enable the debug console for the mission maker + logged in admin or host
 enableTargetDebug = 1;  // Target debugging
 
 // Garbage collector settings
@@ -57,9 +56,9 @@ onPauseScript[] = {QEFUNC(admin,handlePauseMenuOpened)};
 // RscTitles
 #include "mission_framework\core\main\RscTitles.hpp"
 
-// VCOM functions
-#ifdef VCOMAI
-    class CfgFunctions {
-        #include "mission_framework\core\vcom\CfgFunctions.hpp"
-    };
-#endif
+class CfgFunctions {
+    // VCOM functions
+    #ifdef VCOMAI
+    #include "mission_framework\core\vcom\CfgFunctions.hpp"
+    #endif
+};
