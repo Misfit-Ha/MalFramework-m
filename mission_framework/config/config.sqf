@@ -91,10 +91,6 @@ EGVAR(ai_skills,skillSet) = [
 
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
 
-// ACRE
-GVARMAIN(moduleACRE) = false;  // Coop & TvT
-EGVAR(acre,useBabel) = false;  // TvT
-
 
 // AI Spawner
 GVARMAIN(moduleAISpawner) = false;  // Coop & TvT

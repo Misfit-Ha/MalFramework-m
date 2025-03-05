@@ -67,11 +67,6 @@ cutText ["", "BLACK FADED", 5, true];
         [QEGVAR(player,setInsignia), [_unit, _insignia]] call CFUNC(globalEvent);
     }, [_unit], 3] call CFUNC(waitAndExecute);
 
-    // Set radios
-    if GVARMAIN(moduleACRE) then {
-        call EFUNC(acre,setChannels);
-     };
-
     if GVARMAIN(moduleTFAR) then {
         [QEGVAR(tfar,setRadios)] call CFUNC(localEvent);
     };

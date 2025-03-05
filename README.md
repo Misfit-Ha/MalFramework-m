@@ -33,6 +33,5 @@ If something is broken, open a new issue on **[GitHub](https://github.com/Misfit
 
 ## Optional mods:
 
--   ACRE (required by the ACRE module)
 -   CUP Core (required by the Snowfall module)
 -   TFAR (required by the TFAR module)
