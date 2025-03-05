@@ -26,8 +26,8 @@ enableTargetDebug = 1;  // Target debugging
 // Garbage collector settings
 corpseManagerMode = 1;
 corpseLimit = 15;
-corpseRemovalMinTime = 200;
-corpseRemovalMaxTime = 400;
+corpseRemovalMinTime = 120;
+corpseRemovalMaxTime = 300;
 
 wreckManagerMode = 1;
 wreckLimit = 5;
@@ -52,12 +52,21 @@ onPauseScript[] = {QEFUNC(admin,handlePauseMenuOpened)};
 #include "mission_framework\core\main\CfgEventHandlers.hpp"
 
 // Custom sounds
-#include "mission_framework\core\main\CfgSounds.hpp"
+class CfgSounds {
+    #include "mission_framework\core\main\CfgSounds.hpp"
+    #include "mission_framework\core\cbrn\cfgSounds.hpp"
+};
+
+// Custom music 
+class cfgMusic {
+    #include "mission_framework\config\music\CfgMusic.hpp"
+};
 
 // RscTitles
 #include "mission_framework\core\main\RscTitles.hpp"
 
 class CfgFunctions {
+    #include "mission_framework\core\cbrn\CfgFunctions.hpp"
     // VCOM functions
     #ifdef VCOMAI
     #include "mission_framework\core\vcom\CfgFunctions.hpp"

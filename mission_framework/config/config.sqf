@@ -115,12 +115,27 @@ GVARMAIN(moduleBriefing) = false;  // Coop & TvT
 
 
 // CBRN
-GVARMAIN(moduleCBRN) = false;  // Coop & TvT
-EGVAR(cbrn,timeLimit) = 30;  // The time limit in seconds after which the player (with insufficient protection) starts taking damage
-EGVAR(cbrn,protectiveMasks) = ["G_AirPurifyingRespirator_02_black_F"];  // Masks that provide protection (LVL 1)
-EGVAR(cbrn,protectiveUniforms) = ["U_C_CBRN_Suit_01_Blue_F"];  // Uniforms that provide protection (LVL 2)
-EGVAR(cbrn,protectiveBackpack) = ["B_CombinationUnitRespirator_01_F"];  // Backpacks (= breathing apparatus) that provide protection (LVL 3)
-EGVAR(cbrn,protectiveVehicles) = ["B_APC_Wheeled_01_cannon_F"];  // Vehicles that provide protection (LVL 3)
+cbrn_maxDamage = 100; // how much damage before death, 50% starts internal contamination
+cbrn_backpacks = ["B_SCBA_01_F", "B_CombinationUnitRespirator_01_F", "M2_Flamethrower_Balloons_Pipe"]; // backpacks considered oxygen tanks
+cbrn_conditioning = ["B_CombinationUnitRespirator_01_F"]; // backpacks considered air conditioners; help reduce fogging
+cbrn_suits = ["U_C_CBRN_Suit_01_Blue_F", "U_B_CBRN_Suit_01_MTP_F", "U_B_CBRN_Suit_01_Tropic_F", "U_C_CBRN_Suit_01_White_F", "U_B_CBRN_Suit_01_Wdl_F", "U_I_CBRN_Suit_01_AAF_F", "U_I_E_CBRN_Suit_01_EAF_F", "U_O_Wetsuit", "U_B_Wetsuit", "U_I_Wetsuit", "PLP_U_I_Wetsuit_inv", "PLP_U_O_Wetsuit_inv", "PLP_U_B_Wetsuit_inv"]; // uniforms considered CBRN suits
+cbrn_masks = ["G_AirPurifyingRespirator_02_black_F", "G_AirPurifyingRespirator_02_olive_F", "G_AirPurifyingRespirator_02_sand_F", "G_AirPurifyingRespirator_01_F", "G_RegulatorMask_F", "XOF_G_Balaclava3_SND", "XOF_G_Balaclava3", "XOF_G_Balaclava3_GRY", "XOF_G_Balaclava3_GRN", "XOF_G_Balaclava3_OLI", "XOF_G_Balaclava3_WHT", "XOF_G_GP9"]; // goggles considered gas masks (filters included)
+cbrn_threatMeteritem = "ACE_HuntIR_monitor"; // Item that is considered a threat meter
+cbrn_threatGeiger = "ACE_HuntIR_monitor"; // Item that is considered a geiger counter
+cbrn_maxOxygenTime = 60 * 30; // after how much time does the air run out in an oxygen tank (in seconds!)
+cbrn_allowPassiveDamage = true; // should auto damage occur after 50% damage threshold has been reached?
+cbrn_deconWaterTime = 60 * 2; // time in seconds how much water a decon shower has, in seconds
+cbrn_healingRate = 0; // healing rate for each second, does nothing if 0 or below, or player while player is experiencing passive contamination
+cbrn_foggingEnabled = true; // enables or disables fogging entirely
+cbrn_fogStartTime = 60 * 5; // time after which the gas mask starts fogging up; default 5 mins
+cbrn_fogMaxTime = 60 * 10; // maximum time after which the gas mask is fully fogged up; default 10 mins
+cbrn_fogAccumulationCoef = 0.5; // fog accumulation coefficient; used when unit wears a backpack considered an air conditioner; lower means fogging accumulates slower, 0 stops it entirely; default 0.5
+cbrn_fogFadeCoef = 5; // fog fading coefficient; is used in multiplication with the frame-time delta in fogPFH when the gasmask is taken off; higher means accumulated fog will fade faster; default 5
+cbrn_fogMaxAlpha = 1; // max fog visibillity; value from 0 to 1, decimals allowed. Sets the maximum visibility of the fog layer; default 1
+cbrn_fogFatigueEnabled = true; // whether or not fogging takes Fatigue into account
+cbrn_fogFatigueCoef = 1; // Fatigue coefficient; is used in multiplication with the ACE fatigue value; higher means quicker fogging if unit has any fatigue
+cbrn_vehicles = [ /*["vroomvroom", 5], ["B_Quadbike_01_F", 1]*/ ]; // configure vehicles to be CBRN proof, list of arrays, first entry vehicle class or 3den editor object name as string, second entry amount of proofing. The amount is the same measurement as zone threat levels
+cbrn_kat_enabled = false; // Configuration for KAT - Advanced Medical
 
 
 // Countdown
@@ -145,12 +160,19 @@ GVARMAIN(moduleIED) = false;  // Coop
 GVARMAIN(moduleIntel) = false;  // Coop
 
 
-// Intro text
-GVARMAIN(moduleIntroText) = false;  // Coop & TvT
-EGVAR(intro_text,title) = "TEST TITLE";  // Title
-EGVAR(intro_text,date) = "TEST DATE";  // Date
-EGVAR(intro_text,location) = "TEST LOCATION";  // Location
-EGVAR(intro_text,delay) = 15;  // Delay after loading in
+// Intro
+GVARMAIN(moduleIntro) = false;  // Coop & TvT
+EGVAR(intro,blackScreen) = false;  // Black fade screen at start
+EGVAR(intro,freeze) = false;  // Freeze players at start
+EGVAR(intro,unitInfo) = true;  // Show player name, rank and squad name before intro text
+EGVAR(intro,missionInfo) = true;  // Show mission intro text
+EGVAR(intro,delay) = 15;  // Delay after loading in
+EGVAR(intro,font) = "PuristaLight";  // Text font, need to be defined in arma
+EGVAR(intro,line1) = "TEST TITLE";  // Line 1, Title e.g. (Operation Thunderstorm)
+EGVAR(intro,line2) = "TEST Date";  // Line 2, Date e.g. (26 JUL 2035 1500)
+EGVAR(intro,line3) = "TEST Faction";  // Line 3, Faction e.g. (CSAT Paratroopes)
+EGVAR(intro,line4) = "TEST Description";  // Line 4, Description e.g. (ETA T minus 3 minutes)
+EGVAR(intro,line5) = "TEST Location";  // Line 5, Location e.g. (Greece - Altis Island)
 
 
 // JIP

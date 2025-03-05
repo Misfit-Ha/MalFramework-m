@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleCbrn)) exitWith {};
+if !(GVARMAIN(moduleIntro)) exitWith {};
 
 ADDON = false;
 
