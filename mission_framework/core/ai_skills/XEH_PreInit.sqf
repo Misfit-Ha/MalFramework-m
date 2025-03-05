@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if (GVARMAIN(isTvT)) exitWith {};
+if (!GVARMAIN(moduleAISkill)) exitWith {};
 
 ADDON = false;
 

@@ -76,8 +76,9 @@ GVARMAIN(timeAcceleration) = 1;  // Value between 0.1 and 120
 GVARMAIN(useACESpectator) = true;  // Use the ACE spectator camera instead of the vanilla one (for dead players)
 
 // AI skills
+GVARMAIN(moduleAISkill) = true;
 EGVAR(ai_skills,skillSet) = [
-    1,  // General (Higher = Better)
+    1,  // General (Higher = Better) all values are between 0 and 1
     1,  // Commanding (Higher = Better)
     1,  // Courage (Higher = Better)
     1,  // Aiming Accuracy (Higher = Better)
