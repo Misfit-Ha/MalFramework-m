@@ -411,22 +411,22 @@ force ace_medical_treatment_woundReopenChance = 0.5;
 force ace_medical_treatment_woundStitchTime = 0.1;
 
 // ACE Name Tags
-force ace_nametags_ambientBrightnessAffectViewDist = 0.5;
-force ace_nametags_defaultNametagColor = [0.8,0.5,0,1];
-force ace_nametags_nametagColorBlue = [0,0,1,1];
-force ace_nametags_nametagColorGreen = [0,1,0,1];
-force ace_nametags_nametagColorMain = [1,1,1,1];
-force ace_nametags_nametagColorRed = [1,0,0,1];
-force ace_nametags_nametagColorYellow = [1,1,0,1];
+force ace_nametags_ambientBrightnessAffectViewDist = 1;
+ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
+ace_nametags_nametagColorBlue = [0.67,0.67,1,1];
+ace_nametags_nametagColorGreen = [0.67,1,0.67,1];
+ace_nametags_nametagColorMain = [1,1,1,1];
+ace_nametags_nametagColorRed = [1,0.67,0.67,1];
+ace_nametags_nametagColorYellow = [1,1,0.67,1];
 force ace_nametags_playerNamesMaxAlpha = 0.8;
-force ace_nametags_playerNamesViewDistance = 30;
+force ace_nametags_playerNamesViewDistance = 5;
 force ace_nametags_showCursorTagForVehicles = false;
-force ace_nametags_showNamesForAI = false;
-force ace_nametags_showPlayerNames = 0;
-force ace_nametags_showPlayerRanks = true;
-force ace_nametags_showSoundWaves = 1;
-force ace_nametags_showVehicleCrewInfo = true;
-force ace_nametags_tagSize = 2;
+ace_nametags_showNamesForAI = false;
+ace_nametags_showPlayerNames = 1;
+ace_nametags_showPlayerRanks = true;
+ace_nametags_showSoundWaves = 1;
+ace_nametags_showVehicleCrewInfo = true;
+ace_nametags_tagSize = 2;
 
 // ACE Nightvision
 force ace_nightvision_aimDownSightsBlur = 0.2;
