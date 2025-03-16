@@ -82,7 +82,7 @@ case "RM" : {
         ["arifle_AK12U_lush_holo_pointer_F","","acc_pointer_IR","optic_Holosight_lush_F",["30rnd_762x39_AK12_Lush_Mag_F",30],[],""],
         ["launch_RPG32_green_F","","","",["RPG32_F",1],[],""],
         ["hgun_Rook40_F","","","",["16Rnd_9x21_Mag",17],[],""],
-        ["U_O_R_Gorka_01_camo_F",[["FirstAidKit",1],,["30rnd_762x39_AK12_Lush_Mag_F",2,30]]],
+        ["U_O_R_Gorka_01_camo_F",[["FirstAidKit",1],["30rnd_762x39_AK12_Lush_Mag_F",2,30]]],
         ["V_SmershVest_01_F",[["30rnd_762x39_AK12_Lush_Mag_F",3,30],["16Rnd_9x21_Mag",2,17],["SmokeShell",1,1],["SmokeShellRed",1,1],["Chemlight_red",2,1]]],
         ["B_Carryall_green_F",[]],
         "H_HelmetAggressor_cover_taiga_F",
