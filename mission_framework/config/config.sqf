@@ -115,6 +115,7 @@ GVARMAIN(moduleBriefing) = false;  // Coop & TvT
 
 
 // CBRN
+GVARMAIN(moduleCBRN) = false;  // Coop & TvT
 cbrn_maxDamage = 100; // how much damage before death, 50% starts internal contamination
 cbrn_backpacks = ["B_SCBA_01_F", "B_CombinationUnitRespirator_01_F", "M2_Flamethrower_Balloons_Pipe"]; // backpacks considered oxygen tanks
 cbrn_conditioning = ["B_CombinationUnitRespirator_01_F"]; // backpacks considered air conditioners; help reduce fogging

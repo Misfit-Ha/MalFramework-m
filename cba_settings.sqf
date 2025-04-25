@@ -691,6 +691,7 @@ force cba_disposable_replaceDisposableLauncher = true;
 cba_events_repetitionMode = 1;
 force cba_network_loadoutValidation = 0;
 cba_optics_usePipOptics = false;
+cba_quicktime_qteShorten = false;
 cba_ui_notifyLifetime = 4;
 cba_ui_StorePasswords = 1;
 
@@ -942,6 +943,45 @@ force simplesuppress_suppress_overlayOpacity = 0.96;
 force simplesuppress_suppress_overlayTexture = 2;
 force simplesuppress_suppress_projectileMaxDistance = 9;
 force simplesuppress_suppress_shooterMinDistance = 0;
+
+
+// QTE ACE - Explosives
+force qte_ace_explosives_difficulty = 4;
+force qte_ace_explosives_enable = true;
+force qte_ace_explosives_explodeOnFail = true;
+force qte_ace_explosives_noTimer = true;
+force qte_ace_explosives_qteType = 1;
+force qte_ace_explosives_resetUponIncorrectInput = true;
+force qte_ace_explosives_tries = 3;
+
+// QTE ACE - Magazine Repack
+force qte_ace_magazinerepack_difficulty = 1;
+force qte_ace_magazinerepack_enable = true;
+force qte_ace_magazinerepack_qteType = 1;
+force qte_ace_magazinerepack_resetUponIncorrectInput = false;
+force qte_ace_magazinerepack_tries = 5;
+
+// QTE ACE - Main
+force qte_ace_main_maxLength = 500;
+force qte_ace_main_soundsCorrect = "click";
+force qte_ace_main_soundsLastTry = "vtolAlarm";
+force qte_ace_main_soundsLose = "STR_qte_ace_main_no_sound";
+force qte_ace_main_soundsWin = "3DEN_notificationDefault";
+force qte_ace_main_soundsWrong = "addItemFailed";
+
+// QTE ACE - Medical
+force qte_ace_medical_difficulty = 1;
+force qte_ace_medical_enable = true;
+force qte_ace_medical_qteType = 1;
+force qte_ace_medical_resetUponIncorrectInput = false;
+force qte_ace_medical_tries = 3;
+
+// QTE ACE - Repair
+force qte_ace_repair_difficulty = 2;
+force qte_ace_repair_enable = true;
+force qte_ace_repair_qteType = 0;
+force qte_ace_repair_resetUponIncorrectInput = false;
+force qte_ace_repair_tries = 3;
 
 // Snapping for Eden and Zeus
 force sez_setting_useKeybinds = true;
