@@ -1,5 +1,5 @@
 // The UID of the mission makers (to access the admin menu and debug console during the mission)
-#define AuthUID "xxxxxxxxxxxxxxxxx"
+#define AuthUID "76561198297856937" // Misfit's UID for example
 
 // VCOM AI
 //#define VCOMAI  // Comment out this line if you don't want to load VCOM AI

@@ -36,7 +36,7 @@ if !(_result) exitWith {};
 "MF_blackout" cutText [format ["You are being teleported to %1", _destination], "BLACK OUT", 0.5, true];
 
 [{
-    player setPos _this;
+    player setPosATL _this;
 
     [{
         "MF_blackout" cutText ["", "BLACK IN", 0.5, true];
