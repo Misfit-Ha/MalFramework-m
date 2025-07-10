@@ -223,6 +223,12 @@ class GVARMAIN(UnitTracking) {
     serverInit = PATH_POST_SERVER(unit_tracking);
 };
 
+class GVARMAIN(Undercover) {
+    init = PATH_POST(undercover);
+    clientInit = PATH_POST_CLIENT(undercover);
+    serverInit = PATH_POST_SERVER(undercover);
+};
+
 class GVARMAIN(VehicleRespawn) {
     init = PATH_POST(vehicle_respawn);
     clientInit = PATH_POST_CLIENT(vehicle_respawn);

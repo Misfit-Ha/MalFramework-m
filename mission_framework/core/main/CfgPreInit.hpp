@@ -148,6 +148,10 @@ class GVARMAIN(UnitTracking) {
     init = PATH_PRE(unit_tracking);
 };
 
+class GVARMAIN(Undercover) {
+    init = PATH_PRE(undercover);
+};
+
 class GVARMAIN(VehicleRespawn) {
     init = PATH_PRE(vehicle_respawn);
 };

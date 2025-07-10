@@ -264,6 +264,11 @@ GVARMAIN(moduleTFAR) = false;  // Coop & TvT
 // Unit tracking
 GVARMAIN(moduleUnitTracking) = false;  // Coop & TvT
 
+// Undercover
+GVARMAIN(moduleUndercover) = false;  // Coop & TvT
+EGVAR(undercover,specialAreas) = false;  // Enable a function to compromise or hide players in designated areas.
+EGVAR(undercover,deniedAreasArray) = ["deniedArea_01", "deniedArea_02", "deniedArea_03", "deniedArea_04", "deniedArea_05", "deniedArea_06"];  // Denied zones markers name.
+EGVAR(undercover,safeAreasArray) = ["safeArea_01", "safeArea_02"];  // Safe zones markers name.
 
 // Vehicle respawn
 GVARMAIN(moduleVehicleRespawn) = false;  // Coop & TvT
