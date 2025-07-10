@@ -65,6 +65,44 @@ _tpPoles apply {
         }, nil, 1, true, true, "", "true", 12];
     };
 
+    // Option #5 - Teleport to Squad member
+    if (GVARMAIN(moduleTeleportToSquadmate)) then {
+        _x addAction ["Reinsertion - Teleport to Squadmember", {
+            params ["_target", "_caller"]; 
+            
+            private _squadmates = units group _caller select { 
+                alive _x && 
+                _x != _caller 
+            };
+            
+            if (_squadmates isEqualTo []) exitWith {
+                ["Info", ["No alive squad mates available!"]] call BFUNC(showNotification);
+            };
+            
+            private _actionIDs = [];
+            {
+                private _squadmate = _x;
+                private _actionID = _target addAction [
+                    format ["Teleport to %1", name _squadmate],
+                    {
+                        params ["", "", "", "_squadmate"];
+                        [player, _squadmate] call FUNC(teleportToSquadmate);
+                    },
+                    _squadmate,
+                    1.5, true, true, "", "true", 12
+                ];
+                _actionIDs pushBack _actionID;
+            } forEach _squadmates;
+            
+            // Remove actions after 30 seconds
+            [{
+                params ["_target", "_actionIDs"];
+                { _target removeAction _x } forEach _actionIDs;
+            }, [_target, _actionIDs], 30] call CFUNC(waitAndExecute);
+        }, nil, 1, true, true, "", "true", 12];
+    };
+
+
     //Add a helper text on top of teleporter, not tested on server
     _targetPositionAGLTop = _x modelToWorldVisual [0, 0, 3.5];
 

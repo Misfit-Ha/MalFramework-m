@@ -18,3 +18,4 @@ PREP(tpToHAB);
 PREP(tpToHALO);
 PREP(tpToMRV);
 PREP(tpToRP);
+PREP(teleportToSquadmate);
