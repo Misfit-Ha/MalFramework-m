@@ -5,14 +5,13 @@
         Misfit (adapted from Crowdedlight)
     
     Description:
-        Shows zen dialog of squad mates.
+        Shows zen dialog of squadmember.
         
     Arguments:
         0: OBJECT - Player to teleport
-        1: OBJECT - Target squad member (player or AI)
         
     Example:
-        [player, squadMember] call MF_reinsertion_fnc_doSquadmateTeleport
+        [player] call MF_reinsertion_fnc_openSquadmateTeleportDialog
         
     Returns:
         void
