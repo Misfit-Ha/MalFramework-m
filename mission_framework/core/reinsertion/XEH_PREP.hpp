@@ -19,3 +19,4 @@ PREP(tpToHALO);
 PREP(tpToMRV);
 PREP(tpToRP);
 PREP(teleportToSquadmate);
+PREP(openSquadmateTeleportDialog);

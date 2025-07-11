@@ -30,6 +30,7 @@ If something is broken, open a new issue on **[GitHub](https://github.com/Misfit
 
 -   ACE
 -   CBA
+-   ZEN
 
 ## Optional mods:
 

@@ -19,6 +19,9 @@ _Available options:_
         * Any player can TP to the HAB
         * If enabled, players can TP from the HAB to their squad's RP
 
+ - Teleport to Squadmate
+        * Players can teleport to any alive member of their squad (excluding themselves) via a dialog
+
  - TP (Teleport Pole)
         * Teleport destinations can be created dynamically during the mission (via triggers), so players can TP to captured FOB's etc.
 ```
@@ -50,6 +53,9 @@ Arguments:
 Example:
     ["Kavala City Centre", getMarkerPos "marker_kavala"] call MF_reinsertion_fnc_createTPDestination
 ```
+
+_Note:_
+ - _Some of the more popular modes are enabled by default. To disable them from `mission_framework\config\config.sqf`_
 
 ## Config:
 _Description of each value set in the config file._

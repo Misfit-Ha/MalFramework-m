@@ -5,69 +5,69 @@
         Misfit (adapted from Crowdedlight)
     
     Description:
-        Creates menu for teleporting to squad members.
+        Performs teleport to selected squad member with safety checks.
         
     Arguments:
-        -
+        0: OBJECT - Player to teleport
+        1: OBJECT - Target squad member (player or AI)
         
     Example:
-        call MF_reinsertion_fnc_teleportToSquadmate
+        [player, squadMember] call MF_reinsertion_fnc_doSquadmateTeleport
         
     Returns:
         void
 */
 
-if !(hasInterface) exitWith {};
+params ["_player", "_member"];
 
-private _squadMembers = (units group player) - [player];
-if (_squadMembers isEqualTo []) exitWith {
-    ["Info", ["No squad members available"]] call BFUNC(showNotification);
+// Check if target is valid
+if (!alive _member) exitWith {
+    ["Error", ["Squad member is no longer alive!"]] call BFUNC(showNotification);
 };
 
-private _actions = [];
-{
-    private _member = _x;
-    private _name = name _member;
-    private _icon = "";
+// Enemy proximity check (same as RP deployment)
+if (allUnits findIf {
+    side _x != civilian && 
+    side _x getFriend (side _member) < 0.6 && 
+    _x distance _member < 50
+} != -1) exitWith {
+    ["Warning", ["Cannot teleport to squadmate when enemies are near teammate"]] call BFUNC(showNotification);
+};
+
+// Get target's side
+private _targetSide = side _member;
+
+
+// Blackout effect
+"MF_blackout" cutText [format["Teleporting to %1", name _member], "BLACK OUT", 0.5, true];
+
+[{
+    params ["_player", "_member"];
     
-    // Add role indicators
-    if (_member == leader group _member) then {
-        _name = format ["%1 (Squad Leader)", _name];
-        _icon = "\a3\ui_f\data\igui\cfg\simpleTasks\types\meet_ca.paa";
+    // Reset velocity
+    _player setVelocity [0, 0, 0];
+    
+    private _success = false;
+    
+    // Teleport logic (based on MF_admin_fnc_teleportToPlayer)
+    if (vehicle _member != _member) then {
+        // If target is in a vehicle and there is a free seat, move player in
+        private _vicSpot = [_member] call EFUNC(common,checkEmptySeat);
+        if (_vicSpot) then {
+            _player moveInAny vehicle _member;
+            _success = true;
+        } else {
+            // No free seat, teleport next to vehicle
+            _player setPosATL (_member getPos [2, getDir _member]);
+            _success = true;
+        };
+    } else {
+        // Not in vehicle, teleport to position near member
+        _player setPosATL (_member getPos [2, getDir _member]);
+        _success = true;
     };
     
-    // Add vehicle indicator
-    if (!isNull objectParent _member) then {
-        _name = format ["%1 [In Vehicle]", _name];
-        _icon = "\a3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
-    };
+    // Fade in
+    "MF_blackout" cutText ["", "BLACK IN", 3, true];
     
-    private _action = [
-        format["member_%1", netId _member],
-        _name,
-        _icon,
-        {
-            params ["_target", "_player", "_member"];
-            [_player, _member] call FUNC(doSquadmateTeleport);
-        },
-        {alive _this},
-        {},
-        _x
-    ] call ACE_interact_menu_fnc_createAction;
-    
-    _actions pushBack [_action, [], _player];
-} forEach _squadMembers;
-
-// Add cancel action
-private _cancelAction = [
-    "cancel_teleport",
-    "Cancel",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_cancel_ca.paa",
-    {},
-    {true}
-] call ACE_interact_menu_fnc_createAction;
-
-_actions pushBack [_cancelAction, [], _player];
-
-// Open menu
-[_actions] call ACE_interact_menu_fnc_openMenu;
+}, [_player, _member], 1] call CFUNC(waitAndExecute);
