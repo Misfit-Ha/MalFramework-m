@@ -53,7 +53,7 @@ onPauseScript[] = {QEFUNC(admin,handlePauseMenuOpened)};
 
 // Custom sounds
 class CfgSounds {
-    #include "mission_framework\core\main\CfgSounds.hpp"
+    #include "mission_framework\config\sounds\CfgSounds.hpp"
     #include "mission_framework\core\cbrn\cfgSounds.hpp"
 };
 
