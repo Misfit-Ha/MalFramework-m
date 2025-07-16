@@ -261,6 +261,10 @@ EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of
 // TFAR
 GVARMAIN(moduleTFAR) = false;  // Coop & TvT
 
+// ACRE
+GVARMAIN(moduleACRE) = false;  // Coop & TvT
+EGVAR(acre,useBabel) = false;  // TvT
+
 
 // Unit tracking
 GVARMAIN(moduleUnitTracking) = false;  // Coop & TvT

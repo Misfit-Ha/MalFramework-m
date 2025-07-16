@@ -168,6 +168,14 @@ private _groupArray = [];
                 };
             };
 
+            if GVARMAIN(moduleACRE) then {
+                (_items + _assignedItems) apply {
+                    if (_x call acre_api_fnc_isBaseRadio || {_x call acre_api_fnc_isRadio}) then {
+                        _radios pushBack _x;
+                    };
+                };
+            };
+
             _textToDisplay pushBack format ["<font color='#FFFF00'>Misc. items: </font>(Click count for info.)<br/>", _x];
 
             // Display magazines, inventory items, radios and assigned items

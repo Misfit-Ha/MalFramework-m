@@ -19,10 +19,10 @@
 
 params [["_unit", objNull]];
 
-// TFAR
-if (GVARMAIN(moduleTFAR)) then {
-    (_unit call TFUNC(getRadioItems)) apply {
-        _unit removeItems _x;
-        _unit unlinkItem _x;
+if ("ItemRadio" in (assignedItems _unit)) then {
+    _unit unlinkItem "ItemRadio";
+
+    if (GVARMAIN(moduleACRE)) then {
+        _unit linkItem "ItemRadioAcreFlagged";
     };
 };

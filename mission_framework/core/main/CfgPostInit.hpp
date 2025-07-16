@@ -6,6 +6,12 @@ class GVARMAIN(Main) {  // Main first
     serverInit = PATH_POST_SERVER(main);
 };
 
+class GVARMAIN(ACRE) {
+    init = PATH_POST(acre);
+    clientInit = PATH_POST_CLIENT(acre);
+    serverInit = PATH_POST_SERVER(acre);
+};
+
 class GVARMAIN(Admin) {
     init = PATH_POST(admin);
     clientInit = PATH_POST_CLIENT(admin);

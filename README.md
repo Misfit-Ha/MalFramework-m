@@ -36,3 +36,4 @@ If something is broken, open a new issue on **[GitHub](https://github.com/Misfit
 
 -   CUP Core (required by the Snowfall module)
 -   TFAR (required by the TFAR module)
+-   ACRE (required by the ACRE module)
