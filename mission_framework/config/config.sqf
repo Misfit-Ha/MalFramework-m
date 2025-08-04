@@ -180,6 +180,9 @@ EGVAR(intro,line5) = "TEST Location";  // Line 5, Location e.g. (Greece - Altis 
 GVARMAIN(moduleJIP) = true;  // Coop & TvT
 EGVAR(jip,jipTimer) = 10 MINUTES;  // For how long the TP is available after joining the mission
 
+GVARMAIN(moduleBackToGame) = true;  // Enable Back to Game module
+EGVAR(backtogame,reconnectTimeout) = 20 MINUTES;  // Time window for reconnection benefits
+
 
 // Killcam
 GVARMAIN(moduleKillcam) = false;  // Coop & TvT

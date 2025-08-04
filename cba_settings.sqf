@@ -26,6 +26,11 @@ force ace_advanced_fatigue_performanceFactor = 2;
 force ace_advanced_fatigue_recoveryFactor = 5;
 force ace_advanced_fatigue_terrainGradientFactor = 1;
 
+// ACE Advanced Missile Guidance
+force ace_missileguidance_chaffEffectivenessCoef = 1;
+force ace_missileguidance_flareAngleCoef = 1;
+force ace_missileguidance_flareEffectivenessCoef = 1;
+
 // ACE Advanced Throwing
 force ace_advanced_throwing_enabled = true;
 force ace_advanced_throwing_enablePickUp = true;
@@ -95,6 +100,8 @@ force ace_common_swayFactor = 1;
 // ACE Cook-off
 force ace_cookoff_ammoCookoffDuration = 0.5;
 force ace_cookoff_cookoffDuration = 1;
+force ace_cookoff_cookoffEnableProjectiles = true;
+force ace_cookoff_cookoffEnableSound = true;
 force ace_cookoff_destroyVehicleAfterCookoff = false;
 force ace_cookoff_enableAmmobox = true;
 force ace_cookoff_enableAmmoCookoff = true;
@@ -143,7 +150,7 @@ force acex_field_rations_waterSourceActions = 2;
 force ace_fire_dropWeapon = 0;
 force ace_fire_enabled = false;
 force ace_fire_enableFlare = false;
-force ace_fire_enableScreams = false;
+ace_fire_enableScreams = false;
 
 // ACE Fortify
 force ace_fortify_markObjectsOnMap = 1;
@@ -294,6 +301,7 @@ force ace_maptools_rotateModifierKey = 1;
 force ace_medical_ai_enabledFor = 0;
 force ace_medical_ai_requireItems = 0;
 force ace_medical_AIDamageThreshold = 1;
+force ace_medical_alternateArmorPenetration = true;
 force ace_medical_bleedingCoefficient = 1;
 force ace_medical_blood_bloodLifetime = 900;
 force ace_medical_blood_enabledFor = 0;
@@ -301,7 +309,6 @@ force ace_medical_blood_maxBloodObjects = 500;
 force ace_medical_deathChance = 0.5;
 force ace_medical_dropWeaponUnconsciousChance = 0;
 force ace_medical_enableVehicleCrashes = false;
-force ace_medical_engine_damagePassThroughEffect = 1;
 force ace_medical_fatalDamageSource = 2;
 force ace_medical_fractureChance = 0.25;
 force ace_medical_fractures = 1;
@@ -417,22 +424,22 @@ force ace_medical_treatment_woundReopenChance = 0.5;
 force ace_medical_treatment_woundStitchTime = 0.1;
 
 // ACE Name Tags
-force ace_nametags_ambientBrightnessAffectViewDist = 1;
-ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
-ace_nametags_nametagColorBlue = [0.67,0.67,1,1];
-ace_nametags_nametagColorGreen = [0.67,1,0.67,1];
-ace_nametags_nametagColorMain = [1,1,1,1];
-ace_nametags_nametagColorRed = [1,0.67,0.67,1];
-ace_nametags_nametagColorYellow = [1,1,0.67,1];
+force ace_nametags_ambientBrightnessAffectViewDist = 0;
+force ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
+force ace_nametags_nametagColorBlue = [0,0,1,1];
+force ace_nametags_nametagColorGreen = [0,1,0.400409,1];
+force ace_nametags_nametagColorMain = [1,1,1,1];
+force ace_nametags_nametagColorRed = [1,0,0,1];
+force ace_nametags_nametagColorYellow = [1,1,0,1];
 force ace_nametags_playerNamesMaxAlpha = 0.8;
-force ace_nametags_playerNamesViewDistance = 5;
+force ace_nametags_playerNamesViewDistance = 10;
 force ace_nametags_showCursorTagForVehicles = false;
-ace_nametags_showNamesForAI = false;
-ace_nametags_showPlayerNames = 1;
-ace_nametags_showPlayerRanks = true;
-ace_nametags_showSoundWaves = 1;
-ace_nametags_showVehicleCrewInfo = true;
-ace_nametags_tagSize = 2;
+force ace_nametags_showNamesForAI = true;
+force ace_nametags_showPlayerNames = 1;
+force ace_nametags_showPlayerRanks = false;
+force ace_nametags_showSoundWaves = 0;
+force ace_nametags_showVehicleCrewInfo = true;
+force ace_nametags_tagSize = 3;
 
 // ACE Nightvision
 force ace_nightvision_aimDownSightsBlur = 0.2;
@@ -675,230 +682,6 @@ force ace_zeus_revealMines = 0;
 force ace_zeus_zeusAscension = false;
 force ace_zeus_zeusBird = false;
 
-// Carrier Strike - Game Settings
-carrierstrike_game_Settings_AllowFog = false;
-carrierstrike_game_Settings_AllowIndependentFaction = false;
-carrierstrike_game_Settings_AllowRain = false;
-carrierstrike_game_Settings_CarrierMaxHP = 100;
-carrierstrike_game_Settings_HumidityOverride = false;
-carrierstrike_game_Settings_HumidityOverrideAmount = 0;
-carrierstrike_game_Settings_MaxHumidity = 1;
-carrierstrike_game_Settings_NightChance = 0.3;
-carrierstrike_game_Settings_RallyDestroyRadius = 50;
-carrierstrike_game_Settings_RallyGroupSizeRequirement = 3;
-carrierstrike_game_Settings_RallyMinDistanceFromSilo = 100;
-carrierstrike_game_Settings_RallyPlacementCooldown = 90;
-carrierstrike_game_Settings_RandomizeWeather = false;
-carrierstrike_game_Settings_ReactorDestroyedDamage = 12.5;
-carrierstrike_game_Settings_ReactorMaxHP = 100;
-carrierstrike_game_Settings_SeedingMode = false;
-carrierstrike_game_Settings_SiloAllowSpawnOnSilo = false;
-carrierstrike_game_Settings_SiloCaptureRadius = 50;
-carrierstrike_game_Settings_SiloCaptureTime = 30;
-carrierstrike_game_Settings_SiloLaunchCooldown = 120;
-carrierstrike_game_Settings_SiloMissileDamage = 2;
-force carrierstrike_game_Settings_SiloMissileTrackingColorEast = [0.9,0,0];
-force carrierstrike_game_Settings_SiloMissileTrackingColorIndependent = [0,0.8,0];
-force carrierstrike_game_Settings_SiloMissileTrackingColorWest = [0,0,1];
-carrierstrike_game_Settings_SiloPlayerSpawnDistance = 200;
-force carrierstrike_game_Settings_SiloShowMissile3DTracking = false;
-carrierstrike_game_Settings_TimeScale = 1;
-
-// Chemical Warfare PLUS
-force CBRN_AI_UnitFleeingBehaviour_toggle = false;
-force CBRN_ATNAATimer = 5;
-force CBRN_BackpackMultiplier = true;
-force CBRN_Breathing = true;
-force CBRN_color_contamination0 = [0.9294,0.9843,1];
-force CBRN_color_contamination1 = [0.8353,0.9294,0.4627];
-force CBRN_color_contamination2 = [0.9,0.6666,0.6666];
-force CBRN_color_contamination3 = [0.64,0.58,0.08];
-force CBRN_color_contamination4 = [1,1,0.33];
-force CBRN_CustomFacecovers = "[""gm_ge_facewear_acidgoggles"", ""gm_ge_facewear_stormhood_blk"", ""gm_ge_facewear_stormhood_dustglasses_blk"", ""gm_ge_facewear_stormhood_brd"", ""vn_b_bandana_a"", ""vn_o_bandana_b"", ""vn_o_bandana_g"", ""vn_b_acc_seal_01"", ""vn_o_acc_goggles_02"", ""lxWS_H_bmask_base"", ""H_turban_02_mask_black_lxws"", ""lxWS_H_bmask_ghex"", ""lxWS_H_bmask_hex"", ""H_turban_02_mask_hex_lxws"", ""lxWS_H_bmask_camo01"", ""H_bmask_snake_lxws"", ""H_turban_02_mask_snake_lxws"", ""lxWS_H_bmask_white"", ""lxWS_H_bmask_camo02"", ""lxWS_H_bmask_yellow"", ""lxWS_H_turban_03_black"", ""lxWS_H_turban_03_blue"", ""lxWS_H_turban_03_blue_una"", ""lxWS_H_turban_03_green"", ""lxWS_H_turban_03_green_pattern"", ""lxWS_H_turban_03_orange"", ""lxWS_H_turban_03_red"", ""lxWS_H_turban_03_sand"", ""lxWS_H_turban_03_gray"", ""lxWS_H_turban_03_yellow"", ""G_Balaclava_blk_lxWS"", ""G_Balaclava_oli_lxWS"", ""G_Balaclava_snd_lxWS"", ""G_Bandanna_yellow_RF"", ""G_Respirator_blue_F"", ""G_Respirator_white_F"", ""G_Respirator_yellow_F""]";
-force CBRN_CustomGasMasks = "[""gm_ge_facewear_m65"", ""gm_gc_army_facewear_schm41m"", ""vn_b_acc_m17_01"", ""vn_b_acc_m17_02"", ""vn_b_acc_ms22001_01"", ""vn_o_acc_goggles_03"",""H_SPE_US_Helmet_Pilot_SWDG_low_Respirator"", ""H_SPE_US_Helmet_Pilot_Respirator_Glasses_Down"", ""H_SPE_US_Helmet_Pilot_Respirator_Glasses_Up"", ""H_SPE_US_Helmet_Pilot_Respirator"", ""H_SPE_US_Helmet_Pilot_SWDG_low_Respirator"", ""H_SPE_US_Helmet_H15_O2"", ""H_SPE_US_Helmet_H15_B7_low_O2"", ""H_SPE_US_Helmet_H15_SWDG_low_O2"", ""CSLA_helmetZSh5c"",""OPTRE_CBRN"",""OPTRE_CBRN_S"",""OPTRE_CBRN_S"",""GP21_GasmaskPS"",""GP5Filter_RaspiratorPS"",""GP7_RaspiratorPS"",""SE_M17"",""Hamster_PS"",""SE_S10""]";
-force CBRN_CustomSuits = "[""""]";
-force CBRN_DeathAnims = true;
-force CBRN_debugEnabled = false;
-force CBRN_Dev_Mutants_toggle = true;
-force CBRN_DisableFaceSetting_toggle = false;
-force CBRN_DisableForAI_toggle = false;
-force CBRN_DisableForCivilian_toggle = false;
-force CBRN_DisableForEast_toggle = false;
-force CBRN_DisableForIndependent_toggle = false;
-force CBRN_DisableForPlayers_toggle = false;
-force CBRN_DisableForWest_toggle = false;
-force CBRN_DisableTheWholeThing_toggle = true;
-force CBRN_exposureCoughThreshold = 3;
-force CBRN_exposureDeathThreshold = 16;
-force CBRN_exposureKnockoutThreshold = 13;
-force CBRN_exposureLimpThreshold = 8;
-force CBRN_factionMask_AAF_Winter_F = "";
-force CBRN_factionMask_BLU_CTRG_F = "";
-force CBRN_factionMask_BLU_EUDF35_A_F = "";
-force CBRN_factionMask_BLU_EUDF35_D_F = "";
-force CBRN_factionMask_BLU_EUDF35_F = "";
-force CBRN_factionMask_BLU_F = "";
-force CBRN_factionMask_BLU_G_F = "";
-force CBRN_factionMask_BLU_GEN_F = "";
-force CBRN_factionMask_BLU_ION_lxWS = "";
-force CBRN_factionMask_BLU_NATO_lxWS = "";
-force CBRN_factionMask_BLU_T_F = "";
-force CBRN_factionMask_BLU_TURA_lxWS = "";
-force CBRN_factionMask_BLU_UN_lxWS = "";
-force CBRN_factionMask_BLU_W_F = "";
-force CBRN_factionMask_BRPMC = "";
-force CBRN_factionMask_CBRN_Civ = "";
-force CBRN_factionMask_CIV_F = "";
-force CBRN_factionMask_CIV_IDAP_F = "";
-force CBRN_factionMask_dev_mutants = "";
-force CBRN_factionMask_DSA_DeltaX = "";
-force CBRN_factionMask_DSA_Spooks = "";
-force CBRN_factionMask_DVK_TCF = "";
-force CBRN_factionMask_DVK_TCF_B = "";
-force CBRN_factionMask_Expansion_Mod_Gendarmerie_CBRN_Div = "";
-force CBRN_factionMask_GX_B_C_Faction = "";
-force CBRN_factionMask_Horror_Units_F = "";
-force CBRN_factionMask_ibr_LartaFac = "";
-force CBRN_factionMask_IND_C_F = "";
-force CBRN_factionMask_IND_E_F = "";
-force CBRN_factionMask_IND_EUDF35_A_F = "";
-force CBRN_factionMask_IND_EUDF35_D_F = "";
-force CBRN_factionMask_IND_EUDF35_F = "";
-force CBRN_factionMask_IND_F = "";
-force CBRN_factionMask_IND_G_F = "";
-force CBRN_factionMask_IND_ION_lxWS = "";
-force CBRN_factionMask_IND_L_F = "";
-force CBRN_factionMask_IND_P_F = "";
-force CBRN_factionMask_IND_SFIA_lxWS = "";
-force CBRN_factionMask_IND_TURA_lxWS = "";
-force CBRN_factionMask_IND_UN_lxWS = "";
-force CBRN_factionMask_Interactive_F = "";
-force CBRN_factionMask_ion_shutss_pler = "";
-force CBRN_factionMask_LOP_AA = "";
-force CBRN_factionMask_LOP_AFR = "";
-force CBRN_factionMask_LOP_AFR_Civ = "";
-force CBRN_factionMask_LOP_AFR_OPF = "";
-force CBRN_factionMask_LOP_AM = "";
-force CBRN_factionMask_LOP_AM_OPF = "";
-force CBRN_factionMask_LOP_BH = "";
-force CBRN_factionMask_LOP_CDF = "";
-force CBRN_factionMask_LOP_ChDKZ = "";
-force CBRN_factionMask_LOP_CHR_Civ = "";
-force CBRN_factionMask_LOP_GRE = "";
-force CBRN_factionMask_LOP_IA = "";
-force CBRN_factionMask_LOP_IRA = "";
-force CBRN_factionMask_LOP_IRAN = "";
-force CBRN_factionMask_LOP_ISTS = "";
-force CBRN_factionMask_LOP_ISTS_OPF = "";
-force CBRN_factionMask_LOP_NAPA = "";
-force CBRN_factionMask_LOP_NK = "";
-force CBRN_factionMask_LOP_PESH = "";
-force CBRN_factionMask_LOP_PESH_IND = "";
-force CBRN_factionMask_LOP_PMC = "";
-force CBRN_factionMask_LOP_RACS = "";
-force CBRN_factionMask_LOP_SLA = "";
-force CBRN_factionMask_LOP_SYR = "";
-force CBRN_factionMask_LOP_TAK_Civ = "";
-force CBRN_factionMask_LOP_TKA = "";
-force CBRN_factionMask_LOP_TRK = "";
-force CBRN_factionMask_LOP_UA = "";
-force CBRN_factionMask_LOP_UKR = "";
-force CBRN_factionMask_LOP_UN = "";
-force CBRN_factionMask_LOP_US = "";
-force CBRN_factionMask_LOP_UVF = "";
-force CBRN_factionMask_mas_chi_army = "";
-force CBRN_factionMask_mas_chi_army_d = "";
-force CBRN_factionMask_mas_chi_army_n = "";
-force CBRN_factionMask_mas_chi_army_p = "";
-force CBRN_factionMask_mas_chi_army_s = "";
-force CBRN_factionMask_mas_chi_army_t = "";
-force CBRN_factionMask_mas_chi_army_w = "";
-force CBRN_factionMask_OPF_EUDF35_A_F = "";
-force CBRN_factionMask_OPF_EUDF35_D_F = "";
-force CBRN_factionMask_OPF_EUDF35_F = "";
-force CBRN_factionMask_OPF_F = "";
-force CBRN_factionMask_OPF_G_F = "";
-force CBRN_factionMask_OPF_GEN_F = "";
-force CBRN_factionMask_OPF_ION_lxWS = "";
-force CBRN_factionMask_OPF_R_F = "";
-force CBRN_factionMask_OPF_SFIA_lxWS = "";
-force CBRN_factionMask_OPF_T_F = "";
-force CBRN_factionMask_OPF_TURA_lxWS = "";
-force CBRN_factionMask_OPF_V_F = "";
-force CBRN_factionMask_OPFOR_RUSSIA = "";
-force CBRN_factionMask_phantoms_Faction = "";
-force CBRN_factionMask_rhs_faction_insurgents = "";
-force CBRN_factionMask_rhs_faction_msv = "";
-force CBRN_factionMask_rhs_faction_rva = "";
-force CBRN_factionMask_rhs_faction_socom = "";
-force CBRN_factionMask_rhs_faction_tv = "";
-force CBRN_factionMask_rhs_faction_usaf = "";
-force CBRN_factionMask_rhs_faction_usarmy = "";
-force CBRN_factionMask_rhs_faction_usarmy_d = "";
-force CBRN_factionMask_rhs_faction_usarmy_wd = "";
-force CBRN_factionMask_rhs_faction_usmc = "";
-force CBRN_factionMask_rhs_faction_usmc_d = "";
-force CBRN_factionMask_rhs_faction_usmc_wd = "";
-force CBRN_factionMask_rhs_faction_usn = "";
-force CBRN_factionMask_rhs_faction_vdv = "";
-force CBRN_factionMask_rhs_faction_vdv_45 = "";
-force CBRN_factionMask_rhs_faction_vmf = "";
-force CBRN_factionMask_rhs_faction_vpvo = "";
-force CBRN_factionMask_rhs_faction_vv = "";
-force CBRN_factionMask_rhs_faction_vvs = "";
-force CBRN_factionMask_rhs_faction_vvs_c = "";
-force CBRN_factionMask_rhsgref_faction_cdf_air = "";
-force CBRN_factionMask_rhsgref_faction_cdf_air_b = "";
-force CBRN_factionMask_rhsgref_faction_cdf_ground = "";
-force CBRN_factionMask_rhsgref_faction_cdf_ground_b = "";
-force CBRN_factionMask_rhsgref_faction_cdf_ng = "";
-force CBRN_factionMask_rhsgref_faction_cdf_ng_b = "";
-force CBRN_factionMask_rhsgref_faction_chdkz = "";
-force CBRN_factionMask_rhsgref_faction_chdkz_g = "";
-force CBRN_factionMask_rhsgref_faction_hidf = "";
-force CBRN_factionMask_rhsgref_faction_nationalist = "";
-force CBRN_factionMask_rhsgref_faction_tla = "";
-force CBRN_factionMask_rhsgref_faction_tla_g = "";
-force CBRN_factionMask_rhsgref_faction_un = "";
-force CBRN_factionMask_RWG = "";
-force CBRN_factionMask_TF160 = "";
-force CBRN_factionMask_tweed_UA_21 = "";
-force CBRN_factionMask_USA = "";
-force CBRN_factionMask_USMC = "";
-force CBRN_factionMask_USN = "";
-force CBRN_factionMask_Virtual_F = "";
-force CBRN_factionMask_WBK_AI = "";
-force CBRN_factionMask_WBK_AI_Melee = "";
-force CBRN_factionMask_WBK_AI_ZHAMBIES = "";
-force CBRN_factionMask_WBK_WGP_BLUFOR = "";
-force CBRN_factionMask_WBK_WGP_INDFOR = "";
-force CBRN_factionMask_WBK_WGP_OPFOR = "";
-force CBRN_factionMask_YUL_army = "";
-force CBRN_Flood_toggle = false;
-force CBRN_GasMask_Style_setting = 3;
-force CBRN_GasMasks_DammageAllowed_toggle = true;
-force CBRN_Maskoverlay = true;
-force CBRN_medical_gasmask_durability = 300;
-force CBRN_OnlyDepleteInsideGas = false;
-force CBRN_RenegadeConversion_setting = true;
-force CBRN_SealTimer = 10;
-force CBRN_WBK_Combine_toggle = false;
-force CBRN_WBK_Droid_toggle = false;
-force CBRN_WBK_EoO_toggle = false;
-force CBRN_WBK_OB_Aliens_toggle = false;
-force CBRN_WBK_OPTRE_toggle = false;
-force CBRN_WBK_ZoC_toggle = true;
-force CBRN_ZombieImmunity_toggle = true;
-force FSPLUS_CW_AsphyxiantGas = true;
-force FSPLUS_CW_BlisterGas = true;
-force FSPLUS_CW_ChemicalLeak = true;
-force FSPLUS_CW_CSGas = true;
-force FSPLUS_CW_MakeImmune = true;
-force FSPLUS_CW_Mortars = true;
-force FSPLUS_CW_NerveGas = true;
-force FSPLUS_CW_NovaGas = true;
-force FSPLUS_CW_RemoveExposure = true;
-
 // CINE Additional Zeus
 cine_addizeus_ai_hunterAi_seek_range = 400;
 cine_addizeus_ai_unarmedBecomesCaptive_requiredTime = 60;
@@ -936,13 +719,6 @@ force crowsza_zeus_text_CBA_Setting_zeusTextLine1 = true;
 force crowsza_zeus_text_CBA_Setting_zeusTextLine2 = true;
 force crowsza_zeus_text_CBA_Setting_zeusTextLine3 = true;
 
-// DevourerKing Common
-dev_cba_damageMultiplier = 1;
-dev_cba_friendly = "[""HeadlessClient_F"", ""VirtualCurator_F"", ""B_VirtualCurator_F"", ""O_VirtualCurator_F"", ""I_VirtualCurator_F"", ""C_VirtualCurator_F""]";
-force dev_cba_friendlySide = true;
-force dev_cba_killswitch = false;
-force dev_zombie_deleteWeapon = true;
-
 // DUI - Squad Radar - Main
 force diwako_dui_ace_hide_interaction = true;
 diwako_dui_colors = "standard";
@@ -957,31 +733,6 @@ force diwako_dui_main_squadRed = [1,0,0,1];
 force diwako_dui_main_squadYellow = [1,1,0,1];
 force diwako_dui_main_trackingColor = [0.93,0.26,0.93,1];
 force diwako_dui_reset_ui_pos = false;
-
-// DUI - Squad Radar - Nametags
-force diwako_dui_nametags_customRankStyle = "[[""PRIVATE"",""CORPORAL"",""SERGEANT"",""LIEUTENANT"",""CAPTAIN"",""MAJOR"",""COLONEL""],[""Pvt."",""Cpl."",""Sgt."",""Lt."",""Capt."",""Maj."",""Col.""]]";
-force diwako_dui_nametags_deadColor = [1,1,1,1];
-force diwako_dui_nametags_deadRenderDistance = 3.5;
-force diwako_dui_nametags_drawRank = false;
-force diwako_dui_nametags_enabled = true;
-force diwako_dui_nametags_enableFOVBoost = true;
-force diwako_dui_nametags_enableOcclusion = false;
-force diwako_dui_nametags_fadeInTime = 0.08;
-force diwako_dui_nametags_fadeOutTime = 0.16;
-force diwako_dui_nametags_fontGroup = "PuristaSemibold";
-force diwako_dui_nametags_fontGroupNameSize = 9;
-force diwako_dui_nametags_fontName = "PuristaMedium";
-force diwako_dui_nametags_fontNameSize = 12;
-force diwako_dui_nametags_groupColor = [1,1,1,1];
-force diwako_dui_nametags_groupFontShadow = 1;
-force diwako_dui_nametags_groupNameOtherGroupColor = [0,1,0,1];
-force diwako_dui_nametags_nameFontShadow = 1;
-force diwako_dui_nametags_nameOtherGroupColor = [1,1,1,1];
-force diwako_dui_nametags_rankNameStyle = "default";
-force diwako_dui_nametags_renderDistance = 10;
-force diwako_dui_nametags_showUnconAsDead = false;
-force diwako_dui_nametags_useLIS = false;
-force diwako_dui_nametags_useSideIsFriendly = false;
 
 // DUI - Squad Radar - Radar
 force diwako_dui_compass_hide_alone_group = false;
@@ -1001,7 +752,6 @@ force diwako_dui_enable_occlusion_cone = 360;
 force diwako_dui_hudScaling = 0.972222;
 diwako_dui_namelist = false;
 force diwako_dui_namelist_bg = 0;
-force diwako_dui_namelist_only_buddy_icon = false;
 force diwako_dui_namelist_size = 0.958624;
 force diwako_dui_namelist_text_shadow = 2;
 force diwako_dui_namelist_width = 215;
@@ -1156,6 +906,10 @@ force lambs_danger_disableAutonomousFlares = false;
 force lambs_danger_disableAutonomousSmokeGrenades = false;
 force lambs_danger_panicChance = 0.1;
 
+// LAMBS Danger Eventhandlers
+force lambs_eventhandlers_ExplosionEventHandlerEnabled = false;
+force lambs_eventhandlers_ExplosionReactionTime = 9;
+
 // LAMBS Danger WP
 force lambs_wp_autoAddArtillery = false;
 
@@ -1185,129 +939,10 @@ force lambs_main_radioGuer = 500;
 force lambs_main_radioShout = 100;
 force lambs_main_radioWest = 500;
 
-// Necroplague
-force dev_cba_infection = true;
-dev_cba_infection_prolongTime = 900;
-dev_cba_infection_resurrectAmugusChance = 0;
-dev_cba_infection_resurrectParasiteChance = 0.1;
-dev_cba_infection_resurrectTime = "[25,30,35]";
-force dev_cba_infection_resurrectWebknight = true;
-force dev_cba_infection_resurrectZombie = true;
-dev_cba_infection_totalTime = 180;
-
-// Necroplague - Infected
-force dev_zombie_attack_damageMn = 0.125;
-force dev_zombie_attack_damageVeh = 0.001;
-force dev_zombie_attack_launchVeh = "[0,1,1]";
-force dev_zombie_attack_reachMan = 3.5;
-force dev_zombie_attack_reachVeh = 8;
-force dev_zombie_attack_timeout = 0.5;
-force dev_zombie_distance_agro = 50;
-force dev_zombie_distance_hunt = 100;
-force dev_zombie_distance_max = 500;
-force dev_zombie_distance_roam = 75;
-force dev_zombie_greenEyes = false;
-force dev_zombie_head_caliber = 9;
-force dev_zombie_head_chance = 0.5;
-force dev_zombie_health = 1;
-force dev_zombie_infectionChance = 0.5;
-force dev_zombie_uniformFix = false;
-force dev_zombie_useGlasses = false;
-force dev_zombie_useIdentity = true;
-
-// Necroplague - Spitter
-force dev_toxmut_attack_damageMan = 0.3;
-force dev_toxmut_attack_damageManSpit = 0.5;
-force dev_toxmut_attack_damageVeh = 0.01;
-force dev_toxmut_attack_launchVeh = "[0,1,0.1]";
-force dev_toxmut_attack_reachMan = 3.5;
-force dev_toxmut_attack_reachSpit = 30;
-force dev_toxmut_attack_reachVeh = 8;
-force dev_toxmut_attack_specialChance = 0.5;
-force dev_toxmut_attack_timeout = 0.5;
-force dev_toxmut_attack_timeoutSpit = 15;
-force dev_toxmut_distance_agro = 75;
-force dev_toxmut_distance_hunt = 300;
-force dev_toxmut_distance_max = 1000;
-force dev_toxmut_distance_roam = 75;
-force dev_toxmut_health = 1;
-
-// Necroplague - Stalker
-force dev_form939_attack_damageMan = 0.5;
-force dev_form939_attack_damageVeh = 0.01;
-force dev_form939_attack_launchVeh = "[0,1,1]";
-force dev_form939_attack_psychChance = 0.1;
-force dev_form939_attack_psychDuration = 15;
-force dev_form939_attack_psychTimeout = 30;
-force dev_form939_attack_reachMan = 5;
-force dev_form939_attack_reachVeh = 8;
-force dev_form939_attack_timeout = 0.5;
-force dev_form939_distance_agro = 100;
-force dev_form939_distance_hunt = 1400;
-force dev_form939_distance_max = 1500;
-force dev_form939_distance_roam = 75;
-force dev_form939_health = 0.11;
-
-// Necroplague - The Bully
-force dev_asymhuman_attack_bigArmChance = 0.5;
-force dev_asymhuman_attack_damageMan = 0.5;
-force dev_asymhuman_attack_damageVeh = 0.2;
-force dev_asymhuman_attack_infectionChance = 0.5;
-force dev_asymhuman_attack_launchMan = "[0,6,5]";
-force dev_asymhuman_attack_launchVeh = "[0,10,5]";
-force dev_asymhuman_attack_reachMan = 3.5;
-force dev_asymhuman_attack_reachVeh = 8;
-force dev_asymhuman_attack_timeout = 0.5;
-force dev_asymhuman_distance_agro = 75;
-force dev_asymhuman_distance_hunt = 300;
-force dev_asymhuman_distance_max = 1000;
-force dev_asymhuman_distance_roam = 75;
-force dev_asymhuman_health = 1;
-
-// Necroplague - The Hivemind
-force dev_hivemind_hallucinate2Distance = 50;
-force dev_hivemind_hallucinateProbabilityClose = 20;
-force dev_hivemind_hallucinateProbabilityFar = 20;
-force dev_hivemind_health = 0.2;
-force dev_hivemind_maxCooldown = 40;
-force dev_hivemind_maxDistance = 150;
-force dev_hivemind_minCooldown = 15;
-force dev_hivemind_suicideTime = 180;
-
-// Necroplague - The Jumper
-force dev_asymhuman_stage2_agroDistance = 50;
-force dev_asymhuman_stage2_attack2Timeout = 10;
-force dev_asymhuman_stage2_attackDistanceMan = 2.5;
-force dev_asymhuman_stage2_attackDistanceVeh = 8;
-force dev_asymhuman_stage2_attackTimeout = 1;
-force dev_asymhuman_stage2_damageMan = 0.2;
-force dev_asymhuman_stage2_damageManAttack2 = 0.3;
-force dev_asymhuman_stage2_damageVeh = 0.1;
-force dev_asymhuman_stage2_distance_roam = 50;
-force dev_asymhuman_stage2_health = 0.1;
-force dev_asymhuman_stage2_huntDistance = 75;
-force dev_asymhuman_stage2_infectionChance = 0.5;
-force dev_asymhuman_stage2_jumpTimeout = 30;
-force dev_asymhuman_stage2_maxDistance = 500;
-
-// Necroplague - The Parasite
-force dev_parasite_agroDistance = 1000;
-force dev_parasite_attack2Timeout = 4;
-force dev_parasite_attack3Timeout = 20;
-force dev_parasite_attackDistanceMan = 3.5;
-force dev_parasite_attackDistanceVeh = 7;
-force dev_parasite_attackTimeout = 1;
-force dev_parasite_damageMan = 0.2;
-force dev_parasite_damageManAttack2 = 0.2;
-force dev_parasite_damageManAttack3 = 0.25;
-force dev_parasite_damageVeh = 0.001;
-force dev_parasite_distance_roam = 75;
-force dev_parasite_health = 0.05;
-force dev_parasite_huntDistance = 1500;
-force dev_parasite_infectionChance = 1;
-force dev_parasite_jumpTimeout = 20;
-force dev_parasite_maxDistance = 2000;
-force dev_parasite_specialChance = 0.1;
+// LX NODs
+force LX_cba_nods_mainKillSwitch = false;
+LX_cba_nods_nodsPp = [1,1,0,[0,0,0,0],[0.522,0.914,0.776,0],[1,1,1,0]];
+LX_cba_nods_nodsPpKillSwitch = false;
 
 // NIArms
 force niarms_gripSwitch = true;
@@ -1472,15 +1107,14 @@ force TFAR_voiceCone = false;
 
 // TFI Animation
 force TFI_cba_anim_adsOff = true;
-force TFI_cba_anim_doorOff = false;
-force TFI_cba_anim_mapOff = false;
-force TFI_cba_anim_nvgOff = false;
-force TFI_cba_anim_radioGestureOff = false;
+force TFI_cba_anim_doorOff = true;
+force TFI_cba_anim_mapOff = true;
+force TFI_cba_anim_radioGestureOff = true;
 force TFI_cba_anim_runSteepMax = 20;
 force TFI_cba_anim_runSteepMin = -20;
 
 // TFI Fatigue
-force TFI_cba_fat_armFatigueOff = true;
+force TFI_cba_fat_armFatigueOff = false;
 force TFI_cba_fat_rccOff = false;
 force TFI_cba_fat_rccOnlyPlayers = true;
 
@@ -1489,13 +1123,12 @@ force TFI_cba_plat_bubbleChatOff = false;
 TFI_cba_plat_clearRadioOff = true;
 force TFI_cba_plat_craterOff = true;
 force TFI_cba_plat_craterSize = 1.5;
-force TFI_cba_plat_navKeepGPS = false;
 force TFI_cba_plat_navOff = false;
-force TFI_cba_plat_vecCollisionOff = false;
+force TFI_cba_plat_vecCollisionOff = true;
 
 // TFI SFX
 force TFI_cba_sfx_attachmentOff = false;
-force TFI_cba_sfx_deathChance = 0.25;
+force TFI_cba_sfx_deathChance = 0.5;
 force TFI_cba_sfx_deathOff = false;
 force TFI_cba_sfx_inventoryOff = false;
 force TFI_cba_sfx_jumpOff = false;
@@ -1519,7 +1152,6 @@ force TFI_cba_vfx_gcamOff = false;
 force TFI_cba_vfx_gcamRange = 300;
 force TFI_cba_vfx_hsChance = 1;
 force TFI_cba_vfx_hsOff = true;
-TFI_cba_vfx_nvgEffect = "mwEffect";
 
 // Turret Enhanced
 force Fat_Lurch_Grid = true;
@@ -1531,6 +1163,14 @@ force Fat_Lurch_ShowAz = true;
 force Fat_Lurch_ShowEl = true;
 force Fat_Lurch_ShowNorth = true;
 force Fat_Lurch_ShowTarget = true;
+
+// VET_Unflipping
+force vet_unflipping_require_serviceVehicle = false;
+force vet_unflipping_require_toolkit = false;
+force vet_unflipping_time = 5;
+force vet_unflipping_unit_man_limit = 7;
+force vet_unflipping_unit_mass_limit = 3000;
+force vet_unflipping_vehicle_mass_limit = 100000;
 
 // View Distance Manager
 force DT_automaticObjectSync = true;
@@ -1693,8 +1333,6 @@ zen_attributes_enableWaypointType = true;
 
 // Zeus Enhanced - Faction Filter
 zen_faction_filter_0_BRPMC = true;
-zen_faction_filter_0_dev_groups_east = true;
-zen_faction_filter_0_dev_mutants = true;
 zen_faction_filter_0_DVK_TCF = true;
 zen_faction_filter_0_GX_B_C_Faction = true;
 zen_faction_filter_0_ibr_LartaFac = true;
@@ -1716,16 +1354,11 @@ zen_faction_filter_0_mas_chi_army_p = true;
 zen_faction_filter_0_mas_chi_army_s = true;
 zen_faction_filter_0_mas_chi_army_t = true;
 zen_faction_filter_0_mas_chi_army_w = true;
-zen_faction_filter_0_OPF_EUDF35_A_F = true;
-zen_faction_filter_0_OPF_EUDF35_D_F = true;
-zen_faction_filter_0_OPF_EUDF35_F = true;
 zen_faction_filter_0_OPF_F = true;
 zen_faction_filter_0_OPF_G_F = true;
 zen_faction_filter_0_OPF_GEN_F = true;
 zen_faction_filter_0_OPF_R_F = true;
-zen_faction_filter_0_OPF_SFIA_lxWS = true;
 zen_faction_filter_0_OPF_T_F = true;
-zen_faction_filter_0_OPF_TURA_lxWS = true;
 zen_faction_filter_0_rhs_faction_msv = true;
 zen_faction_filter_0_rhs_faction_rva = true;
 zen_faction_filter_0_rhs_faction_tv = true;
@@ -1743,25 +1376,12 @@ zen_faction_filter_0_WBK_AI_Melee = true;
 zen_faction_filter_0_WBK_AI_ZHAMBIES = true;
 zen_faction_filter_0_WBK_WGP_OPFOR = true;
 zen_faction_filter_1_BLU_CTRG_F = true;
-zen_faction_filter_1_BLU_EUDF35_A_F = true;
-zen_faction_filter_1_BLU_EUDF35_D_F = true;
-zen_faction_filter_1_BLU_EUDF35_F = true;
 zen_faction_filter_1_BLU_F = true;
 zen_faction_filter_1_BLU_G_F = true;
 zen_faction_filter_1_BLU_GEN_F = true;
-zen_faction_filter_1_BLU_ION_lxWS = true;
-zen_faction_filter_1_BLU_NATO_lxWS = true;
 zen_faction_filter_1_BLU_T_F = true;
-zen_faction_filter_1_BLU_TURA_lxWS = true;
-zen_faction_filter_1_BLU_UN_lxWS = true;
 zen_faction_filter_1_BLU_W_F = true;
-zen_faction_filter_1_CIV_F = true;
-zen_faction_filter_1_dev_groups_west = true;
-zen_faction_filter_1_dev_mutants = true;
-zen_faction_filter_1_DSA_DeltaX = true;
-zen_faction_filter_1_DSA_DeltaX_groups = true;
 zen_faction_filter_1_DVK_TCF_B = true;
-zen_faction_filter_1_Expansion_Mod_Gendarmerie_CBRN_Div = true;
 zen_faction_filter_1_ion_shutss_pler = true;
 zen_faction_filter_1_LOP_AA = true;
 zen_faction_filter_1_LOP_CDF = true;
@@ -1790,18 +1410,11 @@ zen_faction_filter_1_WBK_AI_ZHAMBIES = true;
 zen_faction_filter_1_WBK_WGP_BLUFOR = true;
 zen_faction_filter_1_YUL_army = true;
 zen_faction_filter_2_AAF_Winter_F = true;
-zen_faction_filter_2_dev_groups_indep = true;
-zen_faction_filter_2_dev_mutants = true;
 zen_faction_filter_2_IND_C_F = true;
 zen_faction_filter_2_IND_E_F = true;
-zen_faction_filter_2_IND_EUDF35_A_F = true;
-zen_faction_filter_2_IND_EUDF35_D_F = true;
-zen_faction_filter_2_IND_EUDF35_F = true;
 zen_faction_filter_2_IND_F = true;
 zen_faction_filter_2_IND_G_F = true;
 zen_faction_filter_2_IND_L_F = true;
-zen_faction_filter_2_IND_SFIA_lxWS = true;
-zen_faction_filter_2_IND_TURA_lxWS = true;
 zen_faction_filter_2_LOP_AFR = true;
 zen_faction_filter_2_LOP_AM = true;
 zen_faction_filter_2_LOP_IRAN = true;
@@ -1829,20 +1442,13 @@ zen_faction_filter_2_rhsgref_faction_un = true;
 zen_faction_filter_2_RWG = true;
 zen_faction_filter_2_WBK_AI_ZHAMBIES = true;
 zen_faction_filter_2_WBK_WGP_INDFOR = true;
-zen_faction_filter_3_CBRN_Civ = true;
 zen_faction_filter_3_CIV_F = true;
 zen_faction_filter_3_CIV_IDAP_F = true;
-zen_faction_filter_3_dev_mutants = true;
-zen_faction_filter_3_DSA_Spooks = true;
 zen_faction_filter_3_EdCat_Edaly_Characters = true;
-zen_faction_filter_3_Horror_Units_F = true;
-zen_faction_filter_3_IND_F = true;
 zen_faction_filter_3_IND_L_F = true;
 zen_faction_filter_3_LOP_AFR_Civ = true;
 zen_faction_filter_3_LOP_CHR_Civ = true;
 zen_faction_filter_3_LOP_TAK_Civ = true;
-zen_faction_filter_3_phantoms_Faction = true;
-zen_faction_filter_3_xs_categories = true;
 
 // VCOM AI East Skill
 force Vcm_AISkills_East_AimingAccuracy = 0.35;
