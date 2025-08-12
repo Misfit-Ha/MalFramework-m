@@ -208,7 +208,10 @@ EGVAR(reinsertion,RPObject) = "Land_TentA_F";  // Object used as the squad rally
 EGVAR(reinsertion,markHAB) = true;  // Mark the HAB location on map
 EGVAR(reinsertion,HABObject) = "Land_HBarrierTower_F";  // Object used as the platoon HAB
 EGVAR(reinsertion,allowTPFromHAB) = true;  // If TP to squad RP is allowed from the platoon HAB
-EGVAR(reinsertion,TPPoles) = ["TFI_obj_opr_teleport_1", "TFI_obj_opr_teleport_2"];  // Teleport pole object(s)
+EGVAR(reinsertion,TPPolesBlue) = ["TFI_obj_opr_teleport_1"];  // Teleport pole object(s) bluefor
+EGVAR(reinsertion,TPPolesRed) = [];  // Teleport pole object(s) for redfor
+EGVAR(reinsertion,TPPolesGreen) = [];  // Teleport pole object(s) for greenfor
+EGVAR(reinsertion,TPPolesPurple) = [];  // Teleport pole object(s) for civilian
 
 // Retreat
 GVARMAIN(moduleRetreat) = false;  // Coop & TvT

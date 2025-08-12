@@ -21,9 +21,18 @@
 if !(hasInterface) exitWith {};
 
 params [["_unit", player], ["_corpse", objNull]];
+private ["_selectedTPPole", "_tpPolePos"];
 
 // TP to respawn pole(s)
-private _tpPolePos = getPosASL (call compile (MF_reinsertion_TPPoles#0));
+switch (side _unit) do {
+    case (west): { _selectedTPPole = MF_reinsertion_TPPolesBlue; };
+    case (east): { _selectedTPPole = MF_reinsertion_TPPolesRed; };
+    case (independent): { _selectedTPPole = MF_reinsertion_TPPolesGreen; };
+    case (civilian): { _selectedTPPole = MF_reinsertion_TPPolesPurple; };
+    default { _selectedTPPole = MF_reinsertion_TPPolesBlue; };
+};
+
+_tpPolePos = getPosASL (call compile (selectRandom _selectedTPPole));
 _unit setPosASL [(_tpPolePos#0) + 5, (_tpPolePos#1), (_tpPolePos#2) + 0.5];
 _unit setDir (getDir _unit + (_unit getRelDir _tpPolePos));
 

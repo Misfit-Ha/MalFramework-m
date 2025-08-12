@@ -6,8 +6,8 @@ if !(GVARMAIN(moduleGear)) exitWith {};
 if (GVAR(arsenalAtPole)) then {
     ["TFI Operation", "TFI_key_opr_openArsenal", ["Open Arsenal", "Only works around TP poles"], {}, {
         private _unit = call CBA_fnc_currentUnit;
-
-        MF_reinsertion_TPPoles apply {
+        private _allPoles = MF_reinsertion_TPPolesBlue + MF_reinsertion_TPPolesRed + MF_reinsertion_TPPolesGreen + MF_reinsertion_TPPolesPurple;
+        _allPoles apply {
             if ((_unit distance2D (call compile _x)) < MF_gear_arsenalAtPoleDistance) exitWith {
                 [_unit, _unit, true] call ace_arsenal_fnc_openBox;
             };
