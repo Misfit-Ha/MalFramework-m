@@ -1109,12 +1109,12 @@ force TFAR_voiceCone = false;
 force TFI_cba_anim_adsOff = true;
 force TFI_cba_anim_doorOff = true;
 force TFI_cba_anim_mapOff = true;
-force TFI_cba_anim_radioGestureOff = true;
+force TFI_cba_anim_radioGestureOff = false;
 force TFI_cba_anim_runSteepMax = 20;
 force TFI_cba_anim_runSteepMin = -20;
 
 // TFI Fatigue
-force TFI_cba_fat_armFatigueOff = false;
+force TFI_cba_fat_armFatigueOff = true;
 force TFI_cba_fat_rccOff = false;
 force TFI_cba_fat_rccOnlyPlayers = true;
 

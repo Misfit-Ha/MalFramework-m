@@ -78,15 +78,15 @@ GVARMAIN(useACESpectator) = true;  // Use the ACE spectator camera instead of th
 // AI skills
 GVARMAIN(moduleAISkill) = true;
 EGVAR(ai_skills,skillSet) = [
-    1,  // General (Higher = Better) all values are between 0 and 1
-    1,  // Commanding (Higher = Better)
-    1,  // Courage (Higher = Better)
-    1,  // Aiming Accuracy (Higher = Better)
-    1,  // Aiming Shake (Higher = Less)
-    1,  // Aiming Speed (Higher = Faster)
-    1,  // Reload Speed (Higher = Faster)
-    1,  // Spotting Distance (Higher = Further)
-    1   // Spotting Time (Higher = Faster)
+    0.6,  // General (Higher = Better) all values are between 0 and 1
+    0.6,  // Commanding (Higher = Better)
+    0.6,  // Courage (Higher = Better)
+    0.6,  // Aiming Accuracy (Higher = Better)
+    0.6,  // Aiming Shake (Higher = Less)
+    0.6,  // Aiming Speed (Higher = Faster)
+    0.6,  // Reload Speed (Higher = Faster)
+    0.6,  // Spotting Distance (Higher = Further)
+    0.6   // Spotting Time (Higher = Faster)
 ];
 
 
