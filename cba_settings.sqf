@@ -1462,15 +1462,15 @@ force Vcm_AISkills_East_spotDistance = 0.7;
 force Vcm_AISkills_East_spotTime = 0.7;
 
 // VCOM AI General Skill
-force Vcm_AISkills_General_AimingAccuracy = 1;
-force Vcm_AISkills_General_aimingShake = 1;
-force Vcm_AISkills_General_aimingSpeed = 1;
+force Vcm_AISkills_General_AimingAccuracy = 0.15;
+force Vcm_AISkills_General_aimingShake = 0.1;
+force Vcm_AISkills_General_aimingSpeed = 0.25;
 force Vcm_AISkills_General_commanding = 1;
 force Vcm_AISkills_General_courage = 1;
-force Vcm_AISkills_General_general = 1;
+force Vcm_AISkills_General_general = 0.5;
 force Vcm_AISkills_General_reloadSpeed = 1;
-force Vcm_AISkills_General_spotDistance = 1;
-force Vcm_AISkills_General_spotTime = 1;
+force Vcm_AISkills_General_spotDistance = 0.8;
+force Vcm_AISkills_General_spotTime = 0.8;
 
 // VCOM AI Resistance Skill
 force Vcm_AISkills_Resistance_AimingAccuracy = 0.35;
