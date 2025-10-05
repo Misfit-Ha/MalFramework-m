@@ -1420,7 +1420,7 @@ force lambs_main_radioShout = 100;
 force lambs_main_radioWest = 500;
 
 // LX NODs
-force LX_cba_nods_mainKillSwitch = false;
+force LX_cba_nods_mainKillSwitch = true;
 LX_cba_nods_nodsPp = [1,1,0,[0,0,0,0],[0.522,0.914,0.776,0],[1,1,1,0]];
 LX_cba_nods_nodsPpKillSwitch = false;
 
