@@ -24,24 +24,24 @@ if !(hasInterface) exitWith {false};
 ["loadout", {call FUNC(checkGuns);}] call CBA_fnc_addPlayerEventHandler;
 // Remove player concelment if throw a frag or plant a explosive
 [
-	"ace_firedPlayer",
-	{
-		if ((_this#1) isEqualTo "Throw") then {
+  "ace_firedPlayer",
+  {
+    if ((_this#1) isEqualTo "Throw") then {
             ACE_player setVariable ["TFI_var_opr_isUnderCover", false];
             [ACE_player, false] remoteExecCall ["setCaptive"];
             ACE_player setCaptive false;
             ["You Went High Profile", 1.5] call ace_common_fnc_displayTextStructured;
         };
-	}
+  }
 ] call CBA_fnc_addEventHandler;
 [
-	"ace_explosives_place",
-	{
-		ACE_player setVariable ["TFI_var_opr_isUnderCover", false];
+  "ace_explosives_place",
+  {
+    ACE_player setVariable ["TFI_var_opr_isUnderCover", false];
         [ACE_player, false] remoteExecCall ["setCaptive"];
         ACE_player setCaptive false;
         ["You Went High Profile", 1.5] call ace_common_fnc_displayTextStructured;
-	}
+  }
 ] call CBA_fnc_addEventHandler;
 
 

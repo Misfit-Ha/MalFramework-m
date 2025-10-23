@@ -24,14 +24,14 @@ if (MF_intro_freeze) then { player enableSimulation false; }; // Freeze unit loc
 
 
 [
-	{ (!isNull findDisplay 46) },
-	{
-		clearRadio;
+  { (!isNull findDisplay 46) },
+  {
+    clearRadio;
         MF_intro_delay fadeSound 1;
-		[
-			{
-				clearRadio;
-				if (MF_intro_freeze) then { player enableSimulation true; }; // Freeze unit unlock
+    [
+      {
+        clearRadio;
+        if (MF_intro_freeze) then { player enableSimulation true; }; // Freeze unit unlock
                 if (MF_intro_blackScreen) then { "TFI_hud_briefFade" cutText ["", "BLACK IN", 0.5]; }; // Black screen out
 
 
@@ -78,7 +78,7 @@ if (MF_intro_freeze) then { player enableSimulation false; }; // Freeze unit loc
                         }, [], [1, 10] select MF_intro_unitInfo // Consider if unit info is on or off
                     ] call CBA_fnc_waitAndExecute;
                 };
-			}, [], MF_intro_delay
-		] call CBA_fnc_waitAndExecute;
-	}
+      }, [], MF_intro_delay
+    ] call CBA_fnc_waitAndExecute;
+  }
 ] call CBA_fnc_waitUntilAndExecute;
