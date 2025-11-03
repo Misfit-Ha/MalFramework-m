@@ -100,7 +100,7 @@ ace_arsenal_showUnavailableItems = 0;
 
 // ACE Artillery
 force ace_artillerytables_advancedCorrections = false;
-force ace_artillerytables_disableArtilleryComputer = true;
+force ace_artillerytables_disableArtilleryComputer = false;
 force ace_mk6mortar_airResistanceEnabled = false;
 force ace_mk6mortar_allowCompass = true;
 force ace_mk6mortar_allowComputerRangefinder = true;
